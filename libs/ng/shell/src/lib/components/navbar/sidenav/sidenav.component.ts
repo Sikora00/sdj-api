@@ -15,7 +15,7 @@ export class SidenavComponent {
   selectedChannel: Channel;
 
   @Output()
-  selectChannel = new EventEmitter<Channel>();
+  selectChannel: EventEmitter<Channel> = new EventEmitter<Channel>();
 
   onSelectChannel(channel: Channel): void {
     this.selectChannel.emit(channel);
