@@ -1,9 +1,10 @@
-name: PMP PR CI
+name: SDJ TASK CI
 
 on:
   push:
     branches-ignore:
       - master
+      - develop
 
 jobs:
   setup:
@@ -25,18 +26,18 @@ jobs:
     - name: validate branch
       run: node ./node_modules/@valueadd/dev validate-branch `echo ${GITHUB_REF#refs/heads/}`
     - name: validate commits
-      run: node ./node_modules/@valueadd/dev validate-commit origin/master
+      run: node ./node_modules/@valueadd/dev validate-commit origin/develop
     - name: validate nx tags
       run: node ./node_modules/@valueadd/dev validate-nx-tags
     - name: prettier check
-      run: node ./node_modules/@valueadd/dev prettier-check `git diff origin/master  --cached --name-only --diff-filter=AM | tr '\r\n' ','`
+      run: node ./node_modules/@valueadd/dev prettier-check `git diff origin/develop  --cached --name-only --diff-filter=AM | tr '\r\n' ','`
     - name: affected:build
-      run: npm run affected:build -- --base origin/master
+      run: npm run affected:build -- --base origin/develop
     - name: affected:test
-      run: npm run affected:test -- --base origin/master
+      run: npm run affected:test -- --base origin/develop
     - name: affected:e2e
-      run: npm run affected:e2e -- --base origin/master
+      run: npm run affected:e2e -- --base origin/develop
     - name: affected:lint
-      run: npm run affected:lint -- --base origin/master
+      run: npm run affected:lint -- --base origin/develop
       env:
         CI: true

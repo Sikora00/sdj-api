@@ -709,13 +709,6 @@
       "sourceRoot": "libs/ng/shared/ui/players/src",
       "prefix": "sdj",
       "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "libs/ng/shared/ui/players/tsconfig.lib.json",
-            "project": "libs/ng/shared/ui/players/ng-package.json"
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
