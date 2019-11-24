@@ -9,10 +9,7 @@
   },
   "projects": {
     "ng-e2e": {
-      "tags": [
-        "scope:ng",
-        "type:e2e"
-      ]
+      "tags": ["scope:ng", "type:e2e"]
     },
     "ng": {
       "tags": ["scope:ng", "type:application"]
@@ -24,10 +21,7 @@
       "tags": ["scope:host-api", "type:application"]
     },
     "backend-slack": {
-      "tags": [
-        "scope:backend",
-        "type:service"
-      ]
+      "tags": ["scope:backend", "type:service"]
     },
     "backend-api": {
       "tags": ["scope:backend", "type:service"]

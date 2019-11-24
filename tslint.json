@@ -136,10 +136,7 @@
           },
           {
             "sourceTag": "scope:host-api",
-            "onlyDependOnLibsWithTags": [
-              "scope:backend-shared",
-              "scope:shared"
-            ]
+            "onlyDependOnLibsWithTags": ["scope:backend-shared", "scope:shared"]
           },
           {
             "sourceTag": "type:e2e",
