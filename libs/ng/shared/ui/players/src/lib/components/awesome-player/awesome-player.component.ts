@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { QueuedTrack } from '@sdj/ng/shared/domain';
 import { Observable } from 'rxjs';
 import { Controls } from './controls';
 import { Framer } from './framer';
@@ -25,15 +26,15 @@ export class AwesomePlayerComponent
     }
   }
 
-  get track$(): Observable<any> {
-    return this._track$;
+  get track(): QueuedTrack {
+    return this._track;
   }
 
   @Input()
-  set track$(value: Observable<any>) {
-    this._track$ = value;
+  set track(value: QueuedTrack) {
+    this._track = value;
     if (this.player) {
-      this.player.track = this.track$;
+      this.player.track = this.track;
     }
   }
 
@@ -42,7 +43,7 @@ export class AwesomePlayerComponent
   private scene: Scene;
 
   private _src: string;
-  private _track$: Observable<any>;
+  private _track: QueuedTrack;
 
   constructor() {}
 

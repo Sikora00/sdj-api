@@ -22,6 +22,6 @@
       </div>
     </li>
   </ul>
-  <sdj-awesome-player #playerComponent [src]="audioSrc" [track$]="currentTrack">
+  <sdj-awesome-player #playerComponent [src]="audioSrc" [track]="currentTrack | async">
   </sdj-awesome-player>
 </div>

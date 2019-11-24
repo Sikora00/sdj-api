@@ -31,7 +31,7 @@ export class RadioComponent implements OnInit, OnDestroy, AfterViewInit {
   toPlayContainer: ElementRef<HTMLElement>;
 
   audioSrc: string = environment.externalStream;
-  currentTrack: Observable<any>;
+  currentTrack: Observable<QueuedTrack>;
   getThumbnail: (track: Track) => string = TrackUtil.getTrackThumbnail;
   getUserName: (user: User) => string = UserUtils.getUserName;
   listScrollSubject: Subject<QueuedTrack[]> = new Subject();

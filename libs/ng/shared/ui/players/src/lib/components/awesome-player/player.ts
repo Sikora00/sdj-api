@@ -1,8 +1,6 @@
 import { environment } from '@ng-environment/environment.prod';
 import { QueuedTrack } from '@sdj/shared/domain';
 import { UserUtils } from '@sdj/shared/utils';
-import { untilDestroyed } from 'ngx-take-until-destroy';
-import { Observable } from 'rxjs';
 
 import { Framer } from './framer';
 import { Scene } from './scene';
@@ -23,13 +21,13 @@ export class Player {
     }
   }
 
-  get track(): Observable<any> {
+  get track(): QueuedTrack {
     return this._track;
   }
 
-  set track(value: Observable<any>) {
+  set track(value: QueuedTrack) {
     this._track = value;
-    this.handleTrackChange();
+    this.handleTrackChange(value);
   }
 
   public audio: HTMLAudioElement;
@@ -41,9 +39,10 @@ export class Player {
   private javascriptNode: ScriptProcessorNode;
   private source: MediaElementAudioSourceNode;
   private _src: string;
-  private _track: Observable<any>;
+  private _track: QueuedTrack;
 
-  constructor(private scene: Scene, private framer: Framer) {}
+  constructor(private scene: Scene, private framer: Framer) {
+  }
 
   destroy(): void {
     this.audio.remove();
@@ -90,22 +89,19 @@ export class Player {
     this.scene.init();
   }
 
-  handleTrackChange(): void {
-    this._track
-      .pipe(untilDestroyed(this, 'destroy'))
-      .subscribe((track: QueuedTrack | undefined) => {
-        const convertedTrack = {
-          artist:
-            track && track.addedBy
-              ? UserUtils.getUserName(track.addedBy)
-              : 'DJ PAWEŁ',
-          song: track ? track.track.title : 'OPEN FM'
-        };
-        document.querySelector('.song .artist').textContent =
-          convertedTrack.artist;
-        document.querySelector('.song .name').textContent = convertedTrack.song;
-        // this.currentSongIndex = index;
-      });
+  handleTrackChange(track: QueuedTrack): void {
+
+    const convertedTrack = {
+      artist:
+        track && track.addedBy
+          ? UserUtils.getUserName(track.addedBy)
+          : 'DJ PAWEŁ',
+      song: track ? track.track.title : 'OPEN FM'
+    };
+    document.querySelector('.song .artist').textContent =
+      convertedTrack.artist;
+    document.querySelector('.song .name').textContent = convertedTrack.song;
+    // this.currentSongIndex = index;
   }
 
   nextTrack(): void {
