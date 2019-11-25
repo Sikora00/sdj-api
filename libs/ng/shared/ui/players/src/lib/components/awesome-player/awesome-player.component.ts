@@ -61,8 +61,8 @@ export class AwesomePlayerComponent
 
     this.scene = new Scene(this.framer, tracker, controls);
     this.player = new Player(this.scene, this.framer);
-    if (this.track$) {
-      this.player.track = this.track$;
+    if (this.track) {
+      this.player.track = this.track;
     }
 
     controls.player = this.player;
