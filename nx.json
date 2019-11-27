@@ -82,6 +82,12 @@
     },
     "shared-utils": {
       "tags": ["scope:shared", "type:util"]
+    },
+    "ng-shared-ui-sdj-loader": {
+      "tags": [
+        "scope:ng-shared",
+        "type:ui"
+      ]
     }
   }
 }

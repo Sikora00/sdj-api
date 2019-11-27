@@ -851,6 +851,40 @@
           }
         }
       }
+    },
+    "ng-shared-ui-sdj-loader": {
+      "projectType": "library",
+      "root": "libs/ng/shared/ui/sdj-loader",
+      "sourceRoot": "libs/ng/shared/ui/sdj-loader/src",
+      "prefix": "sdj",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ng/shared/ui/sdj-loader/tsconfig.lib.json",
+              "libs/ng/shared/ui/sdj-loader/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ng/shared/ui/sdj-loader/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ng/shared/ui/sdj-loader/jest.config.js",
+            "tsConfig": "libs/ng/shared/ui/sdj-loader/tsconfig.spec.json",
+            "setupFile": "libs/ng/shared/ui/sdj-loader/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

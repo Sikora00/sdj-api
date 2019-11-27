@@ -39,7 +39,12 @@
       "@sdj/ng/shared/ui/common": ["libs/ng/shared/ui/common/src/index.ts"],
       "@sdj/ng/shared/domain": ["libs/ng/shared/domain/src/index.ts"],
       "@sdj/ng/shared/app/core": ["libs/ng/shared/app/core/src/index.ts"],
-      "@sdj/backend/shared/logger": ["libs/backend/shared/logger/src/index.ts"]
+      "@sdj/backend/shared/logger": [
+        "libs/backend/shared/logger/src/index.ts"
+      ],
+      "@sdj/ng/shared/ui/sdj-loader": [
+        "libs/ng/shared/ui/sdj-loader/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

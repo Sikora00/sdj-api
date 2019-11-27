@@ -4,8 +4,6 @@ html {
 }
 
 .app-loading {
-  font-size: 20px;
-
   .logo {
     width: 10em;
     height: 10em;
@@ -13,6 +11,10 @@ html {
     // this way asset gets processed by webpack
     background: center/100% url(assets/images/logo.jpg) no-repeat;
   }
+}
+
+.app-loading--first-screen {
+  font-size: 20px;
 }
 
 .app-loading {
@@ -30,10 +32,6 @@ html {
   animation: rotate 2s linear infinite;
   transform-origin: center center;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   margin: auto;
 }
 

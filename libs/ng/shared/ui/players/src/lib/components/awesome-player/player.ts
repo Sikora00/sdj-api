@@ -1,6 +1,7 @@
 import { environment } from '@ng-environment/environment.prod';
 import { QueuedTrack } from '@sdj/shared/domain';
 import { UserUtils } from '@sdj/shared/utils';
+import { Subject } from 'rxjs';
 
 import { Framer } from './framer';
 import { Scene } from './scene';
@@ -30,6 +31,8 @@ export class Player {
     this.handleTrackChange(value);
   }
 
+  isLoadingChange$ = new Subject();
+
   public audio: HTMLAudioElement;
   public context: AudioContext;
 
@@ -46,6 +49,7 @@ export class Player {
 
   destroy(): void {
     this.audio.remove();
+    this.isLoadingChange$.complete();
   }
 
   init(): void {
@@ -66,14 +70,8 @@ export class Player {
       this.audio.src = environment.radioStreamUrl;
       this.audio.crossOrigin = 'anonymous';
       this.audio.load();
-      this.audio.addEventListener('error', () => {
-        setTimeout(() => {
-          this.audio.load();
-          if (this.context.state === 'running') {
-            this.audio.play();
-          }
-        }, 1000);
-      });
+      this.audio.addEventListener('ended', this.replayStream.bind(this));
+      this.audio.addEventListener('error', this.replayStream.bind(this));
       this.source = this.context.createMediaElementSource(this.audio);
       this.destination = this.context.destination;
 
@@ -90,7 +88,6 @@ export class Player {
   }
 
   handleTrackChange(track: QueuedTrack): void {
-
     const convertedTrack = {
       artist:
         track && track.addedBy
@@ -98,8 +95,7 @@ export class Player {
           : 'DJ PAWEŁ',
       song: track ? track.track.title : 'OPEN FM'
     };
-    document.querySelector('.song .artist').textContent =
-      convertedTrack.artist;
+    document.querySelector('.song .artist').textContent = convertedTrack.artist;
     document.querySelector('.song .name').textContent = convertedTrack.song;
     // this.currentSongIndex = index;
   }
@@ -159,11 +155,33 @@ export class Player {
   }
 
   initHandlers(): void {
+    this.audio.addEventListener('ended', this.emitIsLoading.bind(this));
+    this.audio.addEventListener('progress', this.emitIsNotLoading.bind(this));
+    this.audio.addEventListener('waiting', this.emitIsLoading.bind(this));
+
     this.javascriptNode.onaudioprocess = () => {
       this.framer.frequencyData = new Uint8Array(
         this.analyser.frequencyBinCount
       );
       this.analyser.getByteFrequencyData(this.framer.frequencyData);
     };
+  }
+
+  private emitIsLoading(): void {
+    this.isLoadingChange$.next(true);
+  }
+
+  private emitIsNotLoading(): void {
+    this.isLoadingChange$.next(false);
+  }
+
+  private replayStream() {
+    setTimeout(() => {
+      this.audio.load();
+      if (this.context.state === 'running') {
+        this.audio.play().catch(() => {
+        });
+      }
+    }, 1000);
   }
 }

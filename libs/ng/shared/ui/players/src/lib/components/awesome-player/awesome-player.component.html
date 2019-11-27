@@ -1,9 +1,7 @@
-<link
-  href="https://fonts.googleapis.com/css?family=Roboto:100"
-  rel="stylesheet"
-  type="text/css"
-/>
-<div class="player">
+<div
+  [ngStyle]="{ visibility: isPlayerLoading ? 'hidden' : 'visible' }"
+  class="player"
+>
   <canvas></canvas>
   <div class="song">
     <div class="artist">DJ Paweł</div>
@@ -19,3 +17,4 @@
   <div class="soundControl"></div>
   <div class="time">00:00</div>
 </div>
+<sdj-loader *ngIf="isPlayerLoading"></sdj-loader>

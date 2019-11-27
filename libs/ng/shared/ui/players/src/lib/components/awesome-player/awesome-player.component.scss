@@ -9,6 +9,10 @@
   user-select: none;
 }
 
+:host {
+  width: 740px;
+  height: 740px;
+}
 canvas {
   display: block;
 }
@@ -17,11 +21,8 @@ canvas {
   width: 740px;
   height: 740px;
   display: block;
-  margin-left: -370px;
-  margin-top: -370px;
   position: absolute;
-  left: 50%;
-  top: 50%;
+  margin: 0 auto;
 }
 
 .player .playarea {
@@ -141,4 +142,10 @@ canvas {
   margin-left: -22px;
   font-size: 20px;
   bottom: 190px;
+}
+
+::ng-deep {
+  sdj-loader {
+    font-size: 32px;
+  }
 }

@@ -16,6 +16,7 @@ import { untilDestroyed } from 'ngx-take-until-destroy';
 })
 export class MostPlayedComponent implements OnInit, OnDestroy {
   channel: Channel;
+  loading = true;
   tracks: MatTrack[] = [];
 
   constructor(
@@ -62,6 +63,7 @@ export class MostPlayedComponent implements OnInit, OnDestroy {
               link: environment.backendUrl + 'tracks/' + track.id + '.mp3'
             };
           });
+          this.loading = loading;
           this.chD.markForCheck();
         }
       );

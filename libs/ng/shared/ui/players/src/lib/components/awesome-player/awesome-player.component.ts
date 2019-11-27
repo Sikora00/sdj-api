@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { QueuedTrack } from '@sdj/ng/shared/domain';
-import { Observable } from 'rxjs';
+import { of } from 'rxjs';
+import { delay, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { Controls } from './controls';
 import { Framer } from './framer';
 import { Player } from './player';
@@ -10,7 +11,8 @@ import { Tracker } from './tracker';
 @Component({
   selector: 'sdj-awesome-player',
   templateUrl: './awesome-player.component.html',
-  styleUrls: ['./awesome-player.component.scss']
+  styleUrls: ['./awesome-player.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AwesomePlayerComponent
   implements OnInit, OnDestroy, AfterViewInit {
@@ -38,6 +40,8 @@ export class AwesomePlayerComponent
     }
   }
 
+  isPlayerLoading = false;
+
   public player: Player;
   private framer: Framer;
   private scene: Scene;
@@ -45,7 +49,8 @@ export class AwesomePlayerComponent
   private _src: string;
   private _track: QueuedTrack;
 
-  constructor() {}
+  constructor(private chD: ChangeDetectorRef) {
+  }
 
   ngOnDestroy(): void {
     this.player.destroy();
@@ -73,5 +78,12 @@ export class AwesomePlayerComponent
 
     this.player.init();
     this.player.src = this.src;
+    this.player.isLoadingChange$
+      .pipe(distinctUntilChanged(), switchMap((value => of(value).pipe(
+        delay(500)))))
+      .subscribe((isLoading: boolean) => {
+        this.isPlayerLoading = isLoading;
+        this.chD.markForCheck();
+      });
   }
 }

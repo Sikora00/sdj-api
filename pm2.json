@@ -7,6 +7,8 @@
       "watch": true,
       "ignore_watch": [
         "./apps/backend/src/assets",
+        "./apps/ng",
+        "./libs/ng",
         "./.git",
         "./.idea",
         "./schema.gql"
@@ -25,6 +27,8 @@
       "watch": true,
       "ignore_watch": [
         "./apps/backend/src/assets",
+        "./apps/ng",
+        "./libs/ng",
         "./.git",
         "./.idea",
         "./schema.gql"
@@ -43,6 +47,8 @@
       "watch": true,
       "ignore_watch": [
         "./apps/backend/src/assets",
+        "./apps/ng",
+        "./libs/ng",
         "./.git",
         "./.idea",
         "./schema.gql"
@@ -61,6 +67,8 @@
       "watch": true,
       "ignore_watch": [
         "./apps/backend/src/assets",
+        "./apps/ng",
+        "./libs/ng",
         "./.git",
         "./.idea",
         "./schema.gql"
@@ -79,6 +87,8 @@
       "watch": true,
       "ignore_watch": [
         "./apps/backend/src/assets",
+        "./apps/ng",
+        "./libs/ng",
         "./.git",
         "./.idea",
         "./schema.gql"
