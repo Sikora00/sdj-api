@@ -39,7 +39,7 @@ testem.log
 Thumbs.db
 
 .history
-.env
+.env*
 docker-compose.override.yml
 schema.gql
 tracks/*

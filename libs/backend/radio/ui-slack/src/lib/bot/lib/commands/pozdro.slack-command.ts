@@ -4,9 +4,12 @@ import {
   RadioFacade,
 } from '@sdj/backend/radio/core/application-services';
 import { UserDomainRepository } from '@sdj/backend/radio/core/domain';
-import { SlackCommandHandler } from '../bot';
-import { SlackCommand } from '../interfaces/slack-command';
-import { SlackMessage } from '../interfaces/slack-message.interface';
+import {
+  SlackCommand,
+  SlackCommandHandler,
+  SlackMessage,
+  SlackService,
+} from '@sikora00/nestjs-slack-bot';
 
 @SlackCommandHandler()
 @Injectable()

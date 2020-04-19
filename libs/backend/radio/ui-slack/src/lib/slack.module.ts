@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
-import { Bot } from './bot/lib/bot';
+import { connectionConfig } from '@sdj/backend/shared/domain';
+import { SlackBotModule } from '@sikora00/nestjs-slack-bot';
 import { CleanShitSlackCommand } from './bot/lib/commands/clean-shit.slack-command';
 import { FuckYouSlackCommand } from './bot/lib/commands/fuck-you.slack-command';
 import { HeartSlackCommand } from './bot/lib/commands/heart.slack-command';
@@ -12,13 +13,14 @@ import { SetChannelDefaultStreamSlackCommand } from './bot/lib/commands/set-chan
 import { ThumbDownSlackCommand } from './bot/lib/commands/thumb-down.slack-command';
 import { ThumbUpSlackCommand } from './bot/lib/commands/thumb-up.slack-command';
 import { SlackQueuedTrackSkippedHandler } from './bot/lib/events/queued-track-skipped/slack-queued-track-skipped.handler';
-import { SlackService } from './services/slack.service';
 
 const EventsHandlers = [SlackQueuedTrackSkippedHandler];
+
 @Module({
-  imports: [],
+  imports: [
+    SlackBotModule.forRoot({ slackToken: connectionConfig.slack.token }),
+  ],
   providers: [
-    Bot,
     CleanShitSlackCommand,
     FuckYouSlackCommand,
     LsSlackCommand,
@@ -30,7 +32,6 @@ const EventsHandlers = [SlackQueuedTrackSkippedHandler];
     SetChannelDefaultStreamSlackCommand,
     ThumbUpSlackCommand,
     ThumbDownSlackCommand,
-    SlackService,
     ...EventsHandlers,
   ],
 })

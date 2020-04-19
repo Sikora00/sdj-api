@@ -4,10 +4,12 @@ import {
   RadioFacade,
 } from '@sdj/backend/radio/core/application-services';
 import { QueuedTrackDomainRepository } from '@sdj/backend/radio/core/domain';
-import { SlackService } from '../../../services/slack.service';
-import { SlackCommandHandler } from '../bot';
-import { SlackCommand } from '../interfaces/slack-command';
-import { SlackMessage } from '../interfaces/slack-message.interface';
+import {
+  SlackCommand,
+  SlackCommandHandler,
+  SlackMessage,
+  SlackService,
+} from '@sikora00/nestjs-slack-bot';
 
 @SlackCommandHandler()
 @Injectable()
@@ -30,12 +32,12 @@ export class HeartSlackCommand implements SlackCommand {
       const currentTrackInQueue = await this.queuedTrackRepository.getCurrentTrack(
         message.channel
       );
-      this.slackService.rtm.sendMessage(
+      this.slackService.sendMessage(
         ':heart: ' + currentTrackInQueue.track.title,
         message.channel
       );
     } catch (e) {
-      this.slackService.rtm.sendMessage('Co ty pedał jesteś?', message.channel);
+      this.slackService.sendMessage('Co ty pedał jesteś?', message.channel);
     }
   }
 }

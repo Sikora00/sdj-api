@@ -3,10 +3,12 @@ import {
   QueuedTrack,
   QueuedTrackDomainRepository,
 } from '@sdj/backend/radio/core/domain';
-import { SlackService } from '../../../services/slack.service';
-import { SlackCommandHandler } from '../bot';
-import { SlackCommand } from '../interfaces/slack-command';
-import { SlackMessage } from '../interfaces/slack-message.interface';
+import {
+  SlackCommand,
+  SlackCommandHandler,
+  SlackMessage,
+  SlackService,
+} from '@sikora00/nestjs-slack-bot';
 
 @SlackCommandHandler()
 @Injectable()
@@ -31,9 +33,9 @@ export class LsSlackCommand implements SlackCommand {
     const msg = this.mapQueuedTracksToMessage(currentTrack, queuedTracks);
 
     if (!msg.length) {
-      this.slack.rtm.sendMessage('Brak utworów na liście.', message.channel);
+      this.slack.sendMessage('Brak utworów na liście.', message.channel);
     } else {
-      this.slack.rtm.sendMessage(msg, message.channel);
+      this.slack.sendMessage(msg, message.channel);
     }
   }
 

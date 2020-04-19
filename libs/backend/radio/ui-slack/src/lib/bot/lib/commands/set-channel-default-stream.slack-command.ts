@@ -3,10 +3,12 @@ import {
   RadioFacade,
   SetChannelDefaultStreamCommand,
 } from '@sdj/backend/radio/core/application-services';
-import { SlackService } from '../../../services/slack.service';
-import { SlackCommandHandler } from '../bot';
-import { SlackCommand } from '../interfaces/slack-command';
-import { SlackMessage } from '../interfaces/slack-message.interface';
+import {
+  SlackCommand,
+  SlackCommandHandler,
+  SlackMessage,
+  SlackService,
+} from '@sikora00/nestjs-slack-bot';
 
 @SlackCommandHandler()
 @Injectable()
@@ -26,7 +28,7 @@ export class SetChannelDefaultStreamSlackCommand implements SlackCommand {
     await this.radioFacade.setChannelDefaultStream(
       new SetChannelDefaultStreamCommand(message.channel, streamUrl)
     );
-    await this.slack.rtm.sendMessage('Zrobione!', message.channel);
+    await this.slack.sendMessage('Zrobione!', message.channel);
   }
 
   private async validateCommand(
@@ -34,7 +36,7 @@ export class SetChannelDefaultStreamSlackCommand implements SlackCommand {
     message: SlackMessage
   ): Promise<boolean> {
     if (command.length < 2) {
-      await this.slack.rtm.sendMessage('Źle użyłeś komendy', message.channel);
+      await this.slack.sendMessage('Źle użyłeś komendy', message.channel);
 
       return false;
     }

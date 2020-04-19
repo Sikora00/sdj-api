@@ -67,6 +67,7 @@
     "@ngrx/router-store": "10.0.0",
     "@ngrx/store": "10.0.0",
     "@nrwl/angular": "10.2.1",
+    "@sikora00/nestjs-slack-bot": "^0.1.0",
     "@sikora00/rxjs-overlay": "^2.0.1",
     "@slack/client": "^5.0.2",
     "@slack/events-api": "^2.3.1",

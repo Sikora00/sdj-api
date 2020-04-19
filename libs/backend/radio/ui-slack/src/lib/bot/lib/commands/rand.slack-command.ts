@@ -10,10 +10,12 @@ import {
   TrackDomainRepository,
 } from '@sdj/backend/radio/core/domain';
 import { appConfig } from '@sdj/backend/shared/domain';
-import { SlackService } from '../../../services/slack.service';
-import { SlackCommandHandler } from '../bot';
-import { SlackCommand } from '../interfaces/slack-command';
-import { SlackMessage } from '../interfaces/slack-message.interface';
+import {
+  SlackCommand,
+  SlackCommandHandler,
+  SlackMessage,
+  SlackService,
+} from '@sikora00/nestjs-slack-bot';
 
 @SlackCommandHandler()
 @Injectable()
@@ -35,7 +37,7 @@ export class RandSlackCommand implements SlackCommand {
     );
 
     if (queuedTracksCount >= appConfig.queuedTracksPerUser) {
-      this.slack.rtm.sendMessage(
+      this.slack.sendMessage(
         `Osiągnąłeś limit ${appConfig.queuedTracksPerUser} zakolejkowanych utworów.`,
         message.channel
       );
@@ -53,13 +55,13 @@ export class RandSlackCommand implements SlackCommand {
           this.queueTrack(message, randTrack);
         })
         .catch(() => {
-          this.slack.rtm.sendMessage(
+          this.slack.sendMessage(
             `Nie da rady pobrać ${randTrack.title} :(`,
             message.channel
           );
         });
     } else {
-      this.slack.rtm.sendMessage(`Nie ma w czym wybierać :/`, message.channel);
+      this.slack.sendMessage(`Nie ma w czym wybierać :/`, message.channel);
     }
   }
 
@@ -69,7 +71,7 @@ export class RandSlackCommand implements SlackCommand {
         new QueueTrackCommand(track.id, message.channel, message.user, true)
       )
       .then(() => {
-        this.slack.rtm.sendMessage(
+        this.slack.sendMessage(
           `Dodałem ${track.title} do playlisty :)`,
           message.channel
         );

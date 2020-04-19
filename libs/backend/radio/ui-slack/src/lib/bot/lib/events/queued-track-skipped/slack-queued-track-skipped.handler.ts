@@ -1,7 +1,7 @@
 import { EventsHandler, IEventHandler } from '@nestjs/cqrs';
 import { QueuedTrackSkippedEvent } from '@sdj/backend/radio/core/application-services';
 import { QueuedTrackDomainRepository } from '@sdj/backend/radio/core/domain';
-import { SlackService } from '../../../../services/slack.service';
+import { SlackService } from '@sikora00/nestjs-slack-bot';
 
 @EventsHandler(QueuedTrackSkippedEvent)
 export class SlackQueuedTrackSkippedHandler
@@ -15,7 +15,7 @@ export class SlackQueuedTrackSkippedHandler
     const queuedTrack = await this.queuedTrackRepository.findOneOrFail(
       event.queuedTrackId
     );
-    return this.slackService.rtm.sendMessage(
+    return this.slackService.sendMessage(
       'Skipping ' +
         queuedTrack.track.title +
         '\n' +

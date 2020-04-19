@@ -5,10 +5,12 @@ import {
 } from '@sdj/backend/radio/core/application-services';
 import { TrackDomainRepository } from '@sdj/backend/radio/core/domain';
 import { extractVideoIdFromYoutubeUrl } from '@sdj/backend/shared/util-you-tube';
-import { SlackService } from '../../../services/slack.service';
-import { SlackCommandHandler } from '../bot';
-import { SlackCommand } from '../interfaces/slack-command';
-import { SlackMessage } from '../interfaces/slack-message.interface';
+import {
+  SlackCommand,
+  SlackCommandHandler,
+  SlackMessage,
+  SlackService,
+} from '@sikora00/nestjs-slack-bot';
 
 @SlackCommandHandler()
 @Injectable()
@@ -31,12 +33,12 @@ export class PlayTrackSlackCommand implements SlackCommand {
         new AddTrackToQueueCommand(link, message.channel, message.user)
       );
       const track = await this.trackRepository.findOneOrFail(trackId);
-      await this.slack.rtm.sendMessage(
+      await this.slack.sendMessage(
         `Dodałem ${track.title} do playlisty :)`,
         message.channel
       );
     } catch (err) {
-      await this.slack.rtm.sendMessage(err.message, message.channel);
+      await this.slack.sendMessage(err.message, message.channel);
     }
   }
 }

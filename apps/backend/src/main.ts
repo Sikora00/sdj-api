@@ -23,4 +23,7 @@ async function bootstrap(): Promise<void> {
   });
 }
 
+process.on('uncaughtException', console.error);
+process.on('unhandledRejection', console.error);
+
 bootstrap();
