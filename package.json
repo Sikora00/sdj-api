@@ -132,7 +132,7 @@
     "husky": "^4.2.3",
     "istanbul-api": "^2.1.6",
     "istanbul-lib-coverage": "^3.0.0",
-    "jest": "25.1.0",
+    "jest": "25.5.4",
     "jest-createspyobj": "^1.2.2",
     "jest-marbles": "^2.5.1",
     "jest-preset-angular": "^8.1.1",
