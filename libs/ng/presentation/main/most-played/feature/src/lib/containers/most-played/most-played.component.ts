@@ -6,8 +6,7 @@ import {
   OnInit
 } from '@angular/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { ChannelFacade } from '@sdj/ng/core/channel/application-services';
-import { Channel } from '@sdj/ng/core/channel/domain';
+import { Channel, ChannelFacade } from '@sdj/ng/core/radio/domain';
 import { environment } from '@sdj/ng/core/shared/domain';
 import { TrackFacade } from '@sdj/ng/core/track/application-services';
 import { Track } from '@sdj/ng/core/track/domain';

@@ -9,12 +9,21 @@ import Socket = SocketIOClient.Socket;
 
 @Injectable()
 export class WebSocketClientAdapter extends WebSocketClient {
+  private static instance: WebSocketClientAdapter
   private readonly socket: Socket;
 
   constructor() {
     super();
     const io = window.io || socketIo;
     this.socket = io(environment.backendUrl);
+  }
+
+  static getInstance(): WebSocketClientAdapter {
+    if(!WebSocketClientAdapter.instance)   {
+      WebSocketClientAdapter.instance = new WebSocketClientAdapter();
+    }
+    return WebSocketClientAdapter.instance;
+
   }
 
   createSubject<T>(event: string): Subject<T> {
@@ -36,6 +45,9 @@ export class WebSocketClientAdapter extends WebSocketClient {
   }
 
   observe<T>(event: WebSocketEvents): Observable<T> {
+    this.socket.on(event, (data) => {
+      console.log(event, data)
+    })
     return fromEvent<T>(this.socket, event);
   }
 }

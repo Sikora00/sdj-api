@@ -1,21 +1,27 @@
 import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { NgCoreChannelApiModule } from '@sdj/ng/core/channel/api';
+import { ChannelFacade } from '@sdj/ng/core/radio/domain';
 import * as fromRadio from './+state/radio.reducer';
+import { CHANNEL_FEATURE_KEY, reducer } from './channel/+state/channel.reducer';
+import { NgrxChannelFacade } from './channel/ngrx-channel.facade';
+import { LoadChannelsHandler } from './channel/queries/load-channels/load-channels.handler';
 import { JoinHandler } from './commands/join/join.handler';
 import { ExternalRadioFacade } from './external-radio.facade';
 import { GetAudioSourceHandler } from './queries/get-audio-source.handler';
 import { RadioFacade } from './radio.facade';
 
 const HANDLERS = [JoinHandler, GetAudioSourceHandler];
+const CHANNEL_HANDLERS = [LoadChannelsHandler];
 
 @NgModule({
-  providers: [ExternalRadioFacade, RadioFacade],
+  providers: [ExternalRadioFacade, RadioFacade, {
+    provide: ChannelFacade, useClass: NgrxChannelFacade
+  }],
   imports: [
     EffectsModule.forFeature(HANDLERS),
-    NgCoreChannelApiModule,
-    StoreModule.forFeature(fromRadio.RADIO_FEATURE_KEY, fromRadio.reducer)
-  ]
-})
+    StoreModule.forFeature(fromRadio.RADIO_FEATURE_KEY, fromRadio.reducer),
+    EffectsModule.forFeature(CHANNEL_HANDLERS),
+    StoreModule.forFeature(CHANNEL_FEATURE_KEY, reducer)
+  ]})
 export class NgCoreRadioApplicationServicesModule {}

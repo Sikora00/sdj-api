@@ -8,7 +8,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Route, RouterModule } from '@angular/router';
 import { NgCoreAuthShellModule } from '@sdj/ng/core/auth/shell';
-import { NgCoreChannelShellModule } from '@sdj/ng/core/channel/shell';
+import { NgCoreRadioShellModule } from '@sdj/ng/core/radio/shell';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { MainComponent } from './containers/main/main.component';
@@ -68,9 +68,10 @@ export const ngShellRoutes: Route[] = [
     MatListModule,
     MatSidenavModule,
     MatButtonModule,
-    NgCoreChannelShellModule,
-    NgCoreAuthShellModule
+    NgCoreAuthShellModule,
+    NgCoreRadioShellModule
   ],
-  declarations: [NavbarComponent, MainComponent, SidenavComponent]
+  declarations: [NavbarComponent, MainComponent, SidenavComponent],
+  providers: [ChannelResolver]
 })
 export class NgPresentationMainShellModule {}

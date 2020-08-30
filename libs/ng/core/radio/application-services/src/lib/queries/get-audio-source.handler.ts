@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Action, select, Store } from '@ngrx/store';
-import { Channel, ChannelApiFacade } from '@sdj/ng/core/channel/api';
-import { ExternalRadio } from '@sdj/ng/core/radio/domain';
+import { Channel, ChannelFacade, ExternalRadio } from '@sdj/ng/core/radio/domain';
 import { environment } from '@sdj/ng/core/shared/domain';
 import { merge, Observable, of } from 'rxjs';
 import { filter, first, map, switchMap, withLatestFrom } from 'rxjs/operators';
@@ -22,7 +21,7 @@ export class GetAudioSourceHandler {
   @Effect() handle$ = this.actions$.pipe(
     ofType(GetAudioSourceQuery.type),
     withLatestFrom(
-      this.channelApiFacade.selectedChannel$,
+      this.channelFacade.selectedChannel$,
       this.externalRadioFacade.selectedExternalRadio$
     ),
     switchMap(
@@ -36,7 +35,7 @@ export class GetAudioSourceHandler {
 
   constructor(
     private actions$: Actions,
-    private channelApiFacade: ChannelApiFacade,
+    private channelFacade: ChannelFacade,
     private externalRadioFacade: ExternalRadioFacade,
     private radioDataService: RadioDataService,
     private store: Store<RadioPartialState>

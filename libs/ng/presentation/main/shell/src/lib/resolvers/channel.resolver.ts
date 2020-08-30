@@ -1,16 +1,11 @@
 import { Injectable } from '@angular/core';
-import {
-  ActivatedRouteSnapshot,
-  Resolve,
-  RouterStateSnapshot
-} from '@angular/router';
-import { ChannelFacade } from '@sdj/ng/core/channel/application-services';
-import { Channel } from '@sdj/ng/core/channel/domain';
+import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
+import { Channel, ChannelFacade } from '@sdj/ng/core/radio/domain';
 import { SlackChannel } from '@sdj/shared/domain';
 import { Observable } from 'rxjs';
 import { filter, first, switchMap, tap } from 'rxjs/operators';
 
-@Injectable({ providedIn: 'any' })
+@Injectable()
 export class ChannelResolver implements Resolve<SlackChannel[]> {
   constructor(private channelFacade: ChannelFacade) {}
 

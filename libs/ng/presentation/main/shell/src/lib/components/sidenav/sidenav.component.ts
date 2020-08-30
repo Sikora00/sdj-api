@@ -5,8 +5,8 @@ import {
   Input,
   Output
 } from '@angular/core';
-import { Channel } from '@sdj/ng/core/channel/domain';
 import { Observable } from 'rxjs';
+import { Channel } from '@sdj/ng/core/radio/domain';
 
 @Component({
   selector: 'sdj-sidenav',

@@ -11,15 +11,13 @@ import {
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { ChannelFacade } from '@sdj/ng/core/channel/application-services';
-import { Channel } from '@sdj/ng/core/channel/domain';
 import { QueuedTrackFacade } from '@sdj/ng/core/queued-track/application-services';
 import { QueuedTrack } from '@sdj/ng/core/queued-track/domain';
 import {
   ExternalRadioFacade,
   RadioFacade
 } from '@sdj/ng/core/radio/application-services';
-import { ExternalRadio } from '@sdj/ng/core/radio/domain';
+import { Channel, ChannelFacade, ExternalRadio } from '@sdj/ng/core/radio/domain';
 import { WebSocketClient } from '@sdj/ng/core/shared/port';
 import { Track } from '@sdj/ng/core/track/domain';
 import { RadioStationsComponent } from '@sdj/ng/presentation/main/radio/presentation';

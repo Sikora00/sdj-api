@@ -1,13 +1,7 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnInit,
-  ViewChild
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ChannelFacade } from '@sdj/ng/core/channel/application-services';
-import { Channel } from '@sdj/ng/core/channel/domain';
+import { Channel, ChannelFacade } from '@sdj/ng/core/radio/domain';
 
 @Component({
   selector: 'sdj-main',

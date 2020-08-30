@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { Channel, ChannelApiFacade } from '@sdj/ng/core/channel/api';
+import { Channel } from '@sdj/ng/core/radio/domain';
 import { SpeechService, WebSocketClient } from '@sdj/ng/core/shared/port';
 import { WebSocketEvents } from '@sdj/shared/domain';
 import { Observable, Subject, zip } from 'rxjs';
@@ -20,7 +20,6 @@ export class RadioFacade {
   private pozdro$: Subject<{ message: string }>;
 
   constructor(
-    private channelFacade: ChannelApiFacade,
     private externalRadioFacade: ExternalRadioFacade,
     private getAudioSourceHandler: GetAudioSourceHandler,
     private speechService: SpeechService,
