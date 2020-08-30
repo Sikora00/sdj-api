@@ -5,9 +5,9 @@ export abstract class ChannelFacade {
   abstract channels$: Observable<Channel[]>;
   abstract selectedChannel$: Observable<Channel>;
 
-  abstract loadChannels(): void
+  abstract loadChannels(): void;
 
-  abstract selectFirstChannel(channelId: string | null): void
+  abstract selectFirstChannel(channelId: string | null): void;
 
-  abstract selectChannel(channelId: string): void
+  abstract selectChannel(channelId: string): void;
 }

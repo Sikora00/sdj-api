@@ -7,7 +7,7 @@ import { LoadChannelsQuery } from './queries/load-channels/load-channels.query';
 import { SelectChannelService } from './services/select-channel.service';
 
 @Injectable()
-export class NgrxChannelFacade implements ChannelFacade{
+export class NgrxChannelFacade implements ChannelFacade {
   channels$ = this.store.pipe(select(channelQuery.channels));
   selectedChannel$ = this.store.pipe(select(channelQuery.selectedChannel));
 

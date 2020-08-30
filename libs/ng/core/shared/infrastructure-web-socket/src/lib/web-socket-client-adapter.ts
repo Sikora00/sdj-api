@@ -9,7 +9,7 @@ import Socket = SocketIOClient.Socket;
 
 @Injectable()
 export class WebSocketClientAdapter extends WebSocketClient {
-  private static instance: WebSocketClientAdapter
+  private static instance: WebSocketClientAdapter;
   private readonly socket: Socket;
 
   constructor() {
@@ -19,11 +19,10 @@ export class WebSocketClientAdapter extends WebSocketClient {
   }
 
   static getInstance(): WebSocketClientAdapter {
-    if(!WebSocketClientAdapter.instance)   {
+    if (!WebSocketClientAdapter.instance) {
       WebSocketClientAdapter.instance = new WebSocketClientAdapter();
     }
     return WebSocketClientAdapter.instance;
-
   }
 
   createSubject<T>(event: string): Subject<T> {

@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
+import {
+  ActivatedRouteSnapshot,
+  Resolve,
+  RouterStateSnapshot
+} from '@angular/router';
 import { Channel, ChannelFacade } from '@sdj/ng/core/radio/domain';
 import { SlackChannel } from '@sdj/shared/domain';
 import { Observable } from 'rxjs';

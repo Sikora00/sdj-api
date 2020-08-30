@@ -10,42 +10,24 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom",
-      "esnext.asynciterable"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom", "esnext.asynciterable"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@sdj/backend/core": [
-        "libs/backend/core/src/index.ts"
-      ],
-      "@sdj/shared/domain": [
-        "libs/shared/domain/src/index.ts"
-      ],
-      "@sdj/backend/shared/domain": [
-        "libs/backend/shared/domain/src/index.ts"
-      ],
-      "@sdj/shared/utils": [
-        "libs/shared/utils/src/index.ts"
-      ],
-      "@sdj/ng/shared/ui/common": [
-        "libs/ng/shared/ui/common/src/index.ts"
-      ],
+      "@sdj/backend/core": ["libs/backend/core/src/index.ts"],
+      "@sdj/shared/domain": ["libs/shared/domain/src/index.ts"],
+      "@sdj/backend/shared/domain": ["libs/backend/shared/domain/src/index.ts"],
+      "@sdj/shared/utils": ["libs/shared/utils/src/index.ts"],
+      "@sdj/ng/shared/ui/common": ["libs/ng/shared/ui/common/src/index.ts"],
       "@sdj/backend/radio/core/application-services": [
         "libs/backend/radio/core/application-services/src/index.ts"
       ],
       "@sdj/backend/radio/core/domain": [
         "libs/backend/radio/core/domain/src/index.ts"
       ],
-      "@sdj/backend/radio/ui-rest": [
-        "libs/backend/radio/ui-rest/src/index.ts"
-      ],
+      "@sdj/backend/radio/ui-rest": ["libs/backend/radio/ui-rest/src/index.ts"],
       "@sdj/backend/radio/ui-web-socket": [
         "libs/backend/radio/ui-web-socket/src/index.ts"
       ],
@@ -58,9 +40,7 @@
       "@sdj/backend/radio/infrastructure": [
         "libs/backend/radio/infrastructure/src/index.ts"
       ],
-      "@sdj/backend/radio/shell": [
-        "libs/backend/radio/shell/src/index.ts"
-      ],
+      "@sdj/backend/radio/shell": ["libs/backend/radio/shell/src/index.ts"],
       "@sdj/backend/shared/util-you-tube": [
         "libs/backend/shared/util-you-tube/src/index.ts"
       ],
@@ -73,9 +53,7 @@
       "@sdj/backend/shared/infrastructure-logger": [
         "libs/backend/shared/infrastructure-logger/src/index.ts"
       ],
-      "@sdj/backend/shared/port": [
-        "libs/backend/shared/port/src/index.ts"
-      ],
+      "@sdj/backend/shared/port": ["libs/backend/shared/port/src/index.ts"],
       "@sdj/backend/shared/infrastructure": [
         "libs/backend/shared/infrastructure/src/index.ts"
       ],
@@ -91,21 +69,15 @@
       "@sdj/ng/presentation/shared/presentation-players": [
         "libs/ng/presentation/shared/presentation-players/src/index.ts"
       ],
-      "@sdj/ng/core/radio/domain": [
-        "libs/ng/core/radio/domain/src/index.ts"
-      ],
+      "@sdj/ng/core/radio/domain": ["libs/ng/core/radio/domain/src/index.ts"],
       "@sdj/ng/presentation/main/shell": [
         "libs/ng/presentation/main/shell/src/index.ts"
       ],
       "@sdj/ng/presentation/main/top-rated/feature": [
         "libs/ng/presentation/main/top-rated/feature/src/index.ts"
       ],
-      "@sdj/ng/core/shared/kernel": [
-        "libs/ng/core/shared/kernel/src/index.ts"
-      ],
-      "@sdj/backend/shared/kernel": [
-        "libs/backend/shared/kernel/src/index.ts"
-      ],
+      "@sdj/ng/core/shared/kernel": ["libs/ng/core/shared/kernel/src/index.ts"],
+      "@sdj/backend/shared/kernel": ["libs/backend/shared/kernel/src/index.ts"],
       "@sdj/ng/core/radio/infrastructure": [
         "libs/ng/core/radio/infrastructure/src/index.ts"
       ],
@@ -121,18 +93,12 @@
       "@sdj/ng/core/auth/domain-services": [
         "libs/ng/core/auth/domain-services/src/index.ts"
       ],
-      "@sdj/ng/core/radio/shell": [
-        "libs/ng/core/radio/shell/src/index.ts"
-      ],
-      "@sdj/ng/core/auth/shell": [
-        "libs/ng/core/auth/shell/src/index.ts"
-      ],
+      "@sdj/ng/core/radio/shell": ["libs/ng/core/radio/shell/src/index.ts"],
+      "@sdj/ng/core/auth/shell": ["libs/ng/core/auth/shell/src/index.ts"],
       "@sdj/ng/core/shared/infrastructure-web-socket": [
         "libs/ng/core/shared/infrastructure-web-socket/src/index.ts"
       ],
-      "@sdj/ng/core/shared/port": [
-        "libs/ng/core/shared/port/src/index.ts"
-      ],
+      "@sdj/ng/core/shared/port": ["libs/ng/core/shared/port/src/index.ts"],
       "@sdj/ng/core/shared/infrastructure-speech": [
         "libs/ng/core/shared/infrastructure-speech/src/index.ts"
       ],
@@ -142,34 +108,21 @@
       "@sdj/ng/core/shared/infrastructure-slack": [
         "libs/ng/core/shared/infrastructure-slack/src/index.ts"
       ],
-      "@sdj/ng/core/shared/domain": [
-        "libs/ng/core/shared/domain/src/index.ts"
-      ],
-      "@sdj/ng/core/auth/api": [
-        "libs/ng/core/auth/api/src/index.ts"
-      ],
+      "@sdj/ng/core/shared/domain": ["libs/ng/core/shared/domain/src/index.ts"],
+      "@sdj/ng/core/auth/api": ["libs/ng/core/auth/api/src/index.ts"],
       "@sdj/ng/presentation/main/radio/presentation": [
         "libs/ng/presentation/main/radio/presentation/src/index.ts"
-      ],
-      "@sdj/ng/core/queued-track/application-services": [
-        "libs/ng/core/queued-track/application-services/src/index.ts"
-      ],
-      "@sdj/ng/core/queued-track/domain": [
-        "libs/ng/core/queued-track/domain/src/index.ts"
-      ],
-      "@sdj/ng/core/queued-track/infrastructure": [
-        "libs/ng/core/queued-track/infrastructure/src/index.ts"
       ],
       "@sdj/ng/core/radio/infrastructure-channel-http": [
         "libs/ng/core/radio/infrastructure-channel-http/src/index.ts"
       ],
       "@sdj/ng/core/radio/infrastructure-track-apollo": [
         "libs/ng/core/radio/infrastructure-track-apollo/src/index.ts"
+      ],
+      "@sdj/ng/core/radio/infrastructure-queued-track-web-socket": [
+        "libs/ng/core/radio/infrastructure-queued-track-web-socket/src/index.ts"
       ]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

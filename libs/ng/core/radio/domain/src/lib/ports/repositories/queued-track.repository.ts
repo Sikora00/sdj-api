@@ -1,4 +1,4 @@
-import { QueuedTrack } from '@sdj/ng/core/queued-track/domain';
+import { QueuedTrack } from '../../entities/queued-track.entity';
 import { Observable } from 'rxjs';
 
 export abstract class QueuedTrackRepository {

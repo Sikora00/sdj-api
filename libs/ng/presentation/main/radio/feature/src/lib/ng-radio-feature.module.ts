@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NgCoreQueuedTrackApplicationServicesModule } from '@sdj/ng/core/queued-track/application-services';
-import { NgCoreQueuedTrackInfrastructureModule } from '@sdj/ng/core/queued-track/infrastructure';
+import { NgCoreRadioInfrastructureQueuedTrackWebSocketModule } from '@sdj/ng/core/radio/infrastructure-queued-track-web-socket';
 import { NgCoreRadioShellModule } from '@sdj/ng/core/radio/shell';
 import { NgPresentationMainRadioPresentationModule } from '@sdj/ng/presentation/main/radio/presentation';
 import { PlayersModule } from '@sdj/ng/presentation/shared/presentation-players';
@@ -12,8 +11,7 @@ import { RadioComponent } from './containers/radio/radio.component';
   imports: [
     CommonModule,
     NgCoreRadioShellModule,
-    NgCoreQueuedTrackApplicationServicesModule,
-    NgCoreQueuedTrackInfrastructureModule,
+    NgCoreRadioInfrastructureQueuedTrackWebSocketModule,
     PlayersModule,
     RouterModule.forChild([{ path: '', component: RadioComponent }]),
     NgPresentationMainRadioPresentationModule

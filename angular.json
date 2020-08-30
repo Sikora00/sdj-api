@@ -87,10 +87,7 @@
               "apps/ng/tsconfig.app.json",
               "apps/ng/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/ng/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/ng/**"]
           }
         },
         "test": {
@@ -126,10 +123,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/ng-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/ng-e2e/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/ng-e2e/**"]
           }
         }
       }
@@ -147,9 +141,7 @@
             "outputPath": "dist/apps/backend",
             "main": "apps/backend/src/main.ts",
             "tsConfig": "apps/backend/tsconfig.app.json",
-            "assets": [
-              "apps/backend/src/assets"
-            ]
+            "assets": ["apps/backend/src/assets"]
           },
           "configurations": {
             "production": {
@@ -185,10 +177,7 @@
               "apps/backend/tsconfig.app.json",
               "apps/backend/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/backend/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/backend/**"]
           }
         },
         "test": {
@@ -214,9 +203,7 @@
             "outputPath": "dist/apps/host-api",
             "main": "apps/host-api/src/main.ts",
             "tsConfig": "apps/host-api/tsconfig.app.json",
-            "assets": [
-              "apps/host-api/src/assets"
-            ]
+            "assets": ["apps/host-api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -245,10 +232,7 @@
               "apps/host-api/tsconfig.app.json",
               "apps/host-api/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/host-api/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/host-api/**"]
           }
         },
         "test": {
@@ -274,10 +258,7 @@
               "libs/shared/domain/tsconfig.lib.json",
               "libs/shared/domain/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/shared/domain/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/shared/domain/**"]
           }
         },
         "test": {
@@ -303,10 +284,7 @@
               "libs/backend/shared/domain/tsconfig.lib.json",
               "libs/backend/shared/domain/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/backend/shared/domain/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/backend/shared/domain/**"]
           }
         },
         "test": {
@@ -332,10 +310,7 @@
               "libs/shared/utils/tsconfig.lib.json",
               "libs/shared/utils/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/shared/utils/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/shared/utils/**"]
           }
         },
         "test": {
@@ -427,10 +402,7 @@
               "libs/backend/radio/ui-rest/tsconfig.lib.json",
               "libs/backend/radio/ui-rest/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/backend/radio/ui-rest/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/backend/radio/ui-rest/**"]
           }
         },
         "test": {
@@ -497,10 +469,7 @@
               "libs/backend/radio/ui-slack/tsconfig.lib.json",
               "libs/backend/radio/ui-slack/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/backend/radio/ui-slack/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/backend/radio/ui-slack/**"]
           }
         },
         "test": {
@@ -590,10 +559,7 @@
               "libs/backend/radio/shell/tsconfig.lib.json",
               "libs/backend/radio/shell/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/backend/radio/shell/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/backend/radio/shell/**"]
           }
         },
         "test": {
@@ -677,10 +643,7 @@
               "libs/backend/radio/ui-redis/tsconfig.lib.json",
               "libs/backend/radio/ui-redis/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/backend/radio/ui-redis/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/backend/radio/ui-redis/**"]
           }
         },
         "test": {
@@ -737,10 +700,7 @@
               "libs/backend/shared/port/tsconfig.lib.json",
               "libs/backend/shared/port/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/backend/shared/port/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/backend/shared/port/**"]
           }
         },
         "test": {
@@ -935,10 +895,7 @@
               "libs/ng/core/radio/domain/tsconfig.lib.json",
               "libs/ng/core/radio/domain/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ng/core/radio/domain/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/ng/core/radio/domain/**"]
           }
         },
         "test": {
@@ -1040,10 +997,7 @@
               "libs/ng/core/shared/kernel/tsconfig.lib.json",
               "libs/ng/core/shared/kernel/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ng/core/shared/kernel/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/ng/core/shared/kernel/**"]
           }
         },
         "test": {
@@ -1075,10 +1029,7 @@
               "libs/backend/shared/kernel/tsconfig.lib.json",
               "libs/backend/shared/kernel/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/backend/shared/kernel/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/backend/shared/kernel/**"]
           }
         },
         "test": {
@@ -1279,10 +1230,7 @@
               "libs/ng/core/radio/shell/tsconfig.lib.json",
               "libs/ng/core/radio/shell/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ng/core/radio/shell/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/ng/core/radio/shell/**"]
           }
         },
         "test": {
@@ -1314,10 +1262,7 @@
               "libs/ng/core/auth/shell/tsconfig.lib.json",
               "libs/ng/core/auth/shell/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ng/core/auth/shell/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/ng/core/auth/shell/**"]
           }
         },
         "test": {
@@ -1384,10 +1329,7 @@
               "libs/ng/core/shared/port/tsconfig.lib.json",
               "libs/ng/core/shared/port/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ng/core/shared/port/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/ng/core/shared/port/**"]
           }
         },
         "test": {
@@ -1518,10 +1460,7 @@
               "libs/ng/core/shared/domain/tsconfig.lib.json",
               "libs/ng/core/shared/domain/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ng/core/shared/domain/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/ng/core/shared/domain/**"]
           }
         },
         "test": {
@@ -1547,10 +1486,7 @@
               "libs/ng/core/auth/api/tsconfig.lib.json",
               "libs/ng/core/auth/api/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ng/core/auth/api/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/ng/core/auth/api/**"]
           }
         },
         "test": {
@@ -1595,111 +1531,6 @@
             "tsConfig": "libs/ng/presentation/main/radio/presentation/tsconfig.spec.json",
             "passWithNoTests": true,
             "setupFile": "libs/ng/presentation/main/radio/presentation/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "styleext": "scss"
-        }
-      }
-    },
-    "ng-core-queued-track-application-services": {
-      "projectType": "library",
-      "root": "libs/ng/core/queued-track/application-services",
-      "sourceRoot": "libs/ng/core/queued-track/application-services/src",
-      "prefix": "sdj",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/ng/core/queued-track/application-services/tsconfig.lib.json",
-              "libs/ng/core/queued-track/application-services/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ng/core/queued-track/application-services/**"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/ng/core/queued-track/application-services/jest.config.js",
-            "tsConfig": "libs/ng/core/queued-track/application-services/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/ng/core/queued-track/application-services/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "styleext": "scss"
-        }
-      }
-    },
-    "ng-core-queued-track-domain": {
-      "projectType": "library",
-      "root": "libs/ng/core/queued-track/domain",
-      "sourceRoot": "libs/ng/core/queued-track/domain/src",
-      "prefix": "sdj",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/ng/core/queued-track/domain/tsconfig.lib.json",
-              "libs/ng/core/queued-track/domain/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ng/core/queued-track/domain/**"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/ng/core/queued-track/domain/jest.config.js",
-            "tsConfig": "libs/ng/core/queued-track/domain/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/ng/core/queued-track/domain/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "styleext": "scss"
-        }
-      }
-    },
-    "ng-core-queued-track-infrastructure": {
-      "projectType": "library",
-      "root": "libs/ng/core/queued-track/infrastructure",
-      "sourceRoot": "libs/ng/core/queued-track/infrastructure/src",
-      "prefix": "sdj",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/ng/core/queued-track/infrastructure/tsconfig.lib.json",
-              "libs/ng/core/queued-track/infrastructure/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ng/core/queued-track/infrastructure/**"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/ng/core/queued-track/infrastructure/jest.config.js",
-            "tsConfig": "libs/ng/core/queued-track/infrastructure/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/ng/core/queued-track/infrastructure/src/test-setup.ts"
           }
         }
       },
@@ -1770,6 +1601,41 @@
             "tsConfig": "libs/ng/core/radio/infrastructure-track-apollo/tsconfig.spec.json",
             "passWithNoTests": true,
             "setupFile": "libs/ng/core/radio/infrastructure-track-apollo/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ng-core-radio-infrastructure-queued-track-web-socket": {
+      "projectType": "library",
+      "root": "libs/ng/core/radio/infrastructure-queued-track-web-socket",
+      "sourceRoot": "libs/ng/core/radio/infrastructure-queued-track-web-socket/src",
+      "prefix": "sdj",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ng/core/radio/infrastructure-queued-track-web-socket/tsconfig.lib.json",
+              "libs/ng/core/radio/infrastructure-queued-track-web-socket/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ng/core/radio/infrastructure-queued-track-web-socket/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ng/core/radio/infrastructure-queued-track-web-socket/jest.config.js",
+            "tsConfig": "libs/ng/core/radio/infrastructure-queued-track-web-socket/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/ng/core/radio/infrastructure-queued-track-web-socket/src/test-setup.ts"
           }
         }
       },

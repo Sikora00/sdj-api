@@ -9,7 +9,7 @@ import { TokenInterceptor } from './token.interceptor';
 @NgModule({
   imports: [HttpClientModule, NgCoreAuthApiModule],
   providers: [
-    {provide: SlackService, useClass: SlackServiceAdapter },
+    { provide: SlackService, useClass: SlackServiceAdapter },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
