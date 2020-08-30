@@ -1,6 +1,6 @@
-import { Track } from '@sdj/ng/core/track/domain';
 import { ApolloQueryResult } from 'apollo-client';
 import { Observable } from 'rxjs';
+import { Track } from '../../entities/track.entity';
 
 export abstract class TrackRepository {
   abstract loadMostPlayedTracks(

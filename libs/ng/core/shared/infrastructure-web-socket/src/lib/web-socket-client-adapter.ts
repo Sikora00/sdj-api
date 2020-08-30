@@ -45,9 +45,6 @@ export class WebSocketClientAdapter extends WebSocketClient {
   }
 
   observe<T>(event: WebSocketEvents): Observable<T> {
-    this.socket.on(event, (data) => {
-      console.log(event, data)
-    })
     return fromEvent<T>(this.socket, event);
   }
 }

@@ -17,9 +17,8 @@ import {
   ExternalRadioFacade,
   RadioFacade
 } from '@sdj/ng/core/radio/application-services';
-import { Channel, ChannelFacade, ExternalRadio } from '@sdj/ng/core/radio/domain';
+import { Channel, ChannelFacade, ExternalRadio, Track } from '@sdj/ng/core/radio/domain';
 import { WebSocketClient } from '@sdj/ng/core/shared/port';
-import { Track } from '@sdj/ng/core/track/domain';
 import { RadioStationsComponent } from '@sdj/ng/presentation/main/radio/presentation';
 import { AwesomePlayerComponent } from '@sdj/ng/presentation/shared/presentation-players';
 import { User, WebSocketEvents } from '@sdj/shared/domain';

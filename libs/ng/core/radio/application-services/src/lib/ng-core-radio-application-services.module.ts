@@ -10,6 +10,7 @@ import { JoinHandler } from './commands/join/join.handler';
 import { ExternalRadioFacade } from './external-radio.facade';
 import { GetAudioSourceHandler } from './queries/get-audio-source.handler';
 import { RadioFacade } from './radio.facade';
+import { NgCoreTrackApplicationServicesModule } from './track/ng-core-track-application-services.module';
 
 const HANDLERS = [JoinHandler, GetAudioSourceHandler];
 const CHANNEL_HANDLERS = [LoadChannelsHandler];
@@ -19,6 +20,7 @@ const CHANNEL_HANDLERS = [LoadChannelsHandler];
     provide: ChannelFacade, useClass: NgrxChannelFacade
   }],
   imports: [
+    NgCoreTrackApplicationServicesModule,
     EffectsModule.forFeature(HANDLERS),
     StoreModule.forFeature(fromRadio.RADIO_FEATURE_KEY, fromRadio.reducer),
     EffectsModule.forFeature(CHANNEL_HANDLERS),

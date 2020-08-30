@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
-import { TrackRepository } from '@sdj/ng/core/track/domain-services';
+import { TrackRepository } from '@sdj/ng/core/radio/domain';
 import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { MostPlayedTracksReceivedEvent } from '../../events/most-played-tracks-received.event';

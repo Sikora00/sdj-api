@@ -1604,216 +1604,6 @@
         }
       }
     },
-    "ng-core-track-application-services": {
-      "projectType": "library",
-      "root": "libs/ng/core/track/application-services",
-      "sourceRoot": "libs/ng/core/track/application-services/src",
-      "prefix": "sdj",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/ng/core/track/application-services/tsconfig.lib.json",
-              "libs/ng/core/track/application-services/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ng/core/track/application-services/**"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/ng/core/track/application-services/jest.config.js",
-            "tsConfig": "libs/ng/core/track/application-services/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/ng/core/track/application-services/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "styleext": "scss"
-        }
-      }
-    },
-    "ng-core-track-api": {
-      "projectType": "library",
-      "root": "libs/ng/core/track/api",
-      "sourceRoot": "libs/ng/core/track/api/src",
-      "prefix": "sdj",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/ng/core/track/api/tsconfig.lib.json",
-              "libs/ng/core/track/api/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ng/core/track/api/**"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/ng/core/track/api/jest.config.js",
-            "tsConfig": "libs/ng/core/track/api/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/ng/core/track/api/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "styleext": "scss"
-        }
-      }
-    },
-    "ng-core-track-domain": {
-      "projectType": "library",
-      "root": "libs/ng/core/track/domain",
-      "sourceRoot": "libs/ng/core/track/domain/src",
-      "prefix": "sdj",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/ng/core/track/domain/tsconfig.lib.json",
-              "libs/ng/core/track/domain/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ng/core/track/domain/**"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/ng/core/track/domain/jest.config.js",
-            "tsConfig": "libs/ng/core/track/domain/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/ng/core/track/domain/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "styleext": "scss"
-        }
-      }
-    },
-    "ng-core-track-domain-services": {
-      "projectType": "library",
-      "root": "libs/ng/core/track/domain-services",
-      "sourceRoot": "libs/ng/core/track/domain-services/src",
-      "prefix": "sdj",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/ng/core/track/domain-services/tsconfig.lib.json",
-              "libs/ng/core/track/domain-services/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ng/core/track/domain-services/**"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/ng/core/track/domain-services/jest.config.js",
-            "tsConfig": "libs/ng/core/track/domain-services/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/ng/core/track/domain-services/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "styleext": "scss"
-        }
-      }
-    },
-    "ng-core-track-infrastrucutre": {
-      "projectType": "library",
-      "root": "libs/ng/core/track/infrastrucutre",
-      "sourceRoot": "libs/ng/core/track/infrastrucutre/src",
-      "prefix": "sdj",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/ng/core/track/infrastrucutre/tsconfig.lib.json",
-              "libs/ng/core/track/infrastrucutre/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ng/core/track/infrastrucutre/**"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/ng/core/track/infrastrucutre/jest.config.js",
-            "tsConfig": "libs/ng/core/track/infrastrucutre/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/ng/core/track/infrastrucutre/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "styleext": "scss"
-        }
-      }
-    },
-    "ng-core-track-shell": {
-      "projectType": "library",
-      "root": "libs/ng/core/track/shell",
-      "sourceRoot": "libs/ng/core/track/shell/src",
-      "prefix": "sdj",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/ng/core/track/shell/tsconfig.lib.json",
-              "libs/ng/core/track/shell/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ng/core/track/shell/**"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/ng/core/track/shell/jest.config.js",
-            "tsConfig": "libs/ng/core/track/shell/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/ng/core/track/shell/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "styleext": "scss"
-        }
-      }
-    },
     "ng-core-queued-track-application-services": {
       "projectType": "library",
       "root": "libs/ng/core/queued-track/application-services",
@@ -1945,6 +1735,41 @@
             "tsConfig": "libs/ng/core/radio/infrastructure-channel-http/tsconfig.spec.json",
             "passWithNoTests": true,
             "setupFile": "libs/ng/core/radio/infrastructure-channel-http/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ng-core-radio-infrastructure-track-apollo": {
+      "projectType": "library",
+      "root": "libs/ng/core/radio/infrastructure-track-apollo",
+      "sourceRoot": "libs/ng/core/radio/infrastructure-track-apollo/src",
+      "prefix": "sdj",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ng/core/radio/infrastructure-track-apollo/tsconfig.lib.json",
+              "libs/ng/core/radio/infrastructure-track-apollo/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ng/core/radio/infrastructure-track-apollo/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ng/core/radio/infrastructure-track-apollo/jest.config.js",
+            "tsConfig": "libs/ng/core/radio/infrastructure-track-apollo/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/ng/core/radio/infrastructure-track-apollo/src/test-setup.ts"
           }
         }
       },
