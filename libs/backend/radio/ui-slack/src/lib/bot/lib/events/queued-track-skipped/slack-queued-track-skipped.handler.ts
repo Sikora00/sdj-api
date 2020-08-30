@@ -1,6 +1,6 @@
 import { EventsHandler, IEventHandler } from '@nestjs/cqrs';
 import { QueuedTrackSkippedEvent } from '@sdj/backend/radio/core/application-services';
-import { QueuedTrackDomainRepository } from '@sdj/backend/radio/core/domain-service';
+import { QueuedTrackDomainRepository } from '@sdj/backend/radio/core/domain';
 import { SlackService } from '../../../../services/slack.service';
 
 @EventsHandler(QueuedTrackSkippedEvent)

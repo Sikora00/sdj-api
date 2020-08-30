@@ -1,10 +1,10 @@
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import { QueuedTrack } from '@sdj/backend/radio/core/domain';
 import {
   ChannelDomainRepository,
+  QueuedTrack,
   QueuedTrackDomainRepository,
   TrackDomainRepository
-} from '@sdj/backend/radio/core/domain-service';
+} from '@sdj/backend/radio/core/domain';
 import { appConfig } from '@sdj/backend/shared/domain';
 import { PlaySilenceEvent } from '../../events/play-silence/play-silence.event';
 import { RadioFacade } from '../../radio.facade';

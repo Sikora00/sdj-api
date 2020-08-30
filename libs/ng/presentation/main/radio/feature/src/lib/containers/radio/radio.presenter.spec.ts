@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { RadioFacade } from '@sdj/ng/core/radio/application-services';
-import { WebSocketClient } from '@sdj/ng/core/shared/port';
+import { WebSocketClient } from '@sdj/ng/core/shared/application-services';
 import { createSpyObj } from 'jest-createspyobj';
 
 import { RadioPresenter } from './radio.presenter';

@@ -45,14 +45,8 @@
     "backend-radio-ui-slack": {
       "tags": ["platform:backend", "scope:radio", "type:ui"]
     },
-    "backend-radio-core-domain-service": {
-      "tags": ["platform:backend", "scope:radio", "type:domain-services"]
-    },
     "backend-radio-infrastructure": {
       "tags": ["platform:backend", "scope:radio", "type:infrastructure"]
-    },
-    "backend-radio-shell": {
-      "tags": ["platform:backend", "scope:radio", "type:shell"]
     },
     "backend-shared-util-you-tube": {
       "tags": ["platform:backend", "scope:shared", "type:util"]
@@ -65,12 +59,6 @@
     },
     "backend-shared-infrastructure-logger": {
       "tags": ["platform:backend", "scope:shared", "type:util"]
-    },
-    "backend-shared-port": {
-      "tags": ["platform:backend", "scope:shared", "type:port"]
-    },
-    "backend-shared-infrastructure": {
-      "tags": ["platform:backend", "scope:shared", "type:infrastructure"]
     },
     "ng-presentation-main-radio-feature": {
       "tags": ["platform:ng", "scope:radio-feature", "type:feature"]
@@ -86,9 +74,6 @@
     },
     "ng-core-radio-domain": {
       "tags": ["platform:ng", "scope:shared", "type:domain"]
-    },
-    "ng-presentation-main-shell": {
-      "tags": ["platform:ng", "type:shell"]
     },
     "ng-presentation-main-top-rated-feature": {
       "tags": ["platform:ng", "type:feature"]
@@ -111,20 +96,8 @@
     "ng-core-auth-infrastructure": {
       "tags": ["platform:ng", "scope:auth", "type:infrastructure"]
     },
-    "ng-core-auth-domain-services": {
-      "tags": ["platform:ng", "scope:auth", "type:domain-services"]
-    },
-    "ng-core-radio-shell": {
-      "tags": ["platform:ng", "scope:radio", "type:shell"]
-    },
-    "ng-core-auth-shell": {
-      "tags": ["platform:ng", "scope:auth", "type:shell"]
-    },
     "ng-core-shared-infrastructure-web-socket": {
       "tags": ["platform:ng", "scope:shared", "type:infrastructure"]
-    },
-    "ng-core-shared-port": {
-      "tags": ["platform:ng", "scope:shared", "type:port"]
     },
     "ng-core-shared-infrastructure-speech": {
       "tags": ["platform:ng", "scope:shared", "type:infrastructure"]
@@ -138,9 +111,6 @@
     "ng-core-shared-domain": {
       "tags": ["platform:ng", "scope:shared", "type:domain"]
     },
-    "ng-core-auth-api": {
-      "tags": ["name:ng-core-auth-api", "platform:ng", "scope:auth", "type:api"]
-    },
     "ng-presentation-main-radio-presentation": {
       "tags": ["platform:ng", "scope:radio", "type:presentation"]
     },
@@ -151,7 +121,22 @@
       "tags": ["platform:ng", "scope:radio", "type:infrastructure"]
     },
     "ng-core-radio-infrastructure-queued-track-web-socket": {
-      "tags": ["platform:ng", "scope:queued-track", "type:infrastructure"]
+      "tags": ["platform:ng", "scope:radio", "type:infrastructure"]
+    },
+    "ng-presentation-main-feature": {
+      "tags": ["platform:ng", "type:feature"]
+    },
+    "backend-radio-feature": {
+      "tags": ["platform:backend", "scope:radio", "type:feature"]
+    },
+    "ng-core-shared-application-services": {
+      "tags": ["platform:ng", "scope:shared", "type:application-services"]
+    },
+    "backend-shared-application-services": {
+      "tags": ["platform:backend", "scope:shared", "type:application-services"]
+    },
+    "backend-shared-infrastructure-http-host-service": {
+      "tags": ["platform:backend", "scope:shared", "type:infrastructure"]
     }
   }
 }

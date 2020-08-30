@@ -1,5 +1,5 @@
 import { EventsHandler, IEventHandler } from '@nestjs/cqrs';
-import { Store } from '@sdj/backend/radio/core/domain-service';
+import { Store } from '../../ports/store.port';
 import { PlaySilenceEvent } from './play-silence.event';
 
 @EventsHandler(PlaySilenceEvent)

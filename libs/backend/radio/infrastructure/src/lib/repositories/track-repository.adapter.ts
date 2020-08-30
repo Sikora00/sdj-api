@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Track } from '@sdj/backend/radio/core/domain';
-import { TrackDomainRepository } from '@sdj/backend/radio/core/domain-service';
+import { Track, TrackDomainRepository } from '@sdj/backend/radio/core/domain';
 import { appConfig } from '@sdj/backend/shared/domain';
 import { Brackets, Repository } from 'typeorm';
 

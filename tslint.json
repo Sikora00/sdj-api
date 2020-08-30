@@ -32,7 +32,7 @@
     "no-debugger": true,
     "no-duplicate-super": true,
     "no-empty": false,
-    "no-empty-interface": true,
+    "no-empty-interface": false,
     "no-eval": true,
     "no-inferrable-types": [false],
     "no-misused-new": true,
@@ -72,84 +72,48 @@
             "onlyDependOnLibsWithTags": ["scope:auth", "scope:shared"]
           },
           {
-            "sourceTag": "scope:channel",
-            "onlyDependOnLibsWithTags": ["scope:channel", "scope:shared"]
-          },
-          {
             "sourceTag": "scope:host-api",
             "onlyDependOnLibsWithTags": ["scope:host-api", "scope:shared"]
           },
           {
             "sourceTag": "scope:most-played-feature",
-            "onlyDependOnLibsWithTags": [
-              "scope:channel",
-              "scope:most-played-feature",
-              "scope:radio",
-              "scope:shared",
-              "scope:track"
-            ]
-          },
-          {
-            "sourceTag": "scope:queued-track",
-            "onlyDependOnLibsWithTags": ["scope:queued-track", "scope:shared"]
+            "onlyDependOnLibsWithTags": ["scope:radio", "scope:shared"]
           },
           {
             "sourceTag": "scope:radio",
-            "onlyDependOnLibsWithTags": [
-              "name:ng-core-channel-api",
-              "scope:radio",
-              "scope:shared"
-            ]
+            "onlyDependOnLibsWithTags": ["scope:radio", "scope:shared"]
           },
           {
             "sourceTag": "scope:radio-feature",
             "onlyDependOnLibsWithTags": [
-              "scope:channel",
-              "scope:queued-track",
               "scope:radio",
-              "scope:track",
               "scope:radio-feature",
               "scope:shared"
             ]
           },
           {
             "sourceTag": "scope:shared",
-            "onlyDependOnLibsWithTags": [
-              "name:ng-core-auth-api",
-              "scope:shared"
-            ]
-          },
-          {
-            "sourceTag": "scope:track",
-            "onlyDependOnLibsWithTags": ["scope:track", "scope:shared"]
-          },
-          {
-            "sourceTag": "type:api",
-            "onlyDependOnLibsWithTags": [
-              "type:application-services",
-              "type:domain-services",
-              "type:domain",
-              "type:shell"
-            ]
+            "onlyDependOnLibsWithTags": ["scope:shared"]
           },
           {
             "sourceTag": "type:application",
-            "onlyDependOnLibsWithTags": ["type:kernel", "type:shell", "type:ui"]
+            "onlyDependOnLibsWithTags": [
+              "type:kernel",
+              "type:feature",
+              "type:ui"
+            ]
           },
           {
             "sourceTag": "type:application-services",
             "onlyDependOnLibsWithTags": [
-              "type:api",
+              "type:application-services",
               "type:domain",
-              "type:domain-services",
-              "type:port",
               "type:util"
             ]
           },
           {
             "sourceTag": "type:kernel",
             "onlyDependOnLibsWithTags": [
-              "type:port",
               "type:domain",
               "type:infrastructure",
               "type:util"
@@ -160,23 +124,15 @@
             "onlyDependOnLibsWithTags": ["type:domain"]
           },
           {
-            "sourceTag": "type:domain-services",
-            "onlyDependOnLibsWithTags": ["type:domain"]
-          },
-          {
             "sourceTag": "type:feature",
             "onlyDependOnLibsWithTags": ["*"]
           },
           {
             "sourceTag": "type:infrastructure",
             "onlyDependOnLibsWithTags": [
-              "type:api",
               "type:application-services",
               "type:domain",
-              "type:domain-services",
               "type:infrastructure",
-              "type:port",
-              "type:shell",
               "type:util"
             ]
           },
@@ -189,21 +145,11 @@
             ]
           },
           {
-            "sourceTag": "type:port",
-            "onlyDependOnLibsWithTags": ["type:domain", "type:port"]
-          },
-          {
-            "sourceTag": "type:shell",
-            "onlyDependOnLibsWithTags": ["*"]
-          },
-          {
             "sourceTag": "type:ui",
             "onlyDependOnLibsWithTags": [
               "type:application-services",
               "type:domain",
-              "type:domain-services",
-              "type:shell",
-              "type:port",
+              "type:feature",
               "type:util"
             ]
           },

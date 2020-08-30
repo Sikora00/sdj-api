@@ -1,8 +1,6 @@
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
-import {
-  QueuedTrackDomainRepository,
-  Store
-} from '@sdj/backend/radio/core/domain-service';
+import { QueuedTrackDomainRepository } from '@sdj/backend/radio/core/domain';
+import { Store } from '../../ports/store.port';
 import { DeleteQueuedTrackCommand } from './delete-queued-track.command';
 
 @CommandHandler(DeleteQueuedTrackCommand)

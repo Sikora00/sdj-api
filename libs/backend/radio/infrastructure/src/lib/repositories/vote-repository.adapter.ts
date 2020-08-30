@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Vote } from '@sdj/backend/radio/core/domain';
-import { VoteDomainRepository } from '@sdj/backend/radio/core/domain-service';
+import { Vote, VoteDomainRepository } from '@sdj/backend/radio/core/domain';
 import { appConfig } from '@sdj/backend/shared/domain';
 import { Repository } from 'typeorm';
 

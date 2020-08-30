@@ -1,1 +1,1 @@
-export * from './lib/token/token-repository.adapter';
+export * from './lib/ng-core-auth-infrastructure.module';

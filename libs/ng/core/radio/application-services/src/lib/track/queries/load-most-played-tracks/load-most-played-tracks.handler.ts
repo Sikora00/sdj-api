@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
-import { TrackRepository } from '@sdj/ng/core/radio/domain';
 import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
+import { TrackDataService } from '../../../ports/track-data.service';
 import { MostPlayedTracksReceivedEvent } from '../../events/most-played-tracks-received.event';
 import { LoadMostPlayedTracksQuery } from './load-most-played-tracks.query';
 
@@ -16,7 +16,7 @@ export class LoadMostPlayedTracksHandler {
 
   handle(query: LoadMostPlayedTracksQuery): Observable<Action> {
     return this.trackRepository
-      .loadMostPlayedTracks(query.channelId)
+      .getMostPlayedTracks(query.channelId)
       .pipe(
         map(
           result =>
@@ -27,6 +27,6 @@ export class LoadMostPlayedTracksHandler {
 
   constructor(
     private actions$: Actions,
-    private trackRepository: TrackRepository
+    private trackRepository: TrackDataService
   ) {}
 }

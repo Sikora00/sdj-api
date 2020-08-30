@@ -1,10 +1,11 @@
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import { User, Vote } from '@sdj/backend/radio/core/domain';
 import {
   QueuedTrackDomainRepository,
+  User,
   UserDomainRepository,
+  Vote,
   VoteDomainRepository
-} from '@sdj/backend/radio/core/domain-service';
+} from '@sdj/backend/radio/core/domain';
 import { SongVotedNegativelyEvent } from '../../events/song-voted-negatively/song-voted-negatively.event';
 import { ThumbDownCommand } from './thumb-down.command';
 

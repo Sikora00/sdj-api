@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { provideMockStore } from '@ngrx/store/testing';
-import { WebSocketClient } from '@sdj/ng/core/shared/port';
+import { WebSocketClient } from '@sdj/ng/core/shared/application-services';
 import { createSpyObj } from 'jest-createspyobj';
 import { hot } from 'jest-marbles';
 

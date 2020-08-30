@@ -1,7 +1,7 @@
-import { LoggerService } from './logger.service';
-
 // tslint:disable: no-console
-export class ConsoleLogger extends LoggerService {
+import { Logger } from '@nestjs/common';
+
+export class ConsoleLogger extends Logger {
   log(message: any, context?: string): void {
     console.log(message);
   }

@@ -2,8 +2,8 @@ import { Controller, Get, Param, Render } from '@nestjs/common';
 import {
   ChannelDomainRepository,
   QueuedTrackDomainRepository
-} from '@sdj/backend/radio/core/domain-service';
-import { HostService } from '@sdj/backend/shared/port';
+} from '@sdj/backend/radio/core/domain';
+import { HostService } from '@sdj/backend/shared/application-services';
 
 @Controller()
 export class AppController {

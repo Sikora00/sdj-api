@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { TokenRepository } from '@sdj/ng/core/auth/domain-services';
 import { Observable } from 'rxjs';
+import { TokenDataService } from './ports/token-data.service';
 
 @Injectable()
 export class AuthFacade {
   private token: string | null = null;
 
-  constructor(private tokenRepository: TokenRepository) {
+  constructor(private tokenRepository: TokenDataService) {
     this.token = tokenRepository.getToken();
   }
 

@@ -3,7 +3,7 @@ import {
   FuckYouCommand,
   RadioFacade
 } from '@sdj/backend/radio/core/application-services';
-import { QueuedTrackDomainRepository } from '@sdj/backend/radio/core/domain-service';
+import { QueuedTrackDomainRepository } from '@sdj/backend/radio/core/domain';
 import { SlackService } from '../../../services/slack.service';
 import { SlackCommandHandler } from '../bot';
 import { SlackCommand } from '../interfaces/slack-command';

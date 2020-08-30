@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { User } from '@sdj/backend/radio/core/domain';
-import { UserDomainRepository } from '@sdj/backend/radio/core/domain-service';
+import { User, UserDomainRepository } from '@sdj/backend/radio/core/domain';
 import { Repository } from 'typeorm';
 
 @Injectable()

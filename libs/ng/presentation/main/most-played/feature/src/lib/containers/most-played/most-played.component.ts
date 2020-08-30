@@ -6,11 +6,11 @@ import {
   OnInit
 } from '@angular/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { TrackFacade } from '@sdj/ng/core/radio/application-services';
 import { Channel, ChannelFacade, Track } from '@sdj/ng/core/radio/domain';
 import { environment } from '@sdj/ng/core/shared/domain';
 import { Track as MatTrack } from 'ngx-audio-player';
 import { filter, map } from 'rxjs/operators';
-import { TrackFacade } from '../../../../../../../../core/radio/application-services/src/lib/track/track.facade';
 
 @UntilDestroy()
 @Component({

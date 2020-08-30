@@ -5,7 +5,8 @@
       'feature',
       'bugfix',
       'hotfix',
-      'release'
+      'release',
+      'refactor'
     ]
   },
   change: {

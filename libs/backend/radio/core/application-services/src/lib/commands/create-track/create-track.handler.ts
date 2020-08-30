@@ -1,12 +1,11 @@
+import { Logger } from '@nestjs/common';
 import { CommandBus, CommandHandler, ICommandHandler } from '@nestjs/cqrs';
-import { Track } from '@sdj/backend/radio/core/domain';
-import { TrackDomainRepository } from '@sdj/backend/radio/core/domain-service';
+import { Track, TrackDomainRepository } from '@sdj/backend/radio/core/domain';
 import {
   connectionConfig,
   VideoMetadata,
   YoutubeIdError
 } from '@sdj/backend/shared/domain';
-import { LoggerService } from '@sdj/backend/shared/infrastructure-logger';
 import { getDuration } from '@sdj/backend/shared/util-mp3';
 import parseIsoDuration from 'parse-iso-duration';
 import * as requestPromise from 'request-promise-native'; //ToDo use axios from infrastructure
@@ -17,7 +16,7 @@ import { CreateTrackCommand } from './create-track.command';
 export class CreateTrackHandler implements ICommandHandler<CreateTrackCommand> {
   constructor(
     private commandBus: CommandBus,
-    private readonly logger: LoggerService,
+    private readonly logger: Logger,
     private trackRepository: TrackDomainRepository
   ) {}
 

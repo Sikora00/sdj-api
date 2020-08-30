@@ -1,8 +1,7 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { EventBus } from '@nestjs/cqrs';
 import { Track } from '@sdj/backend/radio/core/domain';
 import { connectionConfig } from '@sdj/backend/shared/domain';
-import { LoggerService } from '@sdj/backend/shared/infrastructure-logger';
 import * as redis from 'redis';
 import { RedisClient } from 'redis';
 import { Observable, Observer, Subject } from 'rxjs';
@@ -20,7 +19,7 @@ export class RedisService {
   private redisSub: RedisClient;
 
   constructor(
-    private readonly logger: LoggerService,
+    private readonly logger: Logger,
     private readonly publisher: EventBus
   ) {
     this.redisClient = redis.createClient({

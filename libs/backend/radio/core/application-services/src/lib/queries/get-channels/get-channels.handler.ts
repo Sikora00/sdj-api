@@ -1,6 +1,8 @@
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
-import { Channel } from '@sdj/backend/radio/core/domain';
-import { ChannelDomainRepository } from '@sdj/backend/radio/core/domain-service';
+import {
+  Channel,
+  ChannelDomainRepository
+} from '@sdj/backend/radio/core/domain';
 import { ArrayUtil } from '@sdj/shared/utils';
 import { GetChannelsQuery } from './get-channels.query';
 import { GetChannelsReadModel } from './get-channels.read-model';

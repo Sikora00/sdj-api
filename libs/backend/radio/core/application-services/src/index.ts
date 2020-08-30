@@ -18,6 +18,7 @@ export * from './lib/events/play-queued-track/play-queued-track.event';
 export * from './lib/events/play-silence/play-silence.event';
 export * from './lib/events/pozdro/pozdro.event';
 export * from './lib/events/queued-track-skiepped/queued-track-skipped.event';
+export * from './lib/ports/store.port';
 export * from './lib/queries/get-channels/get-channels.query';
 export * from './lib/queries/get-channels/get-channels.read-model';
 export * from './lib/radio.facade';

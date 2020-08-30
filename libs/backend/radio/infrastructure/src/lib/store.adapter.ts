@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { QueuedTrack } from '@sdj/backend/radio/core/domain';
+import { Store } from '@sdj/backend/radio/core/application-services';
 import {
-  QueuedTrackDomainRepository,
-  Store
-} from '@sdj/backend/radio/core/domain-service';
+  QueuedTrack,
+  QueuedTrackDomainRepository
+} from '@sdj/backend/radio/core/domain';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { distinctUntilChanged, filter, first, map } from 'rxjs/operators';
 

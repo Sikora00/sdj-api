@@ -4,18 +4,17 @@ import { MatDialog } from '@angular/material/dialog';
 import { RouterTestingModule } from '@angular/router/testing';
 import {
   ExternalRadioFacade,
+  QueuedTrackFacade,
   RadioFacade
 } from '@sdj/ng/core/radio/application-services';
 import { ChannelFacade } from '@sdj/ng/core/radio/domain';
-import { WebSocketClient } from '@sdj/ng/core/shared/port';
+import { WebSocketClient } from '@sdj/ng/core/shared/application-services';
 import { RadioActionMenuComponent } from '@sdj/ng/presentation/main/radio/presentation';
 import { AwesomePlayerComponent } from '@sdj/ng/presentation/shared/presentation-players';
 import { LoaderComponent } from '@sdj/ng/presentation/shared/presentation-sdj-loader';
 import { createSpyObj } from 'jest-createspyobj';
 import { hot } from 'jest-marbles';
 import { MockComponents } from 'ng-mocks';
-import { QueuedTrackFacade } from '../../../../../../../../core/radio/application-services/src/lib/queued-track/queued-track.facade';
-
 import { RadioComponent } from './radio.component';
 import Mocked = jest.Mocked;
 

@@ -1,10 +1,11 @@
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
-import { User, Vote } from '@sdj/backend/radio/core/domain';
 import {
   QueuedTrackDomainRepository,
+  User,
   UserDomainRepository,
+  Vote,
   VoteDomainRepository
-} from '@sdj/backend/radio/core/domain-service';
+} from '@sdj/backend/radio/core/domain';
 import { HeartCommand } from './heart.command';
 
 @CommandHandler(HeartCommand)

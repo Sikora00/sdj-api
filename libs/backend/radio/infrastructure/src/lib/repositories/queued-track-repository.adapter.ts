@@ -1,7 +1,9 @@
 import { forwardRef, Inject, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { QueuedTrack } from '@sdj/backend/radio/core/domain';
-import { QueuedTrackDomainRepository } from '@sdj/backend/radio/core/domain-service';
+import {
+  QueuedTrack,
+  QueuedTrackDomainRepository
+} from '@sdj/backend/radio/core/domain';
 import { QueryBuilder, Repository } from 'typeorm';
 import { StoreAdapter } from '../store.adapter';
 

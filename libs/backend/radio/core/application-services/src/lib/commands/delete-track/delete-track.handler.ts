@@ -1,10 +1,11 @@
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
-import { QueuedTrack, Track } from '@sdj/backend/radio/core/domain';
 import {
+  QueuedTrack,
   QueuedTrackDomainRepository,
+  Track,
   TrackDomainRepository,
   VoteDomainRepository
-} from '@sdj/backend/radio/core/domain-service';
+} from '@sdj/backend/radio/core/domain';
 import { DeleteTrackCommand } from './delete-track.command';
 
 @CommandHandler(DeleteTrackCommand)

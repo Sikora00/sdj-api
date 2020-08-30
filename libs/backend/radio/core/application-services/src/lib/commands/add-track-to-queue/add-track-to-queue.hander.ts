@@ -1,10 +1,10 @@
 import { CommandBus, CommandHandler, ICommandHandler } from '@nestjs/cqrs';
-import { Track, User } from '@sdj/backend/radio/core/domain';
-
 import {
+  Track,
   TrackDomainRepository,
+  User,
   UserDomainRepository
-} from '@sdj/backend/radio/core/domain-service';
+} from '@sdj/backend/radio/core/domain';
 import { extractVideoIdFromYoutubeUrl } from '@sdj/backend/shared/util-you-tube';
 import { CreateTrackCommand } from '../create-track/create-track.command';
 import { QueueTrackCommand } from '../queue-track/queue-track.command';

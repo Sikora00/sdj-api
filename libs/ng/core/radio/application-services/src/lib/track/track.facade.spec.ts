@@ -1,9 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 import { provideMockStore } from '@ngrx/store/testing';
+import { TrackDataService } from '@sdj/ng/core/radio/application-services';
 import { createSpyObj } from 'jest-createspyobj';
 
 import { TrackFacade } from './track.facade';
-import { TrackRepository } from '@sdj/ng/core/track/domain-services';
 
 describe('TrackFacade', () => {
   let service: TrackFacade;
@@ -13,7 +13,7 @@ describe('TrackFacade', () => {
       providers: [
         TrackFacade,
         provideMockStore(),
-        { provide: TrackRepository, useValue: createSpyObj(TrackRepository) }
+        { provide: TrackDataService, useValue: createSpyObj(TrackDataService) }
       ]
     });
     service = TestBed.inject(TrackFacade);

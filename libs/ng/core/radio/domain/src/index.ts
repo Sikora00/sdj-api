@@ -5,6 +5,3 @@ export * from './lib/entities/track.entity';
 export * from './lib/models/external-radio-group.model';
 export * from './lib/value-objects/radio-station.interface';
 export * from './lib/ports/channel.facade';
-export * from './lib/ports/repositories/channel.repository';
-export * from './lib/ports/repositories/queued-track.repository';
-export * from './lib/ports/repositories/track.repository';

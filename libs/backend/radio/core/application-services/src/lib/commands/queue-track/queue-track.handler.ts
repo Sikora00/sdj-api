@@ -1,12 +1,12 @@
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
-import { QueuedTrack } from '@sdj/backend/radio/core/domain';
 import {
   ChannelDomainRepository,
+  QueuedTrack,
   QueuedTrackDomainRepository,
-  Store,
   TrackDomainRepository
-} from '@sdj/backend/radio/core/domain-service';
+} from '@sdj/backend/radio/core/domain';
 import { appConfig } from '@sdj/backend/shared/domain';
+import { Store } from '../../ports/store.port';
 
 import { QueueTrackCommand } from './queue-track.command';
 

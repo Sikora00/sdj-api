@@ -1,10 +1,9 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import {
   PozdroEvent,
   RadioFacade
 } from '@sdj/backend/radio/core/application-services';
-import { UserDomainRepository } from '@sdj/backend/radio/core/domain-service';
-import { LoggerService } from '@sdj/backend/shared/infrastructure-logger';
+import { UserDomainRepository } from '@sdj/backend/radio/core/domain';
 import { SlackCommandHandler } from '../bot';
 import { SlackCommand } from '../interfaces/slack-command';
 import { SlackMessage } from '../interfaces/slack-message.interface';
@@ -17,7 +16,7 @@ export class PozdroSlackCommand implements SlackCommand {
   type: string = 'pozdro';
 
   constructor(
-    private readonly logger: LoggerService,
+    private readonly logger: Logger,
     private radioFacade: RadioFacade,
     private userRepository: UserDomainRepository
   ) {}

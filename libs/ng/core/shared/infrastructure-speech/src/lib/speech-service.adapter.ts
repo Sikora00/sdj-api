@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SpeechService } from '@sdj/ng/core/shared/port';
+import { SpeechService } from '@sdj/ng/core/shared/application-services';
 import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable()

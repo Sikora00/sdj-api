@@ -4,7 +4,7 @@ import {
   ChannelDomainRepository,
   QueuedTrackDomainRepository,
   TrackDomainRepository
-} from '@sdj/backend/radio/core/domain-service';
+} from '@sdj/backend/radio/core/domain';
 import { appConfig } from '@sdj/backend/shared/domain';
 import { createSpyObj } from 'jest-createspyobj';
 import { RadioFacade } from '../../radio.facade';

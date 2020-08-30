@@ -1,6 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { QueuedTrack } from '@sdj/backend/radio/core/domain';
-import { QueuedTrackDomainRepository } from '@sdj/backend/radio/core/domain-service';
+import {
+  QueuedTrack,
+  QueuedTrackDomainRepository
+} from '@sdj/backend/radio/core/domain';
 import { SlackService } from '../../../services/slack.service';
 import { SlackCommandHandler } from '../bot';
 import { SlackCommand } from '../interfaces/slack-command';

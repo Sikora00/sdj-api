@@ -8,14 +8,14 @@ import {
 import {
   JoinChannelCommand,
   LeaveChannelCommand,
-  RadioFacade
+  RadioFacade,
+  Store
 } from '@sdj/backend/radio/core/application-services';
-import { QueuedTrack } from '@sdj/backend/radio/core/domain';
 import {
   ChannelDomainRepository,
-  Store
-} from '@sdj/backend/radio/core/domain-service';
-import { HostService } from '@sdj/backend/shared/port';
+  QueuedTrack
+} from '@sdj/backend/radio/core/domain';
+import { HostService } from '@sdj/backend/shared/application-services';
 import { WebSocketEvents } from '@sdj/shared/domain';
 import { Observable, Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';

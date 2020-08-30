@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { TRACK_FEATURE_KEY, reducer } from './+state/track.reducer';
+import { reducer, TRACK_FEATURE_KEY } from './+state/track.reducer';
 import { LoadMostPlayedTracksHandler } from './queries/load-most-played-tracks/load-most-played-tracks.handler';
 import { TrackFacade } from './track.facade';
 

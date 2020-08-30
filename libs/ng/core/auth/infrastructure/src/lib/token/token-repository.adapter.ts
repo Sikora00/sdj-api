@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { TokenRepository } from '@sdj/ng/core/auth/domain-services';
+import { TokenDataService } from '@sdj/ng/core/auth/application-services';
 import { environment } from '@sdj/ng/core/shared/domain';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable()
-export class TokenRepositoryAdapter extends TokenRepository {
+export class TokenRepositoryAdapter extends TokenDataService {
   constructor(private http: HttpClient) {
     super();
   }

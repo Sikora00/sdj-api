@@ -1,6 +1,8 @@
 import { EventsHandler, IEventHandler } from '@nestjs/cqrs';
-import { ChannelStartedEvent } from '@sdj/backend/radio/core/domain';
-import { ChannelDomainRepository } from '@sdj/backend/radio/core/domain-service';
+import {
+  ChannelDomainRepository,
+  ChannelStartedEvent
+} from '@sdj/backend/radio/core/domain';
 import { WebSocketEvents } from '@sdj/shared/domain';
 import { Gateway } from '../../gateway/gateway';
 

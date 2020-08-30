@@ -1,1 +1,1 @@
-export * from './lib/speech-service.adapter';
+export * from './lib/ng-core-shared-infrastructure-speech.module';

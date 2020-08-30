@@ -12,13 +12,18 @@ import {
 import { MatDialog } from '@angular/material/dialog';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import {
+  ExternalRadioFacade,
+  QueuedTrackFacade,
+  RadioFacade
+} from '@sdj/ng/core/radio/application-services';
+import {
   Channel,
   ChannelFacade,
   ExternalRadio,
   QueuedTrack,
   Track
 } from '@sdj/ng/core/radio/domain';
-import { WebSocketClient } from '@sdj/ng/core/shared/port';
+import { WebSocketClient } from '@sdj/ng/core/shared/application-services';
 import { RadioStationsComponent } from '@sdj/ng/presentation/main/radio/presentation';
 import { AwesomePlayerComponent } from '@sdj/ng/presentation/shared/presentation-players';
 import { User, WebSocketEvents } from '@sdj/shared/domain';
@@ -26,11 +31,6 @@ import { TrackUtil, UserUtils } from '@sdj/shared/utils';
 import { merge, Observable, of, Subject } from 'rxjs';
 import { filter, first, map, takeUntil, tap } from 'rxjs/operators';
 import { RadioPresenter } from './radio.presenter';
-import {
-  ExternalRadioFacade,
-  RadioFacade
-} from '@sdj/ng/core/radio/application-services';
-import { QueuedTrackFacade } from 'libs/ng/core/radio/application-services/src/lib/queued-track/queued-track.facade';
 
 @UntilDestroy()
 @Component({

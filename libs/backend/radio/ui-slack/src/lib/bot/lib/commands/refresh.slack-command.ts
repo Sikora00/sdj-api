@@ -3,11 +3,11 @@ import {
   QueueTrackCommand,
   RadioFacade
 } from '@sdj/backend/radio/core/application-services';
-import { Track } from '@sdj/backend/radio/core/domain';
 import {
   QueuedTrackDomainRepository,
+  Track,
   TrackDomainRepository
-} from '@sdj/backend/radio/core/domain-service';
+} from '@sdj/backend/radio/core/domain';
 import { appConfig } from '@sdj/backend/shared/domain';
 import { SlackService } from '../../../services/slack.service';
 import { SlackCommandHandler } from '../bot';

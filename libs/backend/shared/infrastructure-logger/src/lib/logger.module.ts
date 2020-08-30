@@ -1,10 +1,13 @@
-import { Module } from '@nestjs/common';
+import { Logger, Module } from '@nestjs/common';
 import { DefaultLogger } from './services/default.logger.service';
-import { LoggerService } from './services/logger.service';
 
-const logger = {
-  provide: LoggerService,
-  useClass: DefaultLogger
-};
-@Module({ providers: [logger], exports: [logger] })
+@Module({
+  providers: [
+    {
+      provide: Logger,
+      useClass: DefaultLogger
+    }
+  ],
+  exports: [Logger]
+})
 export class LoggerModule {}

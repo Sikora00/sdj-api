@@ -1,7 +1,9 @@
 import { EventPublisher, EventsHandler, IEventHandler } from '@nestjs/cqrs';
-import { ChannelWillStartEvent } from '@sdj/backend/radio/core/domain';
-import { ChannelDomainRepository } from '@sdj/backend/radio/core/domain-service';
-import { HostService } from '@sdj/backend/shared/port';
+import {
+  ChannelDomainRepository,
+  ChannelWillStartEvent
+} from '@sdj/backend/radio/core/domain';
+import { HostService } from '@sdj/backend/shared/application-services';
 
 @EventsHandler(ChannelWillStartEvent)
 export class ChannelWillStartHandler

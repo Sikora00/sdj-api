@@ -6,7 +6,8 @@ import {
   HttpResponse
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AuthApiFacade } from '@sdj/ng/core/auth/api';
+// tslint:disable-next-line:nx-enforce-module-boundaries
+import { AuthFacade } from '@sdj/ng/core/auth/application-services';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
@@ -14,7 +15,7 @@ import { tap } from 'rxjs/operators';
   providedIn: 'any'
 })
 export class ErrorInterceptor implements HttpInterceptor {
-  constructor(private authFacade: AuthApiFacade) {}
+  constructor(private authFacade: AuthFacade) {}
 
   intercept(
     request: HttpRequest<any>,

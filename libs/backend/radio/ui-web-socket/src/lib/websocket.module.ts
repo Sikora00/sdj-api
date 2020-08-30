@@ -1,6 +1,6 @@
 import { Module, OnModuleInit } from '@nestjs/common';
 import { CqrsModule } from '@nestjs/cqrs';
-import { ChannelDomainRepository } from '@sdj/backend/radio/core/domain-service';
+import { ChannelDomainRepository } from '@sdj/backend/radio/core/domain';
 import { WsChannelStartedHandler } from './events/channel-started/ws-channel-started.handler';
 import { WsChannelUpdatedHandler } from './events/channel-updated/ws-channel-updated.handler';
 import { WsPlayQueuedTrackHandler } from './events/play-queued-track/ws-play-queued-track.handler';

@@ -34,13 +34,9 @@
       "@sdj/backend/radio/ui-slack": [
         "libs/backend/radio/ui-slack/src/index.ts"
       ],
-      "@sdj/backend/radio/core/domain-service": [
-        "libs/backend/radio/core/domain-service/src/index.ts"
-      ],
       "@sdj/backend/radio/infrastructure": [
         "libs/backend/radio/infrastructure/src/index.ts"
       ],
-      "@sdj/backend/radio/shell": ["libs/backend/radio/shell/src/index.ts"],
       "@sdj/backend/shared/util-you-tube": [
         "libs/backend/shared/util-you-tube/src/index.ts"
       ],
@@ -52,10 +48,6 @@
       ],
       "@sdj/backend/shared/infrastructure-logger": [
         "libs/backend/shared/infrastructure-logger/src/index.ts"
-      ],
-      "@sdj/backend/shared/port": ["libs/backend/shared/port/src/index.ts"],
-      "@sdj/backend/shared/infrastructure": [
-        "libs/backend/shared/infrastructure/src/index.ts"
       ],
       "@sdj/ng/presentation/main/radio/feature": [
         "libs/ng/presentation/main/radio/feature/src/index.ts"
@@ -70,9 +62,6 @@
         "libs/ng/presentation/shared/presentation-players/src/index.ts"
       ],
       "@sdj/ng/core/radio/domain": ["libs/ng/core/radio/domain/src/index.ts"],
-      "@sdj/ng/presentation/main/shell": [
-        "libs/ng/presentation/main/shell/src/index.ts"
-      ],
       "@sdj/ng/presentation/main/top-rated/feature": [
         "libs/ng/presentation/main/top-rated/feature/src/index.ts"
       ],
@@ -90,15 +79,11 @@
       "@sdj/ng/core/auth/infrastructure": [
         "libs/ng/core/auth/infrastructure/src/index.ts"
       ],
-      "@sdj/ng/core/auth/domain-services": [
-        "libs/ng/core/auth/domain-services/src/index.ts"
-      ],
       "@sdj/ng/core/radio/shell": ["libs/ng/core/radio/shell/src/index.ts"],
       "@sdj/ng/core/auth/shell": ["libs/ng/core/auth/shell/src/index.ts"],
       "@sdj/ng/core/shared/infrastructure-web-socket": [
         "libs/ng/core/shared/infrastructure-web-socket/src/index.ts"
       ],
-      "@sdj/ng/core/shared/port": ["libs/ng/core/shared/port/src/index.ts"],
       "@sdj/ng/core/shared/infrastructure-speech": [
         "libs/ng/core/shared/infrastructure-speech/src/index.ts"
       ],
@@ -121,6 +106,19 @@
       ],
       "@sdj/ng/core/radio/infrastructure-queued-track-web-socket": [
         "libs/ng/core/radio/infrastructure-queued-track-web-socket/src/index.ts"
+      ],
+      "@sdj/ng/presentation/main/feature": [
+        "libs/ng/presentation/main/feature/src/index.ts"
+      ],
+      "@sdj/backend/radio/feature": ["libs/backend/radio/feature/src/index.ts"],
+      "@sdj/ng/core/shared/application-services": [
+        "libs/ng/core/shared/application-services/src/index.ts"
+      ],
+      "@sdj/backend/shared/application-services": [
+        "libs/backend/shared/application-services/src/index.ts"
+      ],
+      "@sdj/backend/shared/infrastructure-http-host-service": [
+        "libs/backend/shared/infrastructure-http-host-service/src/index.ts"
       ]
     }
   },

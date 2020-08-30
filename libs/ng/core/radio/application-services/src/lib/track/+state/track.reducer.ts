@@ -1,7 +1,7 @@
 import { Action } from '@ngrx/store';
+import { Track } from '@sdj/ng/core/radio/domain';
 import { MostPlayedTracksReceivedEvent } from '../events/most-played-tracks-received.event';
 import { LoadMostPlayedTracksQuery } from '../queries/load-most-played-tracks/load-most-played-tracks.query';
-import { Track } from '@sdj/ng/core/radio/domain';
 
 export const TRACK_FEATURE_KEY = 'track';
 

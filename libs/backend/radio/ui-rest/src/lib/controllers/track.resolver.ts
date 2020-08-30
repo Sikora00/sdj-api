@@ -1,6 +1,5 @@
 import { Args, Query, Resolver } from '@nestjs/graphql';
-import { Track } from '@sdj/backend/radio/core/domain';
-import { TrackDomainRepository } from '@sdj/backend/radio/core/domain-service';
+import { Track, TrackDomainRepository } from '@sdj/backend/radio/core/domain';
 
 @Resolver(Track)
 export class TrackResolver {

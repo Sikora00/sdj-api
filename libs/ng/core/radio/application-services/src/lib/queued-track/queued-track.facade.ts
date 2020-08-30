@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { QueuedTrack, QueuedTrackRepository } from '@sdj/ng/core/radio/domain';
+import { QueuedTrack } from '@sdj/ng/core/radio/domain';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { QueuedTrackRepository } from '../ports/queued-track.repository';
 
 @Injectable()
 export class QueuedTrackFacade {

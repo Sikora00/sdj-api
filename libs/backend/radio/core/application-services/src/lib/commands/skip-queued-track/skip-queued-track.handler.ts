@@ -2,8 +2,8 @@ import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import {
   QueuedTrackDomainRepository,
   TrackDomainRepository
-} from '@sdj/backend/radio/core/domain-service';
-import { HostService } from '@sdj/backend/shared/port';
+} from '@sdj/backend/radio/core/domain';
+import { HostService } from '@sdj/backend/shared/application-services';
 import { QueuedTrackSkippedEvent } from '../../events/queued-track-skiepped/queued-track-skipped.event';
 import { SkipQueuedTrackCommand } from './skip-queued-track.command';
 

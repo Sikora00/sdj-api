@@ -1,8 +1,6 @@
-import { Injectable, Type } from '@nestjs/common';
+import { Injectable, Logger, Type } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
-import { User } from '@sdj/backend/radio/core/domain';
-import { UserDomainRepository } from '@sdj/backend/radio/core/domain-service';
-import { LoggerService } from '@sdj/backend/shared/infrastructure-logger';
+import { User, UserDomainRepository } from '@sdj/backend/radio/core/domain';
 import { SlackService } from '../../services/slack.service';
 import { SlackCommand } from './interfaces/slack-command';
 
@@ -19,7 +17,7 @@ export class Bot {
   private commands: { [key: string]: SlackCommand[] } = {};
 
   constructor(
-    private readonly logger: LoggerService,
+    private readonly logger: Logger,
     private slack: SlackService,
     private userRepository: UserDomainRepository,
     private readonly moduleRef: ModuleRef

@@ -1,5 +1,4 @@
-import { Injectable } from '@nestjs/common';
-import { LoggerService } from '@sdj/backend/shared/infrastructure-logger';
+import { Injectable, Logger } from '@nestjs/common';
 import { RedisController } from '../controllers/redis.controller';
 import { RedisService } from './redis.service';
 
@@ -11,7 +10,7 @@ enum RedisMessages {
 export class RedisRouter {
   constructor(
     private controller: RedisController,
-    private logger: LoggerService,
+    private logger: Logger,
     private redisService: RedisService
   ) {
     this.routeRedisMessages();

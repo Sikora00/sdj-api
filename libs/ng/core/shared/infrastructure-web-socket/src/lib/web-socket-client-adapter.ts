@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
+import { WebSocketClient } from '@sdj/ng/core/shared/application-services';
 import { environment } from '@sdj/ng/core/shared/domain';
-import { WebSocketClient } from '@sdj/ng/core/shared/port';
 import { WebSocketEvents } from '@sdj/shared/domain';
 import { fromEvent, Observable, Observer, Subject } from 'rxjs';
 import { AnonymousSubject } from 'rxjs/internal-compatibility';

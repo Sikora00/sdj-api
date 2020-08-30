@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { SlackService } from '@sdj/ng/core/shared/port';
+import { SlackService } from '@sdj/ng/core/shared/application-services';
 import { SlackChannel } from '@sdj/shared/domain';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';

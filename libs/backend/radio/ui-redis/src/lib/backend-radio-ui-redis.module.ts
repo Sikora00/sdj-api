@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { CqrsModule } from '@nestjs/cqrs';
-import { BackendRadioShellModule } from '@sdj/backend/radio/shell';
+import { BackendRadioFeatureModule } from '@sdj/backend/radio/feature';
 import { RedisController } from './controllers/redis.controller';
 import { IcesPlayQueuedTrackHandler } from './events/play-queued-track/ices-play-queued-track.handler';
 import { IcesPlaySilenceHandler } from './events/play-silence/ices-play-silence.handler';
@@ -13,7 +13,7 @@ export const EventsHandlers = [
 ];
 
 @Module({
-  imports: [BackendRadioShellModule, CqrsModule],
+  imports: [BackendRadioFeatureModule, CqrsModule],
   providers: [RedisService, RedisController, RedisRouter, ...EventsHandlers]
 })
 export class BackendRadioUiRedisModule {}

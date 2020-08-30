@@ -1,14 +1,15 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Channel, ChannelRepository } from '@sdj/ng/core/radio/domain';
+import { ChannelDataService } from '@sdj/ng/core/radio/application-services';
+import { Channel } from '@sdj/ng/core/radio/domain';
+import { SlackService } from '@sdj/ng/core/shared/application-services';
 import { environment } from '@sdj/ng/core/shared/domain';
-import { SlackService } from '@sdj/ng/core/shared/port';
 import { ArrayUtil } from '@sdj/shared/utils';
 import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 
 @Injectable()
-export class ChannelRepositoryAdapter extends ChannelRepository {
+export class ChannelRepositoryAdapter extends ChannelDataService {
   endpoints = {
     getChannels: `${environment.apiUrl}/channel`
   };
