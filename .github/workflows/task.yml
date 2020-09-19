@@ -98,8 +98,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install
       run: npm ci
-    - name: validate branch
-      run: node ./node_modules/@valueadd/dev validate-branch `echo ${GITHUB_REF#refs/heads/}`
     - name: validate commits
       run: npm run validate-commit
     - name: validate nx tags

@@ -49,76 +49,74 @@
       "@sdj/backend/shared/infrastructure-logger": [
         "libs/backend/shared/infrastructure-logger/src/index.ts"
       ],
-      "@sdj/ng/presentation/main/radio/feature": [
-        "libs/ng/presentation/main/radio/feature/src/index.ts"
-      ],
-      "@sdj/ng/presentation/main/most-played/feature": [
-        "libs/ng/presentation/main/most-played/feature/src/index.ts"
-      ],
-      "@sdj/ng/presentation/shared/presentation-sdj-loader": [
-        "libs/ng/presentation/shared/presentation-sdj-loader/src/index.ts"
-      ],
-      "@sdj/ng/presentation/shared/presentation-players": [
-        "libs/ng/presentation/shared/presentation-players/src/index.ts"
-      ],
-      "@sdj/ng/core/radio/domain": ["libs/ng/core/radio/domain/src/index.ts"],
-      "@sdj/ng/presentation/main/top-rated/feature": [
-        "libs/ng/presentation/main/top-rated/feature/src/index.ts"
-      ],
-      "@sdj/ng/core/shared/kernel": ["libs/ng/core/shared/kernel/src/index.ts"],
       "@sdj/backend/shared/kernel": ["libs/backend/shared/kernel/src/index.ts"],
-      "@sdj/ng/core/radio/infrastructure": [
-        "libs/ng/core/radio/infrastructure/src/index.ts"
-      ],
-      "@sdj/ng/core/radio/application-services": [
-        "libs/ng/core/radio/application-services/src/index.ts"
-      ],
-      "@sdj/ng/core/auth/application-services": [
-        "libs/ng/core/auth/application-services/src/index.ts"
-      ],
-      "@sdj/ng/core/auth/infrastructure": [
-        "libs/ng/core/auth/infrastructure/src/index.ts"
-      ],
       "@sdj/ng/core/radio/shell": ["libs/ng/core/radio/shell/src/index.ts"],
       "@sdj/ng/core/auth/shell": ["libs/ng/core/auth/shell/src/index.ts"],
-      "@sdj/ng/core/shared/infrastructure-web-socket": [
-        "libs/ng/core/shared/infrastructure-web-socket/src/index.ts"
-      ],
-      "@sdj/ng/core/shared/infrastructure-speech": [
-        "libs/ng/core/shared/infrastructure-speech/src/index.ts"
-      ],
-      "@sdj/ng/core/shared/infrastructure-apollo": [
-        "libs/ng/core/shared/infrastructure-apollo/src/index.ts"
-      ],
-      "@sdj/ng/core/shared/infrastructure-slack": [
-        "libs/ng/core/shared/infrastructure-slack/src/index.ts"
-      ],
-      "@sdj/ng/core/shared/domain": ["libs/ng/core/shared/domain/src/index.ts"],
       "@sdj/ng/core/auth/api": ["libs/ng/core/auth/api/src/index.ts"],
-      "@sdj/ng/presentation/main/radio/presentation": [
-        "libs/ng/presentation/main/radio/presentation/src/index.ts"
-      ],
-      "@sdj/ng/core/radio/infrastructure-channel-http": [
-        "libs/ng/core/radio/infrastructure-channel-http/src/index.ts"
-      ],
-      "@sdj/ng/core/radio/infrastructure-track-apollo": [
-        "libs/ng/core/radio/infrastructure-track-apollo/src/index.ts"
-      ],
-      "@sdj/ng/core/radio/infrastructure-queued-track-web-socket": [
-        "libs/ng/core/radio/infrastructure-queued-track-web-socket/src/index.ts"
-      ],
-      "@sdj/ng/presentation/main/feature": [
-        "libs/ng/presentation/main/feature/src/index.ts"
-      ],
       "@sdj/backend/radio/feature": ["libs/backend/radio/feature/src/index.ts"],
-      "@sdj/ng/core/shared/application-services": [
-        "libs/ng/core/shared/application-services/src/index.ts"
-      ],
       "@sdj/backend/shared/application-services": [
         "libs/backend/shared/application-services/src/index.ts"
       ],
       "@sdj/backend/shared/infrastructure-http-host-service": [
         "libs/backend/shared/infrastructure-http-host-service/src/index.ts"
+      ],
+      "@sdj/ng/auth/core/application-services": [
+        "libs/ng/auth/core/application-services/src/index.ts"
+      ],
+      "@sdj/ng/auth/http-infrastructure": [
+        "libs/ng/auth/http-infrastructure/src/index.ts"
+      ],
+      "@sdj/ng/radio/core/domain": ["libs/ng/radio/core/domain/src/index.ts"],
+      "@sdj/ng/radio/core/application-services": [
+        "libs/ng/radio/core/application-services/src/index.ts"
+      ],
+      "@sdj/ng/radio/infrastructure-channel-http": [
+        "libs/ng/radio/infrastructure-channel-http/src/index.ts"
+      ],
+      "@sdj/ng/radio/infrastructure-queued-track-web-socket": [
+        "libs/ng/radio/infrastructure-queued-track-web-socket/src/index.ts"
+      ],
+      "@sdj/ng/radio/infrastructure-track-apollo": [
+        "libs/ng/radio/infrastructure-track-apollo/src/index.ts"
+      ],
+      "@sdj/ng/radio/infrastructure-radio-ws": [
+        "libs/ng/radio/infrastructure-radio-ws/src/index.ts"
+      ],
+      "@sdj/ng/shared/core/domain": ["libs/ng/shared/core/domain/src/index.ts"],
+      "@sdj/ng/shared/kernel": ["libs/ng/shared/kernel/src/index.ts"],
+      "@sdj/ng/shared/core/application-services": [
+        "libs/ng/shared/core/application-services/src/index.ts"
+      ],
+      "@sdj/ng/shared/presentation-players": [
+        "libs/ng/shared/presentation-players/src/index.ts"
+      ],
+      "@sdj/ng/shared/presentation-sdj-loader": [
+        "libs/ng/shared/presentation-sdj-loader/src/index.ts"
+      ],
+      "@sdj/ng/radio/top-rated/feature": [
+        "libs/ng/radio/top-rated/feature/src/index.ts"
+      ],
+      "@sdj/ng/radio/station/feature": [
+        "libs/ng/radio/station/feature/src/index.ts"
+      ],
+      "@sdj/ng/radio/station/presentation": [
+        "libs/ng/radio/station/presentation/src/index.ts"
+      ],
+      "@sdj/ng/radio/most-played/feature": [
+        "libs/ng/radio/most-played/feature/src/index.ts"
+      ],
+      "@sdj/ng/main/shell": ["libs/ng/main/shell/src/index.ts"],
+      "@sdj/ng/shared/infrastructure-slack-api-http": [
+        "libs/ng/shared/infrastructure-slack-api-http/src/index.ts"
+      ],
+      "@sdj/ng/shared/infrastructure-speech": [
+        "libs/ng/shared/infrastructure-speech/src/index.ts"
+      ],
+      "@sdj/ng/shared/infrastructure-apollo": [
+        "libs/ng/shared/infrastructure-apollo/src/index.ts"
+      ],
+      "@sdj/ng/shared/infrastructure-ws-socket-io": [
+        "libs/ng/shared/infrastructure-ws-socket-io/src/index.ts"
       ]
     }
   },

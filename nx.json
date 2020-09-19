@@ -60,83 +60,83 @@
     "backend-shared-infrastructure-logger": {
       "tags": ["platform:backend", "scope:shared", "type:util"]
     },
-    "ng-presentation-main-radio-feature": {
-      "tags": ["platform:ng", "scope:radio-feature", "type:feature"]
-    },
-    "ng-presentation-main-most-played-feature": {
-      "tags": ["platform:ng", "scope:most-played-feature", "type:feature"]
-    },
-    "ng-presentation-shared-presentation-sdj-loader": {
-      "tags": ["platform:ng", "scope:shared", "type:presentation"]
-    },
-    "ng-presentation-shared-presentation-players": {
-      "tags": ["platform:ng", "scope:shared", "type:presentation"]
-    },
-    "ng-core-radio-domain": {
-      "tags": ["platform:ng", "scope:shared", "type:domain"]
-    },
-    "ng-presentation-main-top-rated-feature": {
-      "tags": ["platform:ng", "type:feature"]
-    },
-    "ng-core-shared-kernel": {
-      "tags": ["platform:ng", "scope:shared", "type:kernel"]
-    },
     "backend-shared-kernel": {
       "tags": ["platform:backend", "scope:shared", "type:kernel"]
     },
-    "ng-core-radio-infrastructure": {
-      "tags": ["platform:ng", "scope:radio", "type:infrastructure"]
-    },
-    "ng-core-radio-application-services": {
-      "tags": ["platform:ng", "scope:radio", "type:application-services"]
-    },
-    "ng-core-auth-application-services": {
-      "tags": ["platform:ng", "scope:auth", "type:application-services"]
-    },
-    "ng-core-auth-infrastructure": {
-      "tags": ["platform:ng", "scope:auth", "type:infrastructure"]
-    },
-    "ng-core-shared-infrastructure-web-socket": {
-      "tags": ["platform:ng", "scope:shared", "type:infrastructure"]
-    },
-    "ng-core-shared-infrastructure-speech": {
-      "tags": ["platform:ng", "scope:shared", "type:infrastructure"]
-    },
-    "ng-core-shared-infrastructure-apollo": {
-      "tags": ["platform:ng", "scope:shared", "type:infrastructure"]
-    },
-    "ng-core-shared-infrastructure-slack": {
-      "tags": ["platform:ng", "scope:shared", "type:infrastructure"]
-    },
-    "ng-core-shared-domain": {
-      "tags": ["platform:ng", "scope:shared", "type:domain"]
-    },
-    "ng-presentation-main-radio-presentation": {
-      "tags": ["platform:ng", "scope:radio", "type:presentation"]
-    },
-    "ng-core-radio-infrastructure-channel-http": {
-      "tags": ["platform:ng", "scope:radio", "type:infrastructure"]
-    },
-    "ng-core-radio-infrastructure-track-apollo": {
-      "tags": ["platform:ng", "scope:radio", "type:infrastructure"]
-    },
-    "ng-core-radio-infrastructure-queued-track-web-socket": {
-      "tags": ["platform:ng", "scope:radio", "type:infrastructure"]
-    },
-    "ng-presentation-main-feature": {
-      "tags": ["platform:ng", "type:feature"]
-    },
     "backend-radio-feature": {
       "tags": ["platform:backend", "scope:radio", "type:feature"]
-    },
-    "ng-core-shared-application-services": {
-      "tags": ["platform:ng", "scope:shared", "type:application-services"]
     },
     "backend-shared-application-services": {
       "tags": ["platform:backend", "scope:shared", "type:application-services"]
     },
     "backend-shared-infrastructure-http-host-service": {
       "tags": ["platform:backend", "scope:shared", "type:infrastructure"]
+    },
+    "ng-auth-core-application-services": {
+      "tags": ["platform:ng", "scope:auth", "type:application-services"]
+    },
+    "ng-auth-http-infrastructure": {
+      "tags": ["platform:ng", "scope:auth", "type:infrastructure"]
+    },
+    "ng-radio-core-domain": {
+      "tags": ["platform:ng", "scope:shared", "type:domain"]
+    },
+    "ng-radio-core-application-services": {
+      "tags": ["platform:ng", "scope:radio", "type:application-services"]
+    },
+    "ng-radio-infrastructure-channel-http": {
+      "tags": ["platform:ng", "scope:radio", "type:infrastructure"]
+    },
+    "ng-radio-infrastructure-queued-track-web-socket": {
+      "tags": ["platform:ng", "scope:radio", "type:infrastructure"]
+    },
+    "ng-radio-infrastructure-track-apollo": {
+      "tags": ["platform:ng", "scope:radio", "type:infrastructure"]
+    },
+    "ng-radio-infrastructure-radio-ws": {
+      "tags": ["platform:ng", "scope:radio", "type:infrastructure"]
+    },
+    "ng-shared-core-domain": {
+      "tags": ["platform:ng", "scope:shared", "type:domain"]
+    },
+    "ng-shared-kernel": {
+      "tags": ["platform:ng", "scope:shared", "type:kernel"]
+    },
+    "ng-shared-core-application-services": {
+      "tags": ["platform:ng", "scope:shared", "type:application-services"]
+    },
+    "ng-shared-presentation-players": {
+      "tags": ["platform:ng", "scope:shared", "type:presentation"]
+    },
+    "ng-shared-presentation-sdj-loader": {
+      "tags": ["platform:ng", "scope:shared", "type:presentation"]
+    },
+    "ng-radio-top-rated-feature": {
+      "tags": ["platform:ng", "scope:radio-top-rated", "type:feature"]
+    },
+    "ng-radio-station-feature": {
+      "tags": ["platform:ng", "scope:radio-station", "type:feature"]
+    },
+    "ng-radio-station-presentation": {
+      "tags": ["platform:ng", "scope:radio-station", "type:presentation"]
+    },
+    "ng-radio-most-played-feature": {
+      "tags": ["platform:ng", "scope:radio-most-played", "type:feature"]
+    },
+    "ng-main-shell": {
+      "tags": ["platform:ng", "type:feature"]
+    },
+    "ng-shared-infrastructure-slack-api-http": {
+      "tags": ["platform:ng", "scope:shared", "type:infrastructure"]
+    },
+    "ng-shared-infrastructure-speech": {
+      "tags": ["platform:ng", "scope:shared", "type:infrastructure"]
+    },
+    "ng-shared-infrastructure-apollo": {
+      "tags": ["platform:ng", "scope:shared", "type:infrastructure"]
+    },
+    "ng-shared-infrastructure-ws-socket-io": {
+      "tags": ["platform:ng", "scope:shared", "type:infrastructure"]
     }
   }
 }

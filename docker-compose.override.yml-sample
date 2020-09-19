@@ -6,6 +6,7 @@ services:
       dockerfile: ./apps/backend/Dockerfile-dev
     volumes:
     - ./:/app
+    - ./tracks:/app/dist/apps/backend/assets/tracks
     ports:
     - 58587:58587
     - 58586:58586

@@ -1,7 +1,7 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 // tslint:disable-next-line:nx-enforce-module-boundaries
-import { environment } from '@sdj/ng/core/shared/domain';
+import { environment } from '@sdj/ng/shared/core/domain';
 
 import { AppModule } from './app/app.module';
 

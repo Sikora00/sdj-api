@@ -76,18 +76,30 @@
             "onlyDependOnLibsWithTags": ["scope:host-api", "scope:shared"]
           },
           {
-            "sourceTag": "scope:most-played-feature",
-            "onlyDependOnLibsWithTags": ["scope:radio", "scope:shared"]
-          },
-          {
             "sourceTag": "scope:radio",
             "onlyDependOnLibsWithTags": ["scope:radio", "scope:shared"]
           },
           {
-            "sourceTag": "scope:radio-feature",
+            "sourceTag": "scope:radio-most-played",
             "onlyDependOnLibsWithTags": [
               "scope:radio",
-              "scope:radio-feature",
+              "scope:radio-most-played",
+              "scope:shared"
+            ]
+          },
+          {
+            "sourceTag": "scope:radio-station",
+            "onlyDependOnLibsWithTags": [
+              "scope:radio",
+              "scope:radio-station",
+              "scope:shared"
+            ]
+          },
+          {
+            "sourceTag": "scope:radio-top-rated",
+            "onlyDependOnLibsWithTags": [
+              "scope:radio",
+              "scope:radio-top-rated",
               "scope:shared"
             ]
           },
