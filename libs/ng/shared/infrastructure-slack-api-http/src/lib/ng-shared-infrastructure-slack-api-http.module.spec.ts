@@ -4,7 +4,7 @@ import { NgSharedInfrastructureSlackApiHttpModule } from './ng-shared-infrastruc
 describe('NgSharedInfrastructureSlackApiHttpModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NgSharedInfrastructureSlackApiHttpModule]
+      imports: [NgSharedInfrastructureSlackApiHttpModule],
     }).compileComponents();
   }));
 

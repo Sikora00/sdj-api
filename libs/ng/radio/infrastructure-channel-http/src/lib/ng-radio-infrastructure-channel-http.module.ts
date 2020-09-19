@@ -6,7 +6,7 @@ import { ChannelRepositoryAdapter } from './channel-repository.adapter';
 @NgModule({
   imports: [NgSharedInfrastructureSlackApiHttpModule],
   providers: [
-    { provide: ChannelDataService, useClass: ChannelRepositoryAdapter }
-  ]
+    { provide: ChannelDataService, useClass: ChannelRepositoryAdapter },
+  ],
 })
 export class NgRadioInfrastructureChannelHttpModule {}

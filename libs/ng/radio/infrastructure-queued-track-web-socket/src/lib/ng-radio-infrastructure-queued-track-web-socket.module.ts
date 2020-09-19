@@ -4,7 +4,7 @@ import { QueuedTrackRepositoryAdapter } from './repositories/queued-track-reposi
 
 @NgModule({
   providers: [
-    { provide: QueuedTrackRepository, useClass: QueuedTrackRepositoryAdapter }
-  ]
+    { provide: QueuedTrackRepository, useClass: QueuedTrackRepositoryAdapter },
+  ],
 })
 export class NgRadioInfrastructureQueuedTrackWebSocketModule {}

@@ -31,7 +31,7 @@ const EventsHandlers = [SlackQueuedTrackSkippedHandler];
     ThumbUpSlackCommand,
     ThumbDownSlackCommand,
     SlackService,
-    ...EventsHandlers
-  ]
+    ...EventsHandlers,
+  ],
 })
 export class SlackModule {}

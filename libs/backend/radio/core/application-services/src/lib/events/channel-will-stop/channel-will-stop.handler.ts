@@ -1,7 +1,7 @@
 import { EventPublisher, EventsHandler, IEventHandler } from '@nestjs/cqrs';
 import {
   ChannelDomainRepository,
-  ChannelWillStopEvent
+  ChannelWillStopEvent,
 } from '@sdj/backend/radio/core/domain';
 import { HostService } from '@sdj/backend/shared/application-services';
 

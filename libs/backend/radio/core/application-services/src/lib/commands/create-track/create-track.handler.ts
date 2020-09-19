@@ -4,7 +4,7 @@ import { Track, TrackDomainRepository } from '@sdj/backend/radio/core/domain';
 import {
   connectionConfig,
   VideoMetadata,
-  YoutubeIdError
+  YoutubeIdError,
 } from '@sdj/backend/shared/domain';
 import { getDuration } from '@sdj/backend/shared/util-mp3';
 import parseIsoDuration from 'parse-iso-duration';

@@ -16,13 +16,13 @@ const EventsHandlers = [
   WsPlayQueuedTrackHandler,
   WsPlaySilenceHandler,
   WsPozdroHandler,
-  WsUserJoinedChannelHandler
+  WsUserJoinedChannelHandler,
 ];
 
 @Module({
   imports: [CqrsModule],
   providers: [...EventsHandlers, Gateway, ChannelListEmitter],
-  exports: [Gateway]
+  exports: [Gateway],
 })
 export class WebSocketModule implements OnModuleInit {
   constructor(private channelRepository: ChannelDomainRepository) {}

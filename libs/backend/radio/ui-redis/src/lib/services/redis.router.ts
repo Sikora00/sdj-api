@@ -3,7 +3,7 @@ import { RedisController } from '../controllers/redis.controller';
 import { RedisService } from './redis.service';
 
 enum RedisMessages {
-  GetNextSong = 'getNext'
+  GetNextSong = 'getNext',
 }
 
 @Injectable()

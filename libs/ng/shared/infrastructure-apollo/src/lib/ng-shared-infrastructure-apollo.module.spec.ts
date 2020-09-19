@@ -4,7 +4,7 @@ import { NgSharedInfrastructureApolloModule } from './ng-shared-infrastructure-a
 describe('NgSharedInfrastructureApolloModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NgSharedInfrastructureApolloModule]
+      imports: [NgSharedInfrastructureApolloModule],
     }).compileComponents();
   }));
 

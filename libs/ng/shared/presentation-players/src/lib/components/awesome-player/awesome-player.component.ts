@@ -9,7 +9,7 @@ import {
   Input,
   OnDestroy,
   OnInit,
-  Output
+  Output,
 } from '@angular/core';
 import { of } from 'rxjs';
 import { delay, distinctUntilChanged, switchMap } from 'rxjs/operators';
@@ -23,9 +23,9 @@ import { Ticks } from './ticks';
   templateUrl: './awesome-player.component.html',
   styleUrls: [
     './awesome-player.component.scss',
-    './awesome-player.component.mobile.scss'
+    './awesome-player.component.mobile.scss',
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AwesomePlayerComponent
   implements OnInit, OnDestroy, AfterViewInit {
@@ -92,7 +92,7 @@ export class AwesomePlayerComponent
     this.player.src = this._src;
     this.isPlayerLoading$ = this.player.isLoadingChange$.pipe(
       distinctUntilChanged(),
-      switchMap(value => of(value).pipe(delay(500)))
+      switchMap((value) => of(value).pipe(delay(500)))
     );
   }
 

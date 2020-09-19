@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import {
   PlayNextTrackOrSilenceCommand,
-  RadioFacade
+  RadioFacade,
 } from '@sdj/backend/radio/core/application-services';
 
 @Injectable()

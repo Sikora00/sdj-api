@@ -4,7 +4,7 @@ import { NgSharedKernelModule } from './ng-shared-kernel.module';
 describe('NgSharedKernelModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NgSharedKernelModule]
+      imports: [NgSharedKernelModule],
     }).compileComponents();
   }));
 

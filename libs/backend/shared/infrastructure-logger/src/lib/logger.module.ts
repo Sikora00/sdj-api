@@ -5,9 +5,9 @@ import { DefaultLogger } from './services/default.logger.service';
   providers: [
     {
       provide: Logger,
-      useClass: DefaultLogger
-    }
+      useClass: DefaultLogger,
+    },
   ],
-  exports: [Logger]
+  exports: [Logger],
 })
 export class LoggerModule {}

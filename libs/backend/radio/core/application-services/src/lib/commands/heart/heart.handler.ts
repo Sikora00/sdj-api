@@ -4,7 +4,7 @@ import {
   User,
   UserDomainRepository,
   Vote,
-  VoteDomainRepository
+  VoteDomainRepository,
 } from '@sdj/backend/radio/core/domain';
 import { HeartCommand } from './heart.command';
 

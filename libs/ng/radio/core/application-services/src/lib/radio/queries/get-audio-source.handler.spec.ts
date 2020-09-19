@@ -30,17 +30,17 @@ describe('TrackFacade', () => {
         GetAudioSourceHandler,
         {
           provide: RadioDataService,
-          useValue: { getPlayDj: jest.fn(), getPlayRadio: jest.fn() }
+          useValue: { getPlayDj: jest.fn(), getPlayRadio: jest.fn() },
         },
         { provide: WebSocketClient, useValue: {} },
         { provide: ChannelFacade, useValue: {} },
         {
           provide: ExternalRadioFacade,
-          useValue: createSpyObj(ExternalRadioFacade)
+          useValue: createSpyObj(ExternalRadioFacade),
         },
         provideMockActions(() => actions),
-        provideMockStore({ initialState: {} })
-      ]
+        provideMockStore({ initialState: {} }),
+      ],
     });
 
     const ws: Mocked<WebSocketClient> = TestBed.inject(WebSocketClient) as any;
@@ -55,7 +55,7 @@ describe('TrackFacade', () => {
     test('emits channel default stream on the beginning', () => {
       channelFacade.selectedChannel$ = cold('a', { a: channel });
       externalRadioFacade.selectedExternalRadio$ = cold('a', {
-        a: null
+        a: null,
       }) as any;
       handler = TestBed.inject(GetAudioSourceHandler);
       handler.roomIsRunning$ = cold('-');
@@ -66,8 +66,8 @@ describe('TrackFacade', () => {
         cold('-a', {
           a: new AudioSourceChangedEvent({
             src: channel.defaultStreamUrl,
-            sourceType: SourceType.ExternalRadio
-          })
+            sourceType: SourceType.ExternalRadio,
+          }),
         })
       );
     });
@@ -75,7 +75,7 @@ describe('TrackFacade', () => {
     test('emits channel stream when room is running', () => {
       channelFacade.selectedChannel$ = cold('a', { a: channel });
       externalRadioFacade.selectedExternalRadio$ = cold('a', {
-        a: null
+        a: null,
       }) as any;
       handler = TestBed.inject(GetAudioSourceHandler);
       handler.roomIsRunning$ = cold('-a');
@@ -88,12 +88,12 @@ describe('TrackFacade', () => {
         hot('-ab', {
           a: new AudioSourceChangedEvent({
             src: channel.defaultStreamUrl,
-            sourceType: SourceType.ExternalRadio
+            sourceType: SourceType.ExternalRadio,
           }),
           b: new AudioSourceChangedEvent({
             src: channelRadioStream,
-            sourceType: SourceType.Station
-          })
+            sourceType: SourceType.Station,
+          }),
         })
       );
     });
@@ -101,7 +101,7 @@ describe('TrackFacade', () => {
     test('switch between channel stream and radio when room is running', () => {
       channelFacade.selectedChannel$ = cold('a', { a: channel });
       externalRadioFacade.selectedExternalRadio$ = cold('a', {
-        a: null
+        a: null,
       }) as any;
       handler = TestBed.inject(GetAudioSourceHandler);
       handler.roomIsRunning$ = cold('-a');
@@ -114,12 +114,12 @@ describe('TrackFacade', () => {
         hot('-abbabab', {
           a: new AudioSourceChangedEvent({
             src: channel.defaultStreamUrl,
-            sourceType: SourceType.ExternalRadio
+            sourceType: SourceType.ExternalRadio,
           }),
           b: new AudioSourceChangedEvent({
             src: channelRadioStream,
-            sourceType: SourceType.Station
-          })
+            sourceType: SourceType.Station,
+          }),
         })
       );
     });

@@ -4,7 +4,7 @@ import { NgCoreQueuedTrackApplicationServicesModule } from './ng-core-queued-tra
 describe('NgCoreQueuedTrackApplicationServicesModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NgCoreQueuedTrackApplicationServicesModule]
+      imports: [NgCoreQueuedTrackApplicationServicesModule],
     }).compileComponents();
   }));
 

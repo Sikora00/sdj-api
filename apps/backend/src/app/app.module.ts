@@ -11,7 +11,7 @@ import { BackendSharedKernelModule } from '@sdj/backend/shared/kernel';
     BackendRadioUiRestModule,
     WebSocketModule,
     BackendRadioUiRedisModule,
-    SlackModule
-  ]
+    SlackModule,
+  ],
 })
 export class AppModule {}

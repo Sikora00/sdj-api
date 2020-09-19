@@ -4,7 +4,7 @@ import { NgMostPlayedFeatureModule } from './ng-most-played-feature.module';
 describe('NgMostPlayedFeatureModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NgMostPlayedFeatureModule]
+      imports: [NgMostPlayedFeatureModule],
     }).compileComponents();
   }));
 

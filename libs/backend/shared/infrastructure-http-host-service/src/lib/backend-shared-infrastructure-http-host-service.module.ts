@@ -4,6 +4,6 @@ import { HostServiceAdapter } from './host-service.adapter';
 
 @Module({
   providers: [{ provide: HostService, useClass: HostServiceAdapter }],
-  exports: [HostService]
+  exports: [HostService],
 })
 export class BackendSharedInfrastructureHttpHostServiceModule {}

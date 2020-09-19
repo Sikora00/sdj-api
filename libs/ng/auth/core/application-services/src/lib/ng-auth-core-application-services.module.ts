@@ -2,6 +2,6 @@ import { NgModule } from '@angular/core';
 import { AuthFacade } from './auth.facade';
 
 @NgModule({
-  providers: [AuthFacade]
+  providers: [AuthFacade],
 })
 export class NgAuthCoreApplicationServicesModule {}

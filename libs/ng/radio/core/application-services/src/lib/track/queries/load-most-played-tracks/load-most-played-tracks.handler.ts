@@ -19,7 +19,7 @@ export class LoadMostPlayedTracksHandler {
       .getMostPlayedTracks(query.channelId)
       .pipe(
         map(
-          result =>
+          (result) =>
             new MostPlayedTracksReceivedEvent(result.data.mostPlayedTracks)
         )
       );

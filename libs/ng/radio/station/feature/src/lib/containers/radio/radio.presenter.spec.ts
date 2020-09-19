@@ -15,8 +15,8 @@ describe('RadioPresenterService', () => {
       providers: [
         RadioPresenter,
         { provide: RadioFacade, useValue: createSpyObj(RadioFacade) },
-        { provide: WebSocketClient, useValue: createSpyObj(WebSocketClient) }
-      ]
+        { provide: WebSocketClient, useValue: createSpyObj(WebSocketClient) },
+      ],
     });
     service = TestBed.inject(RadioPresenter);
     radioFacade = TestBed.inject<any>(RadioFacade);

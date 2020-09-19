@@ -3,7 +3,7 @@ import {
   ChangeDetectorRef,
   Component,
   OnDestroy,
-  OnInit
+  OnInit,
 } from '@angular/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { TrackFacade } from '@sdj/ng/radio/core/application-services';
@@ -17,17 +17,17 @@ import { filter, map } from 'rxjs/operators';
   selector: 'sdj-most-played',
   templateUrl: './most-played.component.html',
   styleUrls: ['./most-played.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MostPlayedComponent implements OnInit, OnDestroy {
   channel: Channel;
   loading$ = this.trackFacade.mostPlayedTracksLoading$;
   tracks$ = this.trackFacade.mostPlayedTracks$.pipe(
     filter(Boolean),
-    map<Track[], MatTrack[]>(tracks =>
-      tracks.map(track => ({
+    map<Track[], MatTrack[]>((tracks) =>
+      tracks.map((track) => ({
         title: `${track.title}. Played ${track.playedCount} times`,
-        link: environment.backendUrl + 'tracks/' + track.id + '.mp3'
+        link: environment.backendUrl + 'tracks/' + track.id + '.mp3',
       }))
     )
   );

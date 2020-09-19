@@ -11,7 +11,7 @@ export const isPlaying = (el: HTMLAudioElement) => {
   return el.duration > 0 && !el.paused && !el.muted;
 };
 
-export const resolveApp = route => {
+export const resolveApp = (route) => {
   login();
   cy.server();
   registerCommonFixtures();
@@ -19,15 +19,15 @@ export const resolveApp = route => {
   cy.visit(route, {
     onBeforeLoad(win: Window): void {
       // @ts-ignore
-      win.io = url => {
+      win.io = (url) => {
         const socket = new MockEventEmitter();
         assignSocket(socket);
         return socket;
       };
       // @ts-ignore
       win.__env = {
-        ...mockConfig
+        ...mockConfig,
       };
-    }
+    },
   });
 };

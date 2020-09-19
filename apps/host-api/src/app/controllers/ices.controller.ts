@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { last } from 'rxjs/operators';
 import icesManagerService, {
-  IcesManager
+  IcesManager,
 } from '../services/ices-manager.service';
 
 class IcesController {

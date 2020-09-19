@@ -5,6 +5,6 @@ const providers = [StoreAdapter];
 
 @Module({
   providers: providers,
-  exports: providers
+  exports: providers,
 })
 export class BackendRadioInfrastructureModule {}

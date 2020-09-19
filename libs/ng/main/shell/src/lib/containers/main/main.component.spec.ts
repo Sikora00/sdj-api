@@ -21,14 +21,14 @@ describe('MainComponent', () => {
         MatSidenavModule,
         RouterTestingModule,
         HttpClientTestingModule,
-        NoopAnimationsModule
+        NoopAnimationsModule,
       ],
       declarations: [
         MainComponent,
         MockComponent(NavbarComponent),
-        MockComponent(SidenavComponent)
+        MockComponent(SidenavComponent),
       ],
-      providers: [{ provide: ChannelFacade, useValue: {} }]
+      providers: [{ provide: ChannelFacade, useValue: {} }],
     }).compileComponents();
 
     const channelFacade = TestBed.inject(ChannelFacade);

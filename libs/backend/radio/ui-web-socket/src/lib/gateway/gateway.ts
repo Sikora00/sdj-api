@@ -3,17 +3,17 @@ import {
   SubscribeMessage,
   WebSocketGateway,
   WebSocketServer,
-  WsResponse
+  WsResponse,
 } from '@nestjs/websockets';
 import {
   JoinChannelCommand,
   LeaveChannelCommand,
   RadioFacade,
-  Store
+  Store,
 } from '@sdj/backend/radio/core/application-services';
 import {
   ChannelDomainRepository,
-  QueuedTrack
+  QueuedTrack,
 } from '@sdj/backend/radio/core/domain';
 import { HostService } from '@sdj/backend/shared/application-services';
 import { WebSocketEvents } from '@sdj/shared/domain';
@@ -77,7 +77,7 @@ export class Gateway implements OnGatewayDisconnect {
     this.clientInRoomSubjects[client.id] = new Subject();
     return this.storageService.getQueue(JSON.parse(channel)).pipe(
       takeUntil(this.clientInRoomSubjects[client.id]),
-      map(list => {
+      map((list) => {
         return { event: WebSocketEvents.queuedTrackList, data: list };
       })
     );

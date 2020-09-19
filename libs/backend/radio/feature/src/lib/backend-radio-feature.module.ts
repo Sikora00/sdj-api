@@ -1,14 +1,14 @@
 import { Global, Module } from '@nestjs/common';
 import {
   BackendRadioCoreApplicationServicesModule,
-  Store
+  Store,
 } from '@sdj/backend/radio/core/application-services';
 import {
   ChannelDomainRepository,
   QueuedTrackDomainRepository,
   TrackDomainRepository,
   UserDomainRepository,
-  VoteDomainRepository
+  VoteDomainRepository,
 } from '@sdj/backend/radio/core/domain';
 import {
   BackendRadioInfrastructureModule,
@@ -17,7 +17,7 @@ import {
   StoreAdapter,
   TrackRepositoryAdapter,
   UserRepositoryAdapter,
-  VoteRepositoryAdapter
+  VoteRepositoryAdapter,
 } from '@sdj/backend/radio/infrastructure';
 import { DbModule } from './db.module';
 
@@ -25,12 +25,12 @@ const providers = [
   { provide: ChannelDomainRepository, useClass: ChannelRepositoryAdapter },
   {
     provide: QueuedTrackDomainRepository,
-    useClass: QueuedTrackRepositoryAdapter
+    useClass: QueuedTrackRepositoryAdapter,
   },
   { provide: TrackDomainRepository, useClass: TrackRepositoryAdapter },
   { provide: UserDomainRepository, useClass: UserRepositoryAdapter },
   { provide: VoteDomainRepository, useClass: VoteRepositoryAdapter },
-  { provide: Store, useExisting: StoreAdapter }
+  { provide: Store, useExisting: StoreAdapter },
 ];
 
 @Global()
@@ -38,14 +38,14 @@ const providers = [
   imports: [
     DbModule,
     BackendRadioCoreApplicationServicesModule,
-    BackendRadioInfrastructureModule
+    BackendRadioInfrastructureModule,
   ],
   providers: providers,
   exports: [
     DbModule,
     ...providers,
     BackendRadioCoreApplicationServicesModule,
-    BackendRadioInfrastructureModule
-  ] // TODo hide infrastructure
+    BackendRadioInfrastructureModule,
+  ], // TODo hide infrastructure
 })
 export class BackendRadioFeatureModule {}

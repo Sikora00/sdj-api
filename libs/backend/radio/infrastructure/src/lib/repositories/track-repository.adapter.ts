@@ -63,9 +63,7 @@ export class TrackRepositoryAdapter extends TrackDomainRepository {
       .setParameter('channelId', channelId)
       .setParameter(
         'weekAgo',
-        DateJS.last()
-          .week()
-          .toString(appConfig.dbDateFormat)
+        DateJS.last().week().toString(appConfig.dbDateFormat)
       );
     if (index) {
       qb.offset(index);
@@ -119,9 +117,7 @@ export class TrackRepositoryAdapter extends TrackDomainRepository {
       .setParameter('channelId', channelId)
       .setParameter(
         'weekAgo',
-        DateJS.last()
-          .week()
-          .toString(appConfig.dbDateFormat)
+        DateJS.last().week().toString(appConfig.dbDateFormat)
       );
     if (index) {
       qb.offset(index);
@@ -140,7 +136,7 @@ export class TrackRepositoryAdapter extends TrackDomainRepository {
       .where('track.skips < ' + appConfig.skipsToBan)
       .andWhere('queuedTrack.playedIn = :channelId')
       .andWhere(
-        new Brackets(qb => {
+        new Brackets((qb) => {
           qb.where('vote.value > 0').orWhere('vote.value IS NULL');
         })
       )

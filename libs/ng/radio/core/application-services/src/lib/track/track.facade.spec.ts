@@ -13,8 +13,8 @@ describe('TrackFacade', () => {
       providers: [
         TrackFacade,
         provideMockStore(),
-        { provide: TrackDataService, useValue: createSpyObj(TrackDataService) }
-      ]
+        { provide: TrackDataService, useValue: createSpyObj(TrackDataService) },
+      ],
     });
     service = TestBed.inject(TrackFacade);
   });

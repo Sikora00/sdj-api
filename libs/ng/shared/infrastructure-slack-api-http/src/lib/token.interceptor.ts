@@ -2,7 +2,7 @@ import {
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
-  HttpRequest
+  HttpRequest,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 // tslint:disable-next-line:nx-enforce-module-boundaries
@@ -10,7 +10,7 @@ import { AuthFacade } from '@sdj/ng/auth/core/application-services';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'any'
+  providedIn: 'any',
 })
 export class TokenInterceptor implements HttpInterceptor {
   constructor(public auth: AuthFacade) {}
@@ -25,8 +25,8 @@ export class TokenInterceptor implements HttpInterceptor {
     ) {
       request = request.clone({
         setParams: {
-          token: this.auth.getToken()
-        }
+          token: this.auth.getToken(),
+        },
       });
     }
     return next.handle(request);

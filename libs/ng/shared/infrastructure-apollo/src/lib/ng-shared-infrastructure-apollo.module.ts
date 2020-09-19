@@ -13,12 +13,12 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
         return {
           cache: new InMemoryCache(),
           link: httpLink.create({
-            uri: environment.backendUrl + 'graphql'
-          })
+            uri: environment.backendUrl + 'graphql',
+          }),
         };
       },
-      deps: [HttpLink]
-    }
-  ]
+      deps: [HttpLink],
+    },
+  ],
 })
 export class NgSharedInfrastructureApolloModule {}

@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Store } from '@sdj/backend/radio/core/application-services';
 import {
   QueuedTrack,
-  QueuedTrackDomainRepository
+  QueuedTrackDomainRepository,
 } from '@sdj/backend/radio/core/domain';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { distinctUntilChanged, filter, first, map } from 'rxjs/operators';
@@ -47,8 +47,8 @@ export class StoreAdapter extends Store {
         ...this.state,
         [queuedTrack.playedIn.id]: {
           ...channelState,
-          queue: channelState.queue.concat(queuedTrack)
-        }
+          queue: channelState.queue.concat(queuedTrack),
+        },
       });
     }
   }
@@ -57,7 +57,7 @@ export class StoreAdapter extends Store {
     return (!!this.state && !!this.state[channelId]
       ? of()
       : this._state.pipe(
-          filter(state => !!state[channelId]),
+          filter((state) => !!state[channelId]),
           first()
         )
     ).toPromise();
@@ -98,7 +98,7 @@ export class StoreAdapter extends Store {
     const channelState = await this.getChannelState(channelId);
     this._state.next({
       ...this.state,
-      [channelId]: { ...channelState, currentTrack: queuedTrack }
+      [channelId]: { ...channelState, currentTrack: queuedTrack },
     });
   }
 
@@ -106,7 +106,7 @@ export class StoreAdapter extends Store {
     const channelState = await this.getChannelState(channelId);
     this._state.next({
       ...this.state,
-      [channelId]: { ...channelState, silenceCount: value }
+      [channelId]: { ...channelState, silenceCount: value },
     });
   }
 
@@ -116,8 +116,10 @@ export class StoreAdapter extends Store {
       ...this.state,
       [queuedTrack.playedIn.id]: {
         ...channelState,
-        queue: channelState.queue.filter(qTrack => qTrack.id !== queuedTrack.id)
-      }
+        queue: channelState.queue.filter(
+          (qTrack) => qTrack.id !== queuedTrack.id
+        ),
+      },
     });
   }
 
@@ -125,7 +127,7 @@ export class StoreAdapter extends Store {
     if (!this.state[channelId]) {
       this.state[channelId] = {
         ...initialChannelState,
-        queue: await this.queuedTrackRepository.findQueuedTracks(channelId)
+        queue: await this.queuedTrackRepository.findQueuedTracks(channelId),
       };
     }
     return this.state[channelId];

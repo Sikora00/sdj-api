@@ -3,7 +3,7 @@ import {
   ChannelDomainRepository,
   QueuedTrack,
   QueuedTrackDomainRepository,
-  TrackDomainRepository
+  TrackDomainRepository,
 } from '@sdj/backend/radio/core/domain';
 import { appConfig } from '@sdj/backend/shared/domain';
 import { PlaySilenceEvent } from '../../events/play-silence/play-silence.event';

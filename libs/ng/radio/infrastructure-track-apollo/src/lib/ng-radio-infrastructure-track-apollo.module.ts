@@ -6,8 +6,8 @@ import { ApolloTrackDataService } from './apollo-track-data.service';
   providers: [
     {
       provide: TrackDataService,
-      useClass: ApolloTrackDataService
-    }
-  ]
+      useClass: ApolloTrackDataService,
+    },
+  ],
 })
 export class NgRadioInfrastructureTrackApolloModule {}

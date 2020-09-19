@@ -3,7 +3,7 @@ import {
   Entity,
   JoinColumn,
   ManyToOne,
-  PrimaryGeneratedColumn
+  PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Channel } from './channel.entity';
 import { QueuedTrack } from './queued-track.entity';
@@ -14,21 +14,18 @@ export class Vote {
   @Column('datetime')
   createdAt: Date;
 
-  @ManyToOne(type => User)
+  @ManyToOne((type) => User)
   @JoinColumn()
   addedBy: User;
 
-  @ManyToOne(type => Channel)
+  @ManyToOne((type) => Channel)
   @JoinColumn()
   addedIn: Channel;
 
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(
-    type => QueuedTrack,
-    track => track.votes
-  )
+  @ManyToOne((type) => QueuedTrack, (track) => track.votes)
   @JoinColumn()
   track: QueuedTrack;
 

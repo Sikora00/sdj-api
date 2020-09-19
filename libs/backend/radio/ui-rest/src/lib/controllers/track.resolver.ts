@@ -5,7 +5,7 @@ import { Track, TrackDomainRepository } from '@sdj/backend/radio/core/domain';
 export class TrackResolver {
   constructor(private readonly trackRepository: TrackDomainRepository) {}
 
-  @Query(returns => [Track])
+  @Query((returns) => [Track])
   async mostPlayedTracks(
     @Args('channelId') channelId: string
   ): Promise<Track[]> {

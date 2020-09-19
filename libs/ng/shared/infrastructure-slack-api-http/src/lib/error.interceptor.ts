@@ -3,7 +3,7 @@ import {
   HttpHandler,
   HttpInterceptor,
   HttpRequest,
-  HttpResponse
+  HttpResponse,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 // tslint:disable-next-line:nx-enforce-module-boundaries
@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'any'
+  providedIn: 'any',
 })
 export class ErrorInterceptor implements HttpInterceptor {
   constructor(private authFacade: AuthFacade) {}

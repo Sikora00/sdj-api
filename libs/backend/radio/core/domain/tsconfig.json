@@ -1,11 +1,16 @@
 {
-  "extends": "../../../../../tsconfig.json",
+  "extends": "../../../../../tsconfig.base.json",
   "compilerOptions": {
     "types": ["node", "jest"]
   },
-  "include": [
-    "**/*.ts",
-    "../cqrs/src/lib/command-bus/handlers/DeleteTrackHandler.ts",
-    "../core/src/lib/cqrs/commands/delete-track.command.ts"
+  "include": [],
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.lib.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
   ]
 }

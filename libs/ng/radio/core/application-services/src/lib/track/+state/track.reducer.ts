@@ -16,7 +16,7 @@ export interface TrackPartialState {
 
 export const initialState: TrackState = {
   mostPlayedTracks: null,
-  mostPlayedTracksLoading: false
+  mostPlayedTracksLoading: false,
 };
 
 export function reducer(
@@ -28,14 +28,14 @@ export function reducer(
       state = {
         ...state,
         mostPlayedTracks: (<MostPlayedTracksReceivedEvent>action).tracks,
-        mostPlayedTracksLoading: false
+        mostPlayedTracksLoading: false,
       };
       break;
     case LoadMostPlayedTracksQuery.type:
       state = {
         ...state,
         mostPlayedTracks: null,
-        mostPlayedTracksLoading: true
+        mostPlayedTracksLoading: true,
       };
   }
   return state;

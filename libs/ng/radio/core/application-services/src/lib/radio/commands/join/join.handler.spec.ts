@@ -22,8 +22,8 @@ describe('JoinHandler', () => {
         { provide: WebSocketClient, useValue: createSpyObj(WebSocketClient) },
         { provide: WebSocketClient, useValue: createSpyObj(WebSocketClient) },
         provideMockActions(() => actions),
-        provideMockStore({ initialState: {} })
-      ]
+        provideMockStore({ initialState: {} }),
+      ],
     });
 
     handler = TestBed.inject(JoinHandler);

@@ -4,7 +4,7 @@ import { NgRadioCoreApplicationServicesModule } from './ng-radio-core-applicatio
 describe('NgRadioCoreApplicationServicesModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NgRadioCoreApplicationServicesModule]
+      imports: [NgRadioCoreApplicationServicesModule],
     }).compileComponents();
   }));
 

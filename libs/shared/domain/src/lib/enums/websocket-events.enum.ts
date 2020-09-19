@@ -8,5 +8,5 @@ export enum WebSocketEvents {
   pozdro = 'pozdro',
   queuedTrackList = 'queuedTrackList',
   reconnect = 'reconnect',
-  roomIsRunning = 'roomIsRunning'
+  roomIsRunning = 'roomIsRunning',
 }

@@ -28,12 +28,12 @@ export const ngShellRoutes: Route[] = [
     path: '',
     canActivate: [AuthGuard],
     resolve: {
-      channel: ChannelResolver
+      channel: ChannelResolver,
     },
     children: [
       {
         component: MainComponent,
-        path: ''
+        path: '',
       },
       {
         component: MainComponent,
@@ -42,28 +42,28 @@ export const ngShellRoutes: Route[] = [
           {
             loadChildren: () =>
               import('@sdj/ng/radio/station/feature').then(
-                module => module.NgRadioFeatureModule
+                (module) => module.NgRadioFeatureModule
               ),
-            path: ''
+            path: '',
           },
           {
             loadChildren: () =>
               import('@sdj/ng/radio/most-played/feature').then(
-                module => module.NgMostPlayedFeatureModule
+                (module) => module.NgMostPlayedFeatureModule
               ),
-            path: 'most-played'
+            path: 'most-played',
           },
           {
             loadChildren: () =>
               import('@sdj/ng/radio/top-rated/feature').then(
-                module => module.NgTopRatedFeatureModule
+                (module) => module.NgTopRatedFeatureModule
               ),
-            path: 'top-rated'
-          }
-        ]
-      }
-    ]
-  }
+            path: 'top-rated',
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 @NgModule({
@@ -85,9 +85,9 @@ export const ngShellRoutes: Route[] = [
     NgSharedInfrastructureWsSocketIoModule,
     NgRadioInfrastructureChannelHttpModule,
     NgSharedInfrastructureSpeechModule,
-    NgRadioInfrastructureTrackApolloModule
+    NgRadioInfrastructureTrackApolloModule,
   ],
   declarations: [NavbarComponent, MainComponent, SidenavComponent],
-  providers: [ChannelResolver]
+  providers: [ChannelResolver],
 })
 export class NgMainShellModule {}

@@ -19,12 +19,12 @@ export class SpeechServiceAdapter extends SpeechService {
   }
 
   private init(): void {
-    new Promise(resolve => (window.speechSynthesis.onvoiceschanged = resolve))
+    new Promise((resolve) => (window.speechSynthesis.onvoiceschanged = resolve))
       .then(() => {
         this.synth = window.speechSynthesis;
         this.voice = this.synth
           .getVoices()
-          .find(voice => voice.lang === this.lang);
+          .find((voice) => voice.lang === this.lang);
       })
       .catch(() => {
         // tslint:disable-next-line: no-console
@@ -36,7 +36,7 @@ export class SpeechServiceAdapter extends SpeechService {
     this.speeching$.next(true);
 
     const utterThis = new SpeechSynthesisUtterance(text);
-    utterThis.onend = event => {
+    utterThis.onend = (event) => {
       event.preventDefault();
       this.speeching$.next(false);
     };

@@ -7,14 +7,14 @@ import {
   HostListener,
   OnDestroy,
   OnInit,
-  ViewChild
+  ViewChild,
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import {
   ExternalRadioFacade,
   QueuedTrackFacade,
-  RadioFacade
+  RadioFacade,
 } from '@sdj/ng/radio/core/application-services';
 import {
   Channel,
@@ -22,7 +22,7 @@ import {
   ExternalRadio,
   QueuedTrack,
   SourceType,
-  Track
+  Track,
 } from '@sdj/ng/radio/core/domain';
 import { RadioStationsComponent } from '@sdj/ng/radio/station/presentation';
 import { WebSocketClient } from '@sdj/ng/shared/core/application-services';
@@ -39,7 +39,7 @@ import { RadioPresenter } from './radio.presenter';
   templateUrl: './radio.component.html',
   styleUrls: ['./radio.component.scss', './radio.component.mobile.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [RadioPresenter]
+  providers: [RadioPresenter],
 })
 export class RadioComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('playerComponent')
@@ -96,15 +96,15 @@ export class RadioComponent implements OnInit, OnDestroy, AfterViewInit {
   onChangeRadioStation(): void {
     this.externalRadioFacade.externalRadioGroups$
       .pipe(first())
-      .subscribe(externalRadioGroups => {
+      .subscribe((externalRadioGroups) => {
         this.dialog
           .open(RadioStationsComponent, {
             data: { externalRadioGroups },
-            panelClass: 'radio-stations-dialog'
+            panelClass: 'radio-stations-dialog',
           })
           .afterClosed()
           .pipe(filter<ExternalRadio>(Boolean))
-          .subscribe(result => {
+          .subscribe((result) => {
             this.externalRadioFacade.select(result);
           });
       });
@@ -116,19 +116,19 @@ export class RadioComponent implements OnInit, OnDestroy, AfterViewInit {
       takeUntil(this.selectedChannelUnsubscribe)
     );
     const trackWillBePlayed$ = queuedTracks$.pipe(
-      map(list => list.slice(1)),
+      map((list) => list.slice(1)),
       filter(
-        newList =>
+        (newList) =>
           this.queuedTracks && newList.length < this.queuedTracks.length
       ),
-      tap(list => this.handleScrollList(list))
+      tap((list) => this.handleScrollList(list))
     );
     trackWillBePlayed$.subscribe();
 
     const newTrackAddedToQueue$ = queuedTracks$.pipe(
-      map(list => list.slice(1)),
+      map((list) => list.slice(1)),
       filter(
-        newList =>
+        (newList) =>
           !this.queuedTracks || newList.length >= this.queuedTracks.length
       )
     );
@@ -137,7 +137,7 @@ export class RadioComponent implements OnInit, OnDestroy, AfterViewInit {
       newTrackAddedToQueue$
     ).pipe(takeUntil(this.selectedChannelUnsubscribe));
 
-    this.queuedTracks$.subscribe(list => {
+    this.queuedTracks$.subscribe((list) => {
       this.queuedTracks = list;
       const listElement = this.toPlayContainer.nativeElement;
       setTimeout(() => {
@@ -168,7 +168,7 @@ export class RadioComponent implements OnInit, OnDestroy, AfterViewInit {
       .pipe(
         filter<Channel>(Boolean),
         filter(
-          channel =>
+          (channel) =>
             !this.selectedChannel || channel.id !== this.selectedChannel.id
         ),
         untilDestroyed(this)

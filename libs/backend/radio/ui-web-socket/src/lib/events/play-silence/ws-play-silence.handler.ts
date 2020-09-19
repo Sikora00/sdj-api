@@ -2,7 +2,7 @@ import { Logger } from '@nestjs/common';
 import { EventsHandler, IEventHandler } from '@nestjs/cqrs';
 import {
   PlaySilenceEvent,
-  Store
+  Store,
 } from '@sdj/backend/radio/core/application-services';
 import { WebSocketEvents } from '@sdj/shared/domain';
 import { Gateway } from '../../gateway/gateway';

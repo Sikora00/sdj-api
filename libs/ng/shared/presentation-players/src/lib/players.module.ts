@@ -6,6 +6,6 @@ import { AwesomePlayerComponent } from './components/awesome-player/awesome-play
 @NgModule({
   imports: [CommonModule, NgSharedUiSdjLoaderModule],
   declarations: [AwesomePlayerComponent],
-  exports: [AwesomePlayerComponent]
+  exports: [AwesomePlayerComponent],
 })
 export class PlayersModule {}

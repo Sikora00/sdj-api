@@ -9,10 +9,10 @@ import { TrackResolver } from './controllers/track.resolver';
   imports: [
     BackendRadioFeatureModule,
     GraphQLModule.forRoot({
-      autoSchemaFile: 'schema.gql'
-    })
+      autoSchemaFile: 'schema.gql',
+    }),
   ],
   controllers: [AppController, ChannelController],
-  providers: [TrackResolver]
+  providers: [TrackResolver],
 })
 export class BackendRadioUiRestModule {}

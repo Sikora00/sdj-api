@@ -5,13 +5,13 @@ import { RouterTestingModule } from '@angular/router/testing';
 import {
   ExternalRadioFacade,
   QueuedTrackFacade,
-  RadioFacade
+  RadioFacade,
 } from '@sdj/ng/radio/core/application-services';
 import { ChannelFacade } from '@sdj/ng/radio/core/domain';
 import {
   AwesomePlayerSecondTitlePipe,
   AwesomePlayerTitlePipe,
-  RadioActionMenuComponent
+  RadioActionMenuComponent,
 } from '@sdj/ng/radio/station/presentation';
 import { WebSocketClient } from '@sdj/ng/shared/core/application-services';
 import { AwesomePlayerComponent } from '@sdj/ng/shared/presentation-players';
@@ -36,22 +36,22 @@ describe('RadioComponent', () => {
           LoaderComponent,
           RadioActionMenuComponent
         ),
-        MockPipes(AwesomePlayerSecondTitlePipe, AwesomePlayerTitlePipe)
+        MockPipes(AwesomePlayerSecondTitlePipe, AwesomePlayerTitlePipe),
       ],
       providers: [
         { provide: ChannelFacade, useValue: createSpyObj(ChannelFacade) },
         {
           provide: QueuedTrackFacade,
-          useValue: createSpyObj(QueuedTrackFacade)
+          useValue: createSpyObj(QueuedTrackFacade),
         },
         { provide: RadioFacade, useValue: createSpyObj(RadioFacade) },
         { provide: WebSocketClient, useValue: createSpyObj(WebSocketClient) },
         { provide: MatDialog, useValue: createSpyObj(MatDialog) },
         {
           provide: ExternalRadioFacade,
-          useValue: createSpyObj(ExternalRadioFacade)
-        }
-      ]
+          useValue: createSpyObj(ExternalRadioFacade),
+        },
+      ],
     }).compileComponents();
 
     const radioFacade = TestBed.inject(RadioFacade);

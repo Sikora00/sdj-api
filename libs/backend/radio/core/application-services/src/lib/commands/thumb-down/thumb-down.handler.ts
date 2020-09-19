@@ -4,7 +4,7 @@ import {
   User,
   UserDomainRepository,
   Vote,
-  VoteDomainRepository
+  VoteDomainRepository,
 } from '@sdj/backend/radio/core/domain';
 import { SongVotedNegativelyEvent } from '../../events/song-voted-negatively/song-voted-negatively.event';
 import { ThumbDownCommand } from './thumb-down.command';

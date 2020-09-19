@@ -4,7 +4,7 @@ import { NgAuthCoreApplicationServicesModule } from './ng-auth-core-application-
 describe('NgAuthCoreApplicationServicesModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NgAuthCoreApplicationServicesModule]
+      imports: [NgAuthCoreApplicationServicesModule],
     }).compileComponents();
   }));
 

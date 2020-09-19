@@ -23,9 +23,9 @@ const CHANNEL_HANDLERS = [LoadChannelsHandler];
     RadioFacade,
     {
       provide: ChannelFacade,
-      useClass: NgrxChannelFacade
+      useClass: NgrxChannelFacade,
     },
-    SelectChannelService
+    SelectChannelService,
   ],
   imports: [
     NgCoreQueuedTrackApplicationServicesModule,
@@ -33,7 +33,7 @@ const CHANNEL_HANDLERS = [LoadChannelsHandler];
     EffectsModule.forFeature(HANDLERS),
     StoreModule.forFeature(fromRadio.RADIO_FEATURE_KEY, fromRadio.reducer),
     EffectsModule.forFeature(CHANNEL_HANDLERS),
-    StoreModule.forFeature(CHANNEL_FEATURE_KEY, reducer)
-  ]
+    StoreModule.forFeature(CHANNEL_FEATURE_KEY, reducer),
+  ],
 })
 export class NgRadioCoreApplicationServicesModule {}

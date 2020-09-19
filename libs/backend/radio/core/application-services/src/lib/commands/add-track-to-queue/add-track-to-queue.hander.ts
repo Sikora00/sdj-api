@@ -3,7 +3,7 @@ import {
   Track,
   TrackDomainRepository,
   User,
-  UserDomainRepository
+  UserDomainRepository,
 } from '@sdj/backend/radio/core/domain';
 import { extractVideoIdFromYoutubeUrl } from '@sdj/backend/shared/util-you-tube';
 import { CreateTrackCommand } from '../create-track/create-track.command';

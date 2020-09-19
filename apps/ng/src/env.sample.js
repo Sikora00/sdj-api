@@ -1,4 +1,4 @@
-(function(window) {
+(function (window) {
   window.__env = {
     apiUrl: '//{{backendUrl}}/api',
     backendUrl: '//{{backendUrl}}/',
@@ -6,8 +6,8 @@
     radioStreamUrl: '//{{radioStreamUrl}}/',
     slack: {
       clientId: '{{slackClientId}}',
-      clientSecret: '{{slackClientSecret}}'
+      clientSecret: '{{slackClientSecret}}',
     },
-    ...(window.__env || {})
+    ...(window.__env || {}),
   };
 })(this);

@@ -10,7 +10,7 @@ describe('RadioActionMenuComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [RadioActionMenuComponent, MockComponent(MatIcon)]
+      declarations: [RadioActionMenuComponent, MockComponent(MatIcon)],
     }).compileComponents();
   }));
 

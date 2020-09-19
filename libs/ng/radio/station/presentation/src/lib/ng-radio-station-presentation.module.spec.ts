@@ -4,7 +4,7 @@ import { NgRadioStationPresentationModule } from './ng-radio-station-presentatio
 describe('NgRadioStationPresentationModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NgRadioStationPresentationModule]
+      imports: [NgRadioStationPresentationModule],
     }).compileComponents();
   }));
 

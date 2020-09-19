@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import {
   Channel,
-  ChannelDomainRepository
+  ChannelDomainRepository,
 } from '@sdj/backend/radio/core/domain';
 import { Repository } from 'typeorm';
 

@@ -13,7 +13,7 @@ export class SelectChannelService {
   selectFirstChannel(channelId: string | null): void {
     this.store
       .pipe(select(channelQuery.channelEntities), first())
-      .subscribe(channelEntities => {
+      .subscribe((channelEntities) => {
         if (channelId) {
           const channel = channelEntities[channelId];
           this.selectChannel(channel.id);
@@ -30,7 +30,7 @@ export class SelectChannelService {
   private selectGeneral(): void {
     this.store
       .pipe(select(channelQuery.channels), first())
-      .subscribe(channels => {
+      .subscribe((channels) => {
         const channel = channels.find((ch: Channel) => ch.name === 'general');
         this.selectChannel(channel.id);
       });

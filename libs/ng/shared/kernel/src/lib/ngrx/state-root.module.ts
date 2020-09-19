@@ -14,14 +14,14 @@ import { environment } from '@sdj/ng/shared/core/domain';
       {
         runtimeChecks: {
           strictActionImmutability: true,
-          strictStateImmutability: true
-        }
+          strictStateImmutability: true,
+        },
       }
     ),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
-      logOnly: environment.production // Restrict extension to log-only mode
-    })
-  ]
+      logOnly: environment.production, // Restrict extension to log-only mode
+    }),
+  ],
 })
 export class StoreRootModule {}

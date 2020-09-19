@@ -9,9 +9,9 @@ import { StoreRootModule } from './ngrx/state-root.module';
     BrowserAnimationsModule,
     BrowserModule,
     RouterModule.forRoot([]),
-    StoreRootModule
+    StoreRootModule,
   ],
   providers: [],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class NgSharedKernelModule {}

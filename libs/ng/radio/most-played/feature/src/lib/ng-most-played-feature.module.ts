@@ -10,8 +10,8 @@ import { MostPlayedComponent } from './containers/most-played/most-played.compon
     CommonModule,
     RouterModule.forChild([{ path: '', component: MostPlayedComponent }]),
     NgxAudioPlayerModule,
-    NgSharedUiSdjLoaderModule
+    NgSharedUiSdjLoaderModule,
   ],
-  declarations: [MostPlayedComponent]
+  declarations: [MostPlayedComponent],
 })
 export class NgMostPlayedFeatureModule {}

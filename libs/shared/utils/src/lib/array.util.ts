@@ -4,7 +4,7 @@ export class ArrayUtil {
       (previousValue: { [id: string]: T }, currentValue: T) => {
         return {
           ...previousValue,
-          [currentValue.id]: currentValue
+          [currentValue.id]: currentValue,
         };
       },
       {}

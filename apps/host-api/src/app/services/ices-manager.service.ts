@@ -23,7 +23,7 @@ export class IcesManager {
       `slack_dj_ices_${id}`,
       `bash`,
       `-c`,
-      `pgrep -f ices | xargs kill -s SIGUSR1`
+      `pgrep -f ices | xargs kill -s SIGUSR1`,
     ]);
     this.commands$.next(execSpawn);
     signal$.subscribe((code: number) =>
@@ -39,7 +39,7 @@ export class IcesManager {
       `slack_dj_ices_${id}`,
       `-e`,
       `ROOM_ID=${id}`,
-      `slack_dj_ices`
+      `slack_dj_ices`,
     ]);
 
     this.commands$.next(execSpawn);
@@ -54,7 +54,7 @@ export class IcesManager {
     const { signal$, execSpawn } = spawn('docker', [
       `rm`,
       `-f`,
-      `slack_dj_ices_${id}`
+      `slack_dj_ices_${id}`,
     ]);
 
     signal$.subscribe((code: number) =>

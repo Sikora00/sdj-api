@@ -6,7 +6,7 @@ import {
   getPlayButton,
   getPlayerHtmlAudioElement,
   getQueuedTracks,
-  getTrackNameElement
+  getTrackNameElement,
 } from '../support/selectors/radio.selectors';
 
 describe('Radio', () => {
@@ -41,7 +41,7 @@ describe('Radio', () => {
       cy.wait(2000);
       cy.emmitInWs(WebSocketEvents.roomIsRunning);
       cy.emmitInWs(WebSocketEvents.queuedTrackList, [
-        { track: { title: 'Song 1' }, addedBy: { name: 'Maciej Sikorski' } }
+        { track: { title: 'Song 1' }, addedBy: { name: 'Maciej Sikorski' } },
       ]);
       getTrackNameElement().contains('Song 1');
       getArtistNameElement().contains('Maciej Sikorski');
@@ -53,27 +53,25 @@ describe('Radio', () => {
       cy.emmitInWs(WebSocketEvents.queuedTrackList, [
         {
           track: { id: '2Lb2BiUC898', title: 'Song 1' },
-          addedBy: { name: 'Maciej Sikorski' }
+          addedBy: { name: 'Maciej Sikorski' },
         },
         {
           track: { id: '2Lb2BiUC898', title: 'Song 2' },
-          addedBy: { name: 'Maciej Sikorski' }
+          addedBy: { name: 'Maciej Sikorski' },
         },
         {
           track: { id: '2Lb2BiUC898', title: 'Song 3' },
-          addedBy: { name: 'Maciej Sikorski' }
-        }
+          addedBy: { name: 'Maciej Sikorski' },
+        },
       ]);
-      getQueuedTracks()
-        .its('length')
-        .should('eq', 2);
+      getQueuedTracks().its('length').should('eq', 2);
     });
 
     it('should handle changes on queue', () => {
       cy.wait(2000);
       cy.emmitInWs(WebSocketEvents.roomIsRunning);
       cy.emmitInWs(WebSocketEvents.queuedTrackList, [
-        { track: { title: 'Song 1' }, addedBy: { name: 'Maciej Sikorski' } }
+        { track: { title: 'Song 1' }, addedBy: { name: 'Maciej Sikorski' } },
       ]);
       getTrackNameElement().contains('Song 1');
       getArtistNameElement().contains('Maciej Sikorski');
@@ -81,42 +79,38 @@ describe('Radio', () => {
       cy.emmitInWs(WebSocketEvents.queuedTrackList, [
         {
           track: { id: '2Lb2BiUC898', title: 'Song 1' },
-          addedBy: { name: 'Maciej Sikorski' }
+          addedBy: { name: 'Maciej Sikorski' },
         },
         {
           track: { id: '2Lb2BiUC898', title: 'Song 2' },
-          addedBy: { name: 'Maciej Sikorski' }
+          addedBy: { name: 'Maciej Sikorski' },
         },
         {
           track: { id: '2Lb2BiUC898', title: 'Song 3' },
-          addedBy: { name: 'Maciej Sikorski' }
-        }
+          addedBy: { name: 'Maciej Sikorski' },
+        },
       ]);
       cy.wait(1000);
 
       getTrackNameElement().contains('Song 1');
       getArtistNameElement().contains('Maciej Sikorski');
-      getQueuedTracks()
-        .its('length')
-        .should('eq', 2);
+      getQueuedTracks().its('length').should('eq', 2);
 
       cy.emmitInWs(WebSocketEvents.queuedTrackList, [
         {
           track: { id: '2Lb2BiUC898', title: 'Song 2' },
-          addedBy: { name: 'Maciej Sikorski' }
+          addedBy: { name: 'Maciej Sikorski' },
         },
         {
           track: { id: '2Lb2BiUC898', title: 'Song 3' },
-          addedBy: { name: 'Maciej Sikorski' }
-        }
+          addedBy: { name: 'Maciej Sikorski' },
+        },
       ]);
       cy.wait(1000);
 
       getTrackNameElement().contains('Song 2');
       getArtistNameElement().contains('Maciej Sikorski');
-      getQueuedTracks()
-        .its('length')
-        .should('eq', 1);
+      getQueuedTracks().its('length').should('eq', 1);
     });
   });
 });

@@ -4,7 +4,7 @@ import {
   QueuedTrackDomainRepository,
   Track,
   TrackDomainRepository,
-  VoteDomainRepository
+  VoteDomainRepository,
 } from '@sdj/backend/radio/core/domain';
 import { DeleteTrackCommand } from './delete-track.command';
 

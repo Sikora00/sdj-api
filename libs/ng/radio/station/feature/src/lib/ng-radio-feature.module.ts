@@ -10,8 +10,8 @@ import { RadioComponent } from './containers/radio/radio.component';
     CommonModule,
     PlayersModule,
     RouterModule.forChild([{ path: '', component: RadioComponent }]),
-    NgRadioStationPresentationModule
+    NgRadioStationPresentationModule,
   ],
-  declarations: [RadioComponent]
+  declarations: [RadioComponent],
 })
 export class NgRadioFeatureModule {}

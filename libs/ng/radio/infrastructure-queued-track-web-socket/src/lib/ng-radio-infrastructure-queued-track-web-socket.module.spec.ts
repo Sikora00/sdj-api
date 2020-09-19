@@ -4,7 +4,7 @@ import { NgRadioInfrastructureQueuedTrackWebSocketModule } from './ng-radio-infr
 describe('NgRadioInfrastructureQueuedTrackWebSocketModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NgRadioInfrastructureQueuedTrackWebSocketModule]
+      imports: [NgRadioInfrastructureQueuedTrackWebSocketModule],
     }).compileComponents();
   }));
 

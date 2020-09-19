@@ -1,4 +1,4 @@
 export enum SourceType {
   ExternalRadio = 'ExternalRadio',
-  Station = 'Station'
+  Station = 'Station',
 }

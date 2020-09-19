@@ -3,7 +3,7 @@ import { select, Store } from '@ngrx/store';
 import { Channel } from '@sdj/ng/radio/core/domain';
 import {
   SpeechService,
-  WebSocketClient
+  WebSocketClient,
 } from '@sdj/ng/shared/core/application-services';
 import { WebSocketEvents } from '@sdj/shared/domain';
 import { Observable, Subject, zip } from 'rxjs';
@@ -45,7 +45,7 @@ export class RadioFacade {
   startListeningForPozdro(): void {
     this.pozdro$ = this.ws.createSubject(WebSocketEvents.pozdro);
     const input = this.pozdro$;
-    const signal = this.speeching$.pipe(filter(speeching => !speeching));
+    const signal = this.speeching$.pipe(filter((speeching) => !speeching));
     const output = zip(input, signal);
     output
       .pipe(

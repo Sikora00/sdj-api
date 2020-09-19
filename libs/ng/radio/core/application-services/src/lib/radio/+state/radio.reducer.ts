@@ -19,7 +19,7 @@ export interface RadioPartialState {
 export const initialState: RadioState = {
   roomIsRunning: false,
   audioSource: null,
-  sourceType: null
+  sourceType: null,
 };
 
 export function reducer(
@@ -31,7 +31,7 @@ export function reducer(
       state = {
         ...state,
         audioSource: (<AudioSourceChangedEvent>action).payload.src,
-        sourceType: (<AudioSourceChangedEvent>action).payload.sourceType
+        sourceType: (<AudioSourceChangedEvent>action).payload.sourceType,
       };
       break;
     case JoinCommand.type:

@@ -6,7 +6,7 @@ import {
   JoinColumn,
   ManyToOne,
   OneToMany,
-  PrimaryColumn
+  PrimaryColumn,
 } from 'typeorm';
 import { QueuedTrack } from './queued-track.entity';
 import { User } from './user.entity';
@@ -14,7 +14,7 @@ import { User } from './user.entity';
 @ObjectType()
 @Entity()
 export class Track implements ITrack {
-  @ManyToOne(type => User)
+  @ManyToOne((type) => User)
   @JoinColumn()
   addedBy: User | null;
 
@@ -29,26 +29,23 @@ export class Track implements ITrack {
   id: string;
 
   @Column('int', {
-    default: 0
+    default: 0,
   })
   skips: number;
 
   @Field()
   @Column('varchar', {
-    length: 200
+    length: 200,
   })
   title: string;
 
-  @OneToMany(
-    type => QueuedTrack,
-    queuedTrack => queuedTrack.track
-  )
+  @OneToMany((type) => QueuedTrack, (queuedTrack) => queuedTrack.track)
   queuedTracks: Promise<QueuedTrack[]>;
 
-  @Field(type => Number)
+  @Field((type) => Number)
   async playedCount(): Promise<number> {
     return (await this.queuedTracks).filter(
-      queuedTrack => !queuedTrack.randomized
+      (queuedTrack) => !queuedTrack.randomized
     ).length;
   }
 

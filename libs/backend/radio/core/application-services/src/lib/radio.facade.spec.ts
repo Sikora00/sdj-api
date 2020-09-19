@@ -12,8 +12,8 @@ describe('RadioFacade', () => {
         RadioFacade,
         { provide: CommandBus, useValue: createSpyObj(CommandBus) },
         { provide: EventBus, useValue: createSpyObj(EventBus) },
-        { provide: QueryBus, useValue: createSpyObj(QueryBus) }
-      ]
+        { provide: QueryBus, useValue: createSpyObj(QueryBus) },
+      ],
     }).compile();
 
     service = module.get<RadioFacade>(RadioFacade);

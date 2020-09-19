@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import {
   GetChannelsQuery,
-  RadioFacade
+  RadioFacade,
 } from '@sdj/backend/radio/core/application-services';
 import { WebSocketEvents } from '@sdj/shared/domain';
 import { Gateway } from './gateway';

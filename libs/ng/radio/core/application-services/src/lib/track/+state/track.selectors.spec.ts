@@ -9,8 +9,8 @@ describe('Track Selectors', () => {
     storeState = {
       [TRACK_FEATURE_KEY]: {
         mostPlayedTracks: [track],
-        mostPlayedTracksLoading: false
-      }
+        mostPlayedTracksLoading: false,
+      },
     };
   });
 

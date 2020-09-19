@@ -9,7 +9,7 @@ const reporter = createReporter();
 const rootDir = './coverage';
 const reportOut = './coverage';
 
-const normalizeJestCoverage = obj => {
+const normalizeJestCoverage = (obj) => {
   const result = { ...obj };
 
   Object.entries(result)
@@ -26,7 +26,7 @@ const mergeAllReports = (coverageMap, reports) => {
     return;
   }
 
-  reports.forEach(reportFile => {
+  reports.forEach((reportFile) => {
     const coverageReport = fs.readJSONSync(reportFile);
     coverageMap.merge(normalizeJestCoverage(coverageReport));
   });
@@ -58,7 +58,7 @@ async function main() {
   );
 }
 
-main().catch(err => {
+main().catch((err) => {
   console.error(err);
   process.exit(1);
 });

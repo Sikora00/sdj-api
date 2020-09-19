@@ -4,7 +4,7 @@ import { NgSharedUiSdjLoaderModule } from './ng-shared-ui-sdj-loader.module';
 describe('NgSharedUiSdjLoaderModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NgSharedUiSdjLoaderModule]
+      imports: [NgSharedUiSdjLoaderModule],
     }).compileComponents();
   }));
 

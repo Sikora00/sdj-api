@@ -10,7 +10,7 @@ export class WsPozdroHandler implements IEventHandler<PozdroEvent> {
 
   async handle(event: PozdroEvent): Promise<void> {
     this.gateway.server.in(event.channelId).emit(WebSocketEvents.pozdro, {
-      message: event.text
+      message: event.text,
     });
   }
 }

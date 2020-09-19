@@ -11,9 +11,9 @@ describe('RadioDataServiceAdapter', () => {
         RadioDataServiceAdapter,
         {
           provide: WebSocketClient,
-          useValue: { observe: jest.fn() }
-        }
-      ]
+          useValue: { observe: jest.fn() },
+        },
+      ],
     });
     service = TestBed.inject(RadioDataServiceAdapter);
   });

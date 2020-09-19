@@ -9,5 +9,5 @@ export const appConfig = {
     10
   ),
   queuedTracksPerUser: parseInt(process.env.BACKEND_QUEUED_TRACKS_PER_USER, 10),
-  skipsToBan: parseInt(process.env.BACKEND_SKIPS_TO_BAN, 10)
+  skipsToBan: parseInt(process.env.BACKEND_SKIPS_TO_BAN, 10),
 };

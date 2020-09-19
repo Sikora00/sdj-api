@@ -6,7 +6,7 @@ import { ExternalRadio, ExternalRadioGroup } from '@sdj/ng/radio/core/domain';
   selector: 'sdj-radio-stations',
   templateUrl: './radio-stations.component.html',
   styleUrls: ['./radio-stations.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RadioStationsComponent {
   externalRadioGroups: ExternalRadioGroup[];

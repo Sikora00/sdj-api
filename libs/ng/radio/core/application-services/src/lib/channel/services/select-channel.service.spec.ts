@@ -16,8 +16,8 @@ describe('SelectChannelService', () => {
       providers: [
         SelectChannelService,
         provideMockActions(() => actions),
-        provideMockStore({ initialState: {} })
-      ]
+        provideMockStore({ initialState: {} }),
+      ],
     });
     service = TestBed.inject(SelectChannelService);
   });

@@ -11,7 +11,7 @@ describe('SidenavComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [MatIconModule, MatListModule],
-      declarations: [SidenavComponent]
+      declarations: [SidenavComponent],
     }).compileComponents();
   }));
 

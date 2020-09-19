@@ -3,7 +3,7 @@ import {
   ActivatedRouteSnapshot,
   CanActivate,
   Router,
-  RouterStateSnapshot
+  RouterStateSnapshot,
 } from '@angular/router';
 import { AuthFacade } from '@sdj/ng/auth/core/application-services';
 import { environment } from '@sdj/ng/shared/core/domain';
@@ -11,7 +11,7 @@ import { Observable, of } from 'rxjs';
 import { switchMap, tap } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
   constructor(private authFacade: AuthFacade, private router: Router) {}
@@ -27,9 +27,9 @@ export class AuthGuard implements CanActivate {
         tap(() => {
           this.router.navigate([], {
             queryParams: {
-              code: null
+              code: null,
             },
-            queryParamsHandling: 'merge'
+            queryParamsHandling: 'merge',
           });
         }),
         switchMap(() => of(true))

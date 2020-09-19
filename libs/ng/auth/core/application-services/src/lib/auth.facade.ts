@@ -25,7 +25,7 @@ export class AuthFacade {
 
   getAccessToken(code: string): Observable<string> {
     const source$ = this.tokenRepository.getAccessToken(code);
-    source$.subscribe(token => this.setToken(token));
+    source$.subscribe((token) => this.setToken(token));
     return source$;
   }
 

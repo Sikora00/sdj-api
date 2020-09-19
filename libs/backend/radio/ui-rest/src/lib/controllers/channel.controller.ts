@@ -2,7 +2,7 @@ import { Controller, Get, Query } from '@nestjs/common';
 import {
   GetChannelsQuery,
   GetChannelsReadModel,
-  RadioFacade
+  RadioFacade,
 } from '@sdj/backend/radio/core/application-services';
 
 @Controller('channel')

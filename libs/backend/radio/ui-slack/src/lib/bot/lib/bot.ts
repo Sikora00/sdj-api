@@ -29,7 +29,7 @@ export class Bot {
   async init(...commands: Type<SlackCommand>[]): Promise<void> {
     const addCommand = this.addCommand.bind(this);
     const commandHandlers = await Promise.all(
-      commands.map(type => this.moduleRef.create(type))
+      commands.map((type) => this.moduleRef.create(type))
     );
     commandHandlers.forEach(addCommand);
     this.start();
@@ -48,8 +48,8 @@ export class Bot {
   getHelpMessage(user: string): string {
     let helpMsg = `Cześć <@${user}>! Łap listę poleceń!\n\n`;
 
-    Object.keys(this.commands).forEach(key => {
-      this.commands[key].forEach(command => {
+    Object.keys(this.commands).forEach((key) => {
+      this.commands[key].forEach((command) => {
         const typeEmiticon = command.type.startsWith(':');
         if (!typeEmiticon) {
           helpMsg += `\``;
@@ -82,7 +82,7 @@ export class Bot {
       if (!user) {
         try {
           userProfile = await this.slack.web.users.info({
-            user: message.user
+            user: message.user,
           });
           userProfile = userProfile.user;
 
@@ -111,7 +111,7 @@ export class Bot {
 
       const command = message.text
         .split(/(\s+)/)
-        .filter(e => e.trim().length > 0);
+        .filter((e) => e.trim().length > 0);
       const commands = this.commands[command[0]];
 
       if (command[0] === 'help') {
@@ -122,8 +122,8 @@ export class Bot {
       }
 
       if (commands && commands.length) {
-        commands.forEach(c => {
-          c.handler(command, message).catch(e => {
+        commands.forEach((c) => {
+          c.handler(command, message).catch((e) => {
             this.logger.log(e.message);
             this.sendErrorMessage(message.channel);
           });
@@ -135,7 +135,7 @@ export class Bot {
   }
 
   start(): void {
-    this.slack.rtm.on('authenticated', rtmStartData => {
+    this.slack.rtm.on('authenticated', (rtmStartData) => {
       this.logger.log(
         `Logged in as ${rtmStartData.self.name} of team ${rtmStartData.team.name}.`
       );

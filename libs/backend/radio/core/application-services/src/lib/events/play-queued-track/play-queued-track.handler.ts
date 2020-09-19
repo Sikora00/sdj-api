@@ -1,7 +1,7 @@
 import { EventsHandler, IEventHandler } from '@nestjs/cqrs';
 import {
   QueuedTrack,
-  QueuedTrackDomainRepository
+  QueuedTrackDomainRepository,
 } from '@sdj/backend/radio/core/domain';
 import { Store } from '../../ports/store.port';
 import { PlayQueuedTrackEvent } from './play-queued-track.event';

@@ -9,11 +9,11 @@ import { RedisService } from './services/redis.service';
 
 export const EventsHandlers = [
   IcesPlayQueuedTrackHandler,
-  IcesPlaySilenceHandler
+  IcesPlaySilenceHandler,
 ];
 
 @Module({
   imports: [BackendRadioFeatureModule, CqrsModule],
-  providers: [RedisService, RedisController, RedisRouter, ...EventsHandlers]
+  providers: [RedisService, RedisController, RedisRouter, ...EventsHandlers],
 })
 export class BackendRadioUiRedisModule {}

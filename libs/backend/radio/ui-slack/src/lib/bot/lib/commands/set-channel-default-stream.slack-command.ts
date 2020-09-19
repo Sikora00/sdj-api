@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import {
   RadioFacade,
-  SetChannelDefaultStreamCommand
+  SetChannelDefaultStreamCommand,
 } from '@sdj/backend/radio/core/application-services';
 import { SlackService } from '../../../services/slack.service';
 import { SlackCommandHandler } from '../bot';

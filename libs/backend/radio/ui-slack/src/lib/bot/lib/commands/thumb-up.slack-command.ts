@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import {
   RadioFacade,
-  ThumbUpCommand
+  ThumbUpCommand,
 } from '@sdj/backend/radio/core/application-services';
 import { QueuedTrackDomainRepository } from '@sdj/backend/radio/core/domain';
 import { SlackService } from '../../../services/slack.service';

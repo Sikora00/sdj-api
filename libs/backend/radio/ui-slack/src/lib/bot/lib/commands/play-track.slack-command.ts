@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import {
   AddTrackToQueueCommand,
-  RadioFacade
+  RadioFacade,
 } from '@sdj/backend/radio/core/application-services';
 import { TrackDomainRepository } from '@sdj/backend/radio/core/domain';
 import { extractVideoIdFromYoutubeUrl } from '@sdj/backend/shared/util-you-tube';

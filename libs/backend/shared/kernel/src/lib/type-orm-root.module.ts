@@ -10,11 +10,11 @@ const typeOrmModule = TypeOrmModule.forRoot({
   username: connectionConfig.db.username,
   password: connectionConfig.db.password,
   database: connectionConfig.db.database,
-  autoLoadEntities: true
+  autoLoadEntities: true,
 });
 
 @Module({
   imports: [typeOrmModule],
-  exports: [typeOrmModule]
+  exports: [typeOrmModule],
 })
 export class TypeOrmRootModule {}

@@ -8,12 +8,12 @@ import { TypeOrmRootModule } from './type-orm-root.module';
   imports: [
     TypeOrmRootModule,
     LoggerModule,
-    BackendSharedInfrastructureHttpHostServiceModule
+    BackendSharedInfrastructureHttpHostServiceModule,
   ],
   exports: [
     TypeOrmRootModule,
     LoggerModule,
-    BackendSharedInfrastructureHttpHostServiceModule
-  ]
+    BackendSharedInfrastructureHttpHostServiceModule,
+  ],
 })
 export class BackendSharedKernelModule {}

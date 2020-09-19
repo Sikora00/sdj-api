@@ -40,7 +40,7 @@ export const CommandHandlers = [
   SkipQueuedTrackHandler,
   QueueTrackHandler,
   ThumbDownHandler,
-  ThumbUpHandler
+  ThumbUpHandler,
 ];
 
 export const EventHandlers = [
@@ -48,7 +48,7 @@ export const EventHandlers = [
   ChannelWillStopHandler,
   PlayQueuedTrackHandler,
   PlaySilenceHandler,
-  SongVotedNegativelyHandler
+  SongVotedNegativelyHandler,
 ];
 
 const QueryHandlers = [GetChannelsHandler];
@@ -59,8 +59,8 @@ const QueryHandlers = [GetChannelsHandler];
     RadioFacade,
     ...CommandHandlers,
     ...EventHandlers,
-    ...QueryHandlers
+    ...QueryHandlers,
   ],
-  exports: [RadioFacade]
+  exports: [RadioFacade],
 })
 export class BackendRadioCoreApplicationServicesModule {}

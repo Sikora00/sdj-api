@@ -4,7 +4,7 @@ import { UserUtils } from '@sdj/shared/utils';
 import { QueuedTrack } from '@sdj/shared/domain';
 
 @Pipe({
-  name: 'awesomePlayerSecondTitle'
+  name: 'awesomePlayerSecondTitle',
 })
 export class AwesomePlayerSecondTitlePipe implements PipeTransform {
   transform(type: SourceType, ...args: any[]): unknown {

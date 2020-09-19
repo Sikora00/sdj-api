@@ -28,11 +28,11 @@ export class LoadChannelsHandler {
           storedChannels.map((channel: Channel) => ({
             ...channel,
             ...channels[channel.id],
-            name: channel.name
+            name: channel.name,
           }))
         )
       )
-    ).pipe(map(channels => new ChannelsReceivedEvent(channels)));
+    ).pipe(map((channels) => new ChannelsReceivedEvent(channels)));
   }
 
   constructor(

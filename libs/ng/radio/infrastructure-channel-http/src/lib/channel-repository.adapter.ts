@@ -11,7 +11,7 @@ import { map, switchMap } from 'rxjs/operators';
 @Injectable()
 export class ChannelRepositoryAdapter extends ChannelDataService {
   endpoints = {
-    getChannels: `${environment.apiUrl}/channel`
+    getChannels: `${environment.apiUrl}/channel`,
   };
 
   constructor(private http: HttpClient, private slackService: SlackService) {
@@ -20,15 +20,15 @@ export class ChannelRepositoryAdapter extends ChannelDataService {
 
   getChannels(): Observable<Channel[]> {
     return this.slackService.getChannelList().pipe(
-      map(slackChannels =>
+      map((slackChannels) =>
         ArrayUtil.arrayToMap(
-          slackChannels.map(slackChannel => ({
+          slackChannels.map((slackChannel) => ({
             id: slackChannel.id,
-            name: slackChannel.name
+            name: slackChannel.name,
           }))
         )
       ),
-      switchMap(slackChannels => {
+      switchMap((slackChannels) => {
         const params = Object.keys(slackChannels).reduce(
           (p, id) => p.append('channelIds[]', id),
           new HttpParams()
@@ -36,15 +36,15 @@ export class ChannelRepositoryAdapter extends ChannelDataService {
         return this.http
           .get<Channel[]>(this.endpoints.getChannels, { params })
           .pipe(
-            map(channels =>
-              Object.keys(slackChannels).map(id => {
+            map((channels) =>
+              Object.keys(slackChannels).map((id) => {
                 const channel = channels[id];
                 const slackChannel = slackChannels[id];
                 return {
                   id,
                   defaultStreamUrl: channel?.defaultStreamUrl,
                   name: slackChannel.name,
-                  usersOnline: channel ? channel.usersOnline : 0
+                  usersOnline: channel ? channel.usersOnline : 0,
                 };
               })
             )

@@ -3,7 +3,7 @@ import {
   MAT_DIALOG_DATA,
   MatDialogActions,
   MatDialogContent,
-  MatDialogRef
+  MatDialogRef,
 } from '@angular/material/dialog';
 import { createSpyObj } from 'jest-createspyobj';
 import { MockDirectives } from 'ng-mocks';
@@ -18,12 +18,12 @@ describe('RadioStationsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         RadioStationsComponent,
-        MockDirectives(MatDialogContent, MatDialogActions)
+        MockDirectives(MatDialogContent, MatDialogActions),
       ],
       providers: [
         { provide: MatDialogRef, useValue: createSpyObj(MatDialogRef) },
-        { provide: MAT_DIALOG_DATA, useValue: {} }
-      ]
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+      ],
     }).compileComponents();
   }));
 

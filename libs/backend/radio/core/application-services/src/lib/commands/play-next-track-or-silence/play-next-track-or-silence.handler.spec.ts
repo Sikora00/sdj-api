@@ -3,7 +3,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import {
   ChannelDomainRepository,
   QueuedTrackDomainRepository,
-  TrackDomainRepository
+  TrackDomainRepository,
 } from '@sdj/backend/radio/core/domain';
 import { appConfig } from '@sdj/backend/shared/domain';
 import { createSpyObj } from 'jest-createspyobj';
@@ -25,21 +25,21 @@ describe('PlayNextTrackOrSilenceHandler', () => {
         { provide: RadioFacade, useValue: createSpyObj(RadioFacade) },
         {
           provide: EventBus,
-          useValue: createSpyObj(EventBus)
+          useValue: createSpyObj(EventBus),
         },
         {
           provide: ChannelDomainRepository,
-          useValue: createSpyObj(ChannelDomainRepository)
+          useValue: createSpyObj(ChannelDomainRepository),
         },
         {
           provide: QueuedTrackDomainRepository,
-          useValue: createSpyObj(QueuedTrackDomainRepository)
+          useValue: createSpyObj(QueuedTrackDomainRepository),
         },
         {
           provide: TrackDomainRepository,
-          useValue: createSpyObj(TrackDomainRepository)
-        }
-      ]
+          useValue: createSpyObj(TrackDomainRepository),
+        },
+      ],
     }).compile();
 
     channelRepository = module.get(ChannelDomainRepository);

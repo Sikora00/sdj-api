@@ -6,7 +6,7 @@ import { AppModule } from './app/app.module';
 
 async function bootstrap(): Promise<void> {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
-    cors: true
+    cors: true,
   });
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
@@ -14,7 +14,7 @@ async function bootstrap(): Promise<void> {
   app.useStaticAssets(join(__dirname, 'assets'), {
     setHeaders: (res, path, stat) => {
       res.set('Access-Control-Allow-Origin', '*');
-    }
+    },
   });
   app.enableCors();
 

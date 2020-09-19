@@ -96,10 +96,11 @@
       2,
       'always',
       [
-        'sdj',
         'backend',
+        'deps',
         'ng',
-        'ng-radio'
+        'ng-radio',
+        'sdj'
       ]
     ]
   },

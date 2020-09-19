@@ -18,7 +18,7 @@ export interface ChannelPartialState {
 
 export const initialState: ChannelState = {
   ...adapter.getInitialState(),
-  selectedChannelId: null
+  selectedChannelId: null,
 };
 
 export function reducer(
@@ -32,7 +32,7 @@ export function reducer(
     case SelectChannelCommand.type:
       state = {
         ...state,
-        selectedChannelId: (<SelectChannelCommand>action).channelId
+        selectedChannelId: (<SelectChannelCommand>action).channelId,
       };
   }
   return state;

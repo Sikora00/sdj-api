@@ -4,7 +4,7 @@ import { PlayersModule } from './players.module';
 describe('PlayersModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [PlayersModule]
+      imports: [PlayersModule],
     }).compileComponents();
   }));
 

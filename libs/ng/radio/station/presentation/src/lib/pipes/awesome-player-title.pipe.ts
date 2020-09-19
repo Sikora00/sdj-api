@@ -3,7 +3,7 @@ import { ExternalRadio, SourceType } from '@sdj/ng/radio/core/domain';
 import { QueuedTrack } from '@sdj/shared/domain';
 
 @Pipe({
-  name: 'awesomePlayerTitle'
+  name: 'awesomePlayerTitle',
 })
 export class AwesomePlayerTitlePipe implements PipeTransform {
   transform(type: SourceType, ...args: any[]): unknown {

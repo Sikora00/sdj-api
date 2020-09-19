@@ -4,7 +4,7 @@ import { NgRadioInfrastructureChannelHttpModule } from './ng-radio-infrastructur
 describe('NgRadioInfrastructureChannelHttpModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NgRadioInfrastructureChannelHttpModule]
+      imports: [NgRadioInfrastructureChannelHttpModule],
     }).compileComponents();
   }));
 

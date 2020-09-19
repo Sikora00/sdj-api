@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import {
   QueueTrackCommand,
-  RadioFacade
+  RadioFacade,
 } from '@sdj/backend/radio/core/application-services';
 import {
   QueuedTrackDomainRepository,
   Track,
-  TrackDomainRepository
+  TrackDomainRepository,
 } from '@sdj/backend/radio/core/domain';
 import { appConfig } from '@sdj/backend/shared/domain';
 import { SlackService } from '../../../services/slack.service';
@@ -72,13 +72,13 @@ export class RefreshSlackCommand implements SlackCommand {
       .queueTrack(
         new QueueTrackCommand(track.id, message.channel, message.user, true)
       )
-      .then(_ =>
+      .then((_) =>
         this.slack.rtm.sendMessage(
           `Odświeżamy! Dodałem ${track.title} do playlisty :)`,
           message.channel
         )
       )
-      .catch(error => {
+      .catch((error) => {
         this.slack.rtm.sendMessage(error.message, message.channel);
       });
   }

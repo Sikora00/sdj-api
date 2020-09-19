@@ -12,7 +12,7 @@ describe('NavbarComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [MatIconModule, MatMenuModule, MatToolbarModule],
-      declarations: [NavbarComponent]
+      declarations: [NavbarComponent],
     }).compileComponents();
   }));
 

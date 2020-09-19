@@ -7,7 +7,7 @@ describe('SlackService', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [SlackServiceAdapter]
+      providers: [SlackServiceAdapter],
     })
   );
 

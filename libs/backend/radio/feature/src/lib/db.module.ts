@@ -5,7 +5,7 @@ import {
   QueuedTrack,
   Track,
   User,
-  Vote
+  Vote,
 } from '@sdj/backend/radio/core/domain';
 
 const typeormModule = TypeOrmModule.forFeature([
@@ -13,11 +13,11 @@ const typeormModule = TypeOrmModule.forFeature([
   QueuedTrack,
   Track,
   User,
-  Vote
+  Vote,
 ]);
 
 @Module({
   imports: [typeormModule],
-  exports: [typeormModule]
+  exports: [typeormModule],
 })
 export class DbModule {}

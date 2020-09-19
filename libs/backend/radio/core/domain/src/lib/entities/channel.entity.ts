@@ -13,7 +13,7 @@ import { QueuedTrack } from './queued-track.entity';
 export class Channel extends AggregateRoot {
   @Column('varchar', {
     length: 200,
-    nullable: true
+    nullable: true,
   })
   defaultStreamUrl: string;
 
@@ -21,24 +21,21 @@ export class Channel extends AggregateRoot {
   id: string;
 
   @Column({
-    default: false
+    default: false,
   })
   isRunning: boolean;
 
   @Column('varchar', {
     length: 200,
-    nullable: true
+    nullable: true,
   })
   name: string;
 
-  @OneToMany(
-    type => QueuedTrack,
-    queuedTrack => queuedTrack.track
-  )
+  @OneToMany((type) => QueuedTrack, (queuedTrack) => queuedTrack.track)
   queuedTracks: Promise<QueuedTrack[]>;
 
   @Column({
-    default: 0
+    default: 0,
   })
   usersOnline: number;
 

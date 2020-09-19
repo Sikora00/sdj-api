@@ -5,15 +5,15 @@ const getTrackState = createFeatureSelector<TrackState>(TRACK_FEATURE_KEY);
 
 const mostPlayedTracks = createSelector(
   getTrackState,
-  state => state.mostPlayedTracks
+  (state) => state.mostPlayedTracks
 );
 
 const mostPlayedTracksLoading = createSelector(
   getTrackState,
-  state => state.mostPlayedTracksLoading
+  (state) => state.mostPlayedTracksLoading
 );
 
 export const trackQuery = {
   mostPlayedTracks,
-  mostPlayedTracksLoading
+  mostPlayedTracksLoading,
 };

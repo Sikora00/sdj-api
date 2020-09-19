@@ -22,17 +22,17 @@ describe('MostPlayedComponent', () => {
       imports: [
         RouterTestingModule,
         HttpClientTestingModule,
-        ApolloTestingModule
+        ApolloTestingModule,
       ],
       declarations: [
         MostPlayedComponent,
         MockComponent(LoaderComponent),
-        MockComponent(MatAdvancedAudioPlayerComponent)
+        MockComponent(MatAdvancedAudioPlayerComponent),
       ],
       providers: [
         { provide: ChannelFacade, useValue: createSpyObj(ChannelFacade) },
-        { provide: TrackFacade, useValue: createSpyObj(TrackFacade) }
-      ]
+        { provide: TrackFacade, useValue: createSpyObj(TrackFacade) },
+      ],
     }).compileComponents();
 
     const channelFacade = TestBed.inject<ChannelFacade>(ChannelFacade);

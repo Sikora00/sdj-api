@@ -4,7 +4,7 @@ import { NgCoreTrackApplicationServicesModule } from './ng-core-track-applicatio
 describe('NgCoreTrackApplicationServicesModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NgCoreTrackApplicationServicesModule]
+      imports: [NgCoreTrackApplicationServicesModule],
     }).compileComponents();
   }));
 

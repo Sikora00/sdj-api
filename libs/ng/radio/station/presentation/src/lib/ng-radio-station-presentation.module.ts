@@ -15,18 +15,18 @@ import { RadioStationsComponent } from './radio-stations/radio-stations.componen
     MatIconModule,
     MatTooltipModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   exports: [
     RadioActionMenuComponent,
     AwesomePlayerTitlePipe,
-    AwesomePlayerSecondTitlePipe
+    AwesomePlayerSecondTitlePipe,
   ],
   declarations: [
     RadioActionMenuComponent,
     RadioStationsComponent,
     AwesomePlayerTitlePipe,
-    AwesomePlayerSecondTitlePipe
-  ]
+    AwesomePlayerSecondTitlePipe,
+  ],
 })
 export class NgRadioStationPresentationModule {}

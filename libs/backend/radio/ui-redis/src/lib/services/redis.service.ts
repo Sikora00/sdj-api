@@ -23,10 +23,10 @@ export class RedisService {
     private readonly publisher: EventBus
   ) {
     this.redisClient = redis.createClient({
-      host: connectionConfig.redis.host
+      host: connectionConfig.redis.host,
     });
     this.redisSub = redis.createClient({
-      host: connectionConfig.redis.host
+      host: connectionConfig.redis.host,
     });
     this.redisSub.subscribe('getNext');
   }
@@ -46,7 +46,7 @@ export class RedisService {
         this.redisClient.publish(event, data);
       },
       error: () => {},
-      complete: () => {}
+      complete: () => {},
     };
 
     return new AnonymousSubject<RedisData<T>>(observer, observable);

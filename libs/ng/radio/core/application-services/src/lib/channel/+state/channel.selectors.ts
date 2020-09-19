@@ -2,7 +2,7 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 import {
   adapterSelectors,
   CHANNEL_FEATURE_KEY,
-  ChannelState
+  ChannelState,
 } from './channel.reducer';
 
 const getChannelState = createFeatureSelector<ChannelState>(
@@ -18,7 +18,7 @@ const channelEntities = createSelector(
 
 const selectedChannelId = createSelector(
   getChannelState,
-  state => state.selectedChannelId
+  (state) => state.selectedChannelId
 );
 
 const selectedChannel = createSelector(
@@ -30,5 +30,5 @@ const selectedChannel = createSelector(
 export const channelQuery = {
   channels,
   channelEntities,
-  selectedChannel
+  selectedChannel,
 };

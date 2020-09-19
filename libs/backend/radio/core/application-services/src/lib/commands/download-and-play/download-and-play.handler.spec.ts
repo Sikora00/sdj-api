@@ -17,9 +17,9 @@ describe('DownloadAndPlayHandler', () => {
         { provide: RadioFacade, useValue: createSpyObj(RadioFacade) },
         {
           provide: EventBus,
-          useValue: createSpyObj(EventBus)
-        }
-      ]
+          useValue: createSpyObj(EventBus),
+        },
+      ],
     }).compile();
 
     eventBus = module.get(EventBus);

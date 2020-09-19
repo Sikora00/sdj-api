@@ -4,7 +4,7 @@ import { NgRadioFeatureModule } from './ng-radio-feature.module';
 describe('NgRadioFeatureModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NgRadioFeatureModule]
+      imports: [NgRadioFeatureModule],
     }).compileComponents();
   }));
 

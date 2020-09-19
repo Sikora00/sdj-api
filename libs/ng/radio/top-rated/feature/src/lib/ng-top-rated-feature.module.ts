@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
 
     RouterModule.forChild([
       /* {path: '', pathMatch: 'full', component: InsertYourComponentHere} */
-    ])
-  ]
+    ]),
+  ],
 })
 export class NgTopRatedFeatureModule {}

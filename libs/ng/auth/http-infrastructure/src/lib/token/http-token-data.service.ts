@@ -16,10 +16,10 @@ export class HttpTokenDataService implements TokenDataService {
           client_id: environment.slack.clientId,
           client_secret: environment.slack.clientSecret,
           code,
-          redirect_uri: window.location.origin
-        }
+          redirect_uri: window.location.origin,
+        },
       })
-      .pipe(map(response => response.access_token));
+      .pipe(map((response) => response.access_token));
   }
 
   setToken(token: string): void {

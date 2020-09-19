@@ -8,7 +8,7 @@ import { QueuedTrackRepository } from '../ports/queued-track.repository';
 export class QueuedTrackFacade {
   queuedTracks$ = new BehaviorSubject<QueuedTrack[]>([]);
   currentTrack$ = this.queuedTracks$.pipe(
-    map<QueuedTrack[], QueuedTrack>(list => list[0])
+    map<QueuedTrack[], QueuedTrack>((list) => list[0])
   );
   queuedTracksSub: Subscription;
 
@@ -20,7 +20,7 @@ export class QueuedTrackFacade {
     }
     this.queuedTracksSub = this.queuedTrackRepository
       .getQueuedTracks(channelId)
-      .subscribe(queuedTracks => {
+      .subscribe((queuedTracks) => {
         this.queuedTracks$.next(queuedTracks);
       });
   }

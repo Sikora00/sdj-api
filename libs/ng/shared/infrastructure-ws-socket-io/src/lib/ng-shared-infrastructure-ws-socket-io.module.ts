@@ -6,8 +6,8 @@ import { WebSocketClientAdapter } from './web-socket-client-adapter';
   providers: [
     {
       provide: WebSocketClient,
-      useFactory: () => WebSocketClientAdapter.getInstance()
-    }
-  ]
+      useFactory: () => WebSocketClientAdapter.getInstance(),
+    },
+  ],
 })
 export class NgSharedInfrastructureWsSocketIoModule {}

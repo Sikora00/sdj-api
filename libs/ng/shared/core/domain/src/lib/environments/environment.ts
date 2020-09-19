@@ -14,6 +14,6 @@ export const environment: {
 } = {
   ...browserWindowEnv,
   ...{
-    production: false
-  }
+    production: false,
+  },
 };

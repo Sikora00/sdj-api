@@ -10,8 +10,8 @@ const HANDLERS = [LoadMostPlayedTracksHandler];
 @NgModule({
   imports: [
     EffectsModule.forFeature(HANDLERS),
-    StoreModule.forFeature(TRACK_FEATURE_KEY, reducer)
+    StoreModule.forFeature(TRACK_FEATURE_KEY, reducer),
   ],
-  providers: [TrackFacade]
+  providers: [TrackFacade],
 })
 export class NgCoreTrackApplicationServicesModule {}

@@ -7,7 +7,7 @@ describe('Channel Selectors', () => {
 
   beforeEach(() => {
     storeState = {
-      [CHANNEL_FEATURE_KEY]: { entities: { ['1234']: channel }, ids: ['1234'] }
+      [CHANNEL_FEATURE_KEY]: { entities: { ['1234']: channel }, ids: ['1234'] },
     };
   });
 

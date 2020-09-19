@@ -97,7 +97,7 @@ export class Ticks {
       }
     });
     const sum =
-      allScales.reduce(function(pv: number, cv: number): number {
+      allScales.reduce(function (pv: number, cv: number): number {
         return pv + cv;
       }, 0) / allScales.length;
     this.canvas.style.transform = 'scale(' + sum + ')';

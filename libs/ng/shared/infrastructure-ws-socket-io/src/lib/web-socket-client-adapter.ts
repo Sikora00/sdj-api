@@ -33,7 +33,7 @@ export class WebSocketClientAdapter extends WebSocketClient {
         this.socket.emit(event, JSON.stringify(data));
       },
       error: () => {},
-      complete: () => {}
+      complete: () => {},
     };
 
     return new AnonymousSubject<T>(observer, observable);

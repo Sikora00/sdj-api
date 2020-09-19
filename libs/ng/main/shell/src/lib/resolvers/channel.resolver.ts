@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
   Resolve,
-  RouterStateSnapshot
+  RouterStateSnapshot,
 } from '@angular/router';
 import { Channel, ChannelFacade } from '@sdj/ng/radio/core/domain';
 import { SlackChannel } from '@sdj/shared/domain';
@@ -18,7 +18,7 @@ export class ChannelResolver implements Resolve<SlackChannel[]> {
     if (channelId) {
       return channelId;
     } else {
-      route.children.some(r => {
+      route.children.some((r) => {
         channelId = this.findChannelIdParam(r);
         return !!channelId;
       });
@@ -34,14 +34,14 @@ export class ChannelResolver implements Resolve<SlackChannel[]> {
     const channelIdParam = this.findChannelIdParam(route);
 
     return this.channelFacade.channels$.pipe(
-      tap(channels => {
+      tap((channels) => {
         if (!channels || !channels.length) {
           this.channelFacade.loadChannels();
         }
       }),
-      filter(channels => !!channels && !!channels.length),
+      filter((channels) => !!channels && !!channels.length),
       first(),
-      switchMap(_ => this.channelFacade.selectedChannel$),
+      switchMap((_) => this.channelFacade.selectedChannel$),
       tap((channel: Channel) => {
         if (!channel) {
           this.channelFacade.selectFirstChannel(channelIdParam);

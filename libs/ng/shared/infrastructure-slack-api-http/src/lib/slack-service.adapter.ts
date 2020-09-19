@@ -19,6 +19,6 @@ export class SlackServiceAdapter extends SlackService {
   getChannelList(): Observable<SlackChannel[]> {
     return this.http
       .get<any>(this.channelList)
-      .pipe(map(response => response.channels));
+      .pipe(map((response) => response.channels));
   }
 }

@@ -5,7 +5,7 @@ import {
   Channel,
   ChannelFacade,
   ExternalRadio,
-  SourceType
+  SourceType,
 } from '@sdj/ng/radio/core/domain';
 import { environment } from '@sdj/ng/shared/core/domain';
 import { merge, Observable, of } from 'rxjs';
@@ -53,7 +53,7 @@ export class GetAudioSourceHandler {
   ): AudioSourceChangedEventPayload {
     return {
       src: externalRadio ? externalRadio.url : channel.defaultStreamUrl,
-      sourceType: SourceType.ExternalRadio
+      sourceType: SourceType.ExternalRadio,
     };
   }
 
@@ -73,12 +73,12 @@ export class GetAudioSourceHandler {
           merge(
             of({
               src: environment.radioStreamUrl + selectedChannelId,
-              sourceType: SourceType.Station
+              sourceType: SourceType.Station,
             }),
             this.playDj$.pipe(
               map(() => ({
                 src: environment.radioStreamUrl + selectedChannelId,
-                sourceType: SourceType.Station
+                sourceType: SourceType.Station,
               }))
             ),
             this.playRadio$.pipe(
@@ -97,7 +97,7 @@ export class GetAudioSourceHandler {
         (data?: AudioSourceChangedEventPayload) =>
           new AudioSourceChangedEvent({
             src: data?.src || environment.externalStream,
-            sourceType: data?.sourceType || SourceType.ExternalRadio
+            sourceType: data?.sourceType || SourceType.ExternalRadio,
           })
       )
     );

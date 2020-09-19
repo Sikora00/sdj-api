@@ -1,7 +1,7 @@
 import { resolveApp } from '../support/helpers/helpers';
 import {
   getChannelListItem,
-  getNavbarList
+  getNavbarList,
 } from '../support/selectors/main.selectors';
 import { getPlayButton } from '../support/selectors/radio.selectors';
 

@@ -4,7 +4,7 @@ import { NgTopRatedFeatureModule } from './ng-top-rated-feature.module';
 describe('NgTopRatedFeatureModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NgTopRatedFeatureModule]
+      imports: [NgTopRatedFeatureModule],
     }).compileComponents();
   }));
 

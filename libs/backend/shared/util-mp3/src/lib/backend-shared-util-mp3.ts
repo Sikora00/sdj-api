@@ -18,7 +18,7 @@ export function downloadAndNormalize(id: string): Observable<void> {
   }
 
   const obs = download(id).pipe(
-    switchMap(filePath => normalize(filePath)),
+    switchMap((filePath) => normalize(filePath)),
     finalize(() => {
       delete inProgress[id];
     })
@@ -50,7 +50,7 @@ function download(id: string): Observable<string> {
       '--audio-format',
       'mp3',
       '--audio-quality',
-      '1'
+      '1',
     ],
     {},
     (err, output) => {

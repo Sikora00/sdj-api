@@ -20,35 +20,35 @@ const externalRadios: ExternalRadioGroup[] = [
         title: 'Radio Zet',
         iconUrl:
           'https://upload.wikimedia.org/wikipedia/commons/4/4b/Radio_ZET_logo.png',
-        url: 'https://n-4-14.dcs.redcdn.pl/sc/o2/Eurozet/live/audio.livx'
+        url: 'https://n-4-14.dcs.redcdn.pl/sc/o2/Eurozet/live/audio.livx',
       },
       {
         title: 'RMF FM',
         url: 'http://rmfstream2.interia.pl:8000/rmf_fm',
         iconUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/RMF_FM_logo.svg/1200px-RMF_FM_logo.svg.png'
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/RMF_FM_logo.svg/1200px-RMF_FM_logo.svg.png',
       },
       {
         title: 'Anty Radio',
         url: 'https://an.cdn.eurozet.pl/ant-waw.mp3',
-        iconUrl: 'https://bi.im-g.pl/im/b1/99/10/z17406641IBG,Antyradio.jpg'
+        iconUrl: 'https://bi.im-g.pl/im/b1/99/10/z17406641IBG,Antyradio.jpg',
       },
       {
         title: 'Rock Radio',
         url: 'https://stream.open.fm/202',
-        iconUrl: 'https://open.fm/logo/200x200/202'
+        iconUrl: 'https://open.fm/logo/200x200/202',
       },
       {
         title: 'Radio Złote Przeboje',
         url: 'https://stream.open.fm/201',
-        iconUrl: 'https://open.fm/logo/200x200/201'
+        iconUrl: 'https://open.fm/logo/200x200/201',
       },
       {
         title: 'Radio TOK FM',
         url: 'https://stream.open.fm/200',
-        iconUrl: 'https://open.fm/logo/200x200/200'
-      }
-    ]
+        iconUrl: 'https://open.fm/logo/200x200/200',
+      },
+    ],
   },
   // {
   //   title: 'Eska Go',
@@ -76,28 +76,28 @@ const externalRadios: ExternalRadioGroup[] = [
       {
         title: 'Impreza',
         url: 'https://stream.open.fm/2',
-        iconUrl: 'https://open.fm/logo/200x200/2'
+        iconUrl: 'https://open.fm/logo/200x200/2',
       },
       {
         title: '100% Hits',
         url: 'https://stream.open.fm/64',
-        iconUrl: 'https://open.fm/logo/200x200/64'
+        iconUrl: 'https://open.fm/logo/200x200/64',
       },
       {
         title: 'Work',
         url: 'https://stream.open.fm/109',
-        iconUrl: 'https://open.fm/logo/200x200/109'
+        iconUrl: 'https://open.fm/logo/200x200/109',
       },
       {
         title: 'Top Wszech Czasów - Rock',
         url: 'https://stream.open.fm/153',
-        iconUrl: 'https://open.fm/logo/200x200/153'
+        iconUrl: 'https://open.fm/logo/200x200/153',
       },
       {
         title: 'Polski Rock',
         url: 'https://stream.open.fm/29',
-        iconUrl: 'https://open.fm/logo/200x200/29'
-      }
-    ]
-  }
+        iconUrl: 'https://open.fm/logo/200x200/29',
+      },
+    ],
+  },
 ];

@@ -31,7 +31,7 @@ export class MockEventEmitter {
 
   emit(event: string, ...args: any[]): void {
     if (typeof this.events[event] === 'object') {
-      this.events[event].forEach(listener => listener.apply(this, args));
+      this.events[event].forEach((listener) => listener.apply(this, args));
     }
   }
 
