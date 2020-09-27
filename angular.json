@@ -1441,6 +1441,39 @@
           "styleext": "scss"
         }
       }
+    },
+    "backend-e2e": {
+      "root": "apps/backend-e2e",
+      "sourceRoot": "apps/backend-e2e/src",
+      "projectType": "application",
+      "prefix": "backend-e2e",
+      "schematics": {},
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/backend-e2e/jest.config.js",
+            "passWithNoTests": true,
+            "runInBand": true
+          }
+        }
+      }
+    },
+    "host-api-e2e": {
+      "root": "apps/host-api-e2e",
+      "sourceRoot": "apps/host-api-e2e/src",
+      "projectType": "application",
+      "prefix": "host-api-e2e",
+      "schematics": {},
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/host-api-e2e/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

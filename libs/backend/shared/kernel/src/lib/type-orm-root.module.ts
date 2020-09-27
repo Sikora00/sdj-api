@@ -3,7 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { connectionConfig } from '@sdj/backend/shared/domain';
 
 const typeOrmModule = TypeOrmModule.forRoot({
-  type: 'mysql',
+  type: 'mariadb',
   synchronize: true,
   host: connectionConfig.db.host,
   port: connectionConfig.db.port,

@@ -18,10 +18,7 @@ export class RedisService {
   private redisClient: RedisClient;
   private redisSub: RedisClient;
 
-  constructor(
-    private readonly logger: Logger,
-    private readonly publisher: EventBus
-  ) {
+  constructor() {
     this.redisClient = redis.createClient({
       host: connectionConfig.redis.host,
     });

@@ -6,9 +6,9 @@ class SpawnService {
   spawn(command, args, options) {
     const child = child_process_1.spawn(command, [...args], options);
     const result = new rxjs_1.Subject();
-    child.stdout.on('data', data => result.next(data));
-    child.stderr.on('data', data => result.next(data.toString()));
-    child.on('close', code => {
+    child.stdout.on('data', (data) => result.next(data));
+    child.stderr.on('data', (data) => result.next(data.toString()));
+    child.on('close', (code) => {
       result.complete();
     });
     return result;

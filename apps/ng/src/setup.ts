@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-fs.readFile(path.join(__dirname + '/env.sample.js'), 'utf8', function(
+fs.readFile(path.join(__dirname + '/env.sample.js'), 'utf8', function (
   err: unknown,
   data: string
 ): void {
@@ -15,7 +15,7 @@ fs.readFile(path.join(__dirname + '/env.sample.js'), 'utf8', function(
     .replace(/{{slackClientId}}/g, process.env.SLACK_CLIENT_ID)
     .replace(/{{slackClientSecret}}/g, process.env.SLACK_CLIENT_SECRET);
 
-  fs.writeFile(path.join(__dirname + '/env.js'), result, 'utf8', function(
+  fs.writeFile(path.join(__dirname + '/env.js'), result, 'utf8', function (
     error: unknown
   ): void {
     if (error) return console.log(error);

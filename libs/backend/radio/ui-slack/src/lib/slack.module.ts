@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { connectionConfig } from '@sdj/backend/shared/domain';
-import { SlackBotModule } from '@sikora00/nestjs-slack-bot';
 import { CleanShitSlackCommand } from './bot/lib/commands/clean-shit.slack-command';
 import { FuckYouSlackCommand } from './bot/lib/commands/fuck-you.slack-command';
 import { HeartSlackCommand } from './bot/lib/commands/heart.slack-command';
@@ -17,9 +15,6 @@ import { SlackQueuedTrackSkippedHandler } from './bot/lib/events/queued-track-sk
 const EventsHandlers = [SlackQueuedTrackSkippedHandler];
 
 @Module({
-  imports: [
-    SlackBotModule.forRoot({ slackToken: connectionConfig.slack.token }),
-  ],
   providers: [
     CleanShitSlackCommand,
     FuckYouSlackCommand,

@@ -137,6 +137,14 @@
     },
     "ng-shared-infrastructure-ws-socket-io": {
       "tags": ["platform:ng", "scope:shared", "type:infrastructure"]
+    },
+    "backend-e2e": {
+      "tags": ["type:e2e"],
+      "implicitDependencies": ["backend"]
+    },
+    "host-api-e2e": {
+      "tags": ["type:e2e"],
+      "implicitDependencies": ["host-api"]
     }
   },
   "tasksRunnerOptions": {

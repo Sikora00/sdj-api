@@ -9,9 +9,9 @@ class SpawnService {
   ): Observable<any> {
     const child = spawnL(command, [...args], options);
     const result = new Subject();
-    child.stdout.on('data', data => result.next(data));
-    child.stderr.on('data', data => result.next(data.toString()));
-    child.on('close', code => {
+    child.stdout.on('data', (data) => result.next(data));
+    child.stderr.on('data', (data) => result.next(data.toString()));
+    child.on('close', (code) => {
       result.complete();
     });
     return result;

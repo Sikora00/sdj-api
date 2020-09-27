@@ -1,14 +1,13 @@
 import { Global, Module } from '@nestjs/common';
-import { connectionConfig } from '@sdj/backend/shared/domain';
 import { BackendSharedInfrastructureHttpHostServiceModule } from '@sdj/backend/shared/infrastructure-http-host-service';
 import { LoggerModule } from '@sdj/backend/shared/infrastructure-logger';
-import { SlackBotModule } from '@sikora00/nestjs-slack-bot';
+import { SlackBotTestingModule } from '@sikora00/nestjs-slack-bot';
 import { TypeOrmRootModule } from './type-orm-root.module';
 
 @Global()
 @Module({
   imports: [
-    SlackBotModule.forRoot({ slackToken: connectionConfig.slack.token }),
+    SlackBotTestingModule,
     TypeOrmRootModule,
     LoggerModule,
     BackendSharedInfrastructureHttpHostServiceModule,
@@ -17,7 +16,7 @@ import { TypeOrmRootModule } from './type-orm-root.module';
     TypeOrmRootModule,
     LoggerModule,
     BackendSharedInfrastructureHttpHostServiceModule,
-    SlackBotModule,
+    SlackBotTestingModule,
   ],
 })
-export class BackendSharedKernelModule {}
+export class BackendSharedTestingKernelModule {}
