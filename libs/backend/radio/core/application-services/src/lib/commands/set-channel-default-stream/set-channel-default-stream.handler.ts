@@ -1,12 +1,12 @@
 import { CommandHandler, EventPublisher, ICommandHandler } from '@nestjs/cqrs';
-import { ChannelDomainRepository } from '@sdj/backend/radio/core/domain';
+import { ChannelRepositoryInterface } from '@sdj/backend/radio/core/domain';
 import { SetChannelDefaultStreamCommand } from './set-channel-default-stream.command';
 
 @CommandHandler(SetChannelDefaultStreamCommand)
 export class SetChannelDefaultStreamHandler
   implements ICommandHandler<SetChannelDefaultStreamCommand> {
   constructor(
-    private channelRepository: ChannelDomainRepository,
+    private channelRepository: ChannelRepositoryInterface,
     private publisher: EventPublisher
   ) {}
 

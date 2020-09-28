@@ -1,6 +1,6 @@
 import { Module, OnModuleInit } from '@nestjs/common';
 import { CqrsModule } from '@nestjs/cqrs';
-import { ChannelDomainRepository } from '@sdj/backend/radio/core/domain';
+import { ChannelRepositoryInterface } from '@sdj/backend/radio/core/domain';
 import { WsChannelStartedHandler } from './events/channel-started/ws-channel-started.handler';
 import { WsChannelUpdatedHandler } from './events/channel-updated/ws-channel-updated.handler';
 import { WsPlayQueuedTrackHandler } from './events/play-queued-track/ws-play-queued-track.handler';
@@ -25,7 +25,7 @@ const EventsHandlers = [
   exports: [Gateway],
 })
 export class WebSocketModule implements OnModuleInit {
-  constructor(private channelRepository: ChannelDomainRepository) {}
+  constructor(private channelRepository: ChannelRepositoryInterface) {}
 
   async onModuleInit(): Promise<void> {
     const channels = await this.channelRepository.findAll();

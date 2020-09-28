@@ -1,5 +1,4 @@
-import { Injectable, Logger } from '@nestjs/common';
-import { EventBus } from '@nestjs/cqrs';
+import { Injectable } from '@nestjs/common';
 import { Track } from '@sdj/backend/radio/core/domain';
 import { connectionConfig } from '@sdj/backend/shared/domain';
 import * as redis from 'redis';

@@ -1,19 +1,19 @@
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import {
-  QueuedTrackDomainRepository,
+  QueuedTrackRepositoryInterface,
   User,
-  UserDomainRepository,
+  UserRepositoryInterface,
   Vote,
-  VoteDomainRepository,
+  VoteRepositoryInterface,
 } from '@sdj/backend/radio/core/domain';
 import { ThumbUpCommand } from './thumb-up.command';
 
 @CommandHandler(ThumbUpCommand)
 export class ThumbUpHandler implements ICommandHandler<ThumbUpCommand> {
   constructor(
-    private queuedTrackRepository: QueuedTrackDomainRepository,
-    private userRepository: UserDomainRepository,
-    private voteRepository: VoteDomainRepository
+    private queuedTrackRepository: QueuedTrackRepositoryInterface,
+    private userRepository: UserRepositoryInterface,
+    private voteRepository: VoteRepositoryInterface
   ) {}
 
   async execute(command: ThumbUpCommand): Promise<void> {

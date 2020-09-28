@@ -1,12 +1,12 @@
 import { CommandHandler, EventPublisher, ICommandHandler } from '@nestjs/cqrs';
-import { ChannelDomainRepository } from '@sdj/backend/radio/core/domain';
+import { ChannelRepositoryInterface } from '@sdj/backend/radio/core/domain';
 import { LeaveChannelCommand } from './leave-channel.command';
 
 @CommandHandler(LeaveChannelCommand)
 export class LeaveChannelHandler
   implements ICommandHandler<LeaveChannelCommand> {
   constructor(
-    private channelRepository: ChannelDomainRepository,
+    private channelRepository: ChannelRepositoryInterface,
     private publisher: EventPublisher
   ) {}
 

@@ -29,7 +29,7 @@ jobs:
       CI: true
 
   e2e:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
     - name: Build the stack
@@ -37,12 +37,12 @@ jobs:
     - name: npm install
       run: docker exec sdj-e2e-backend bash -c "npm ci"
     - name: affected:e2e
-      run: docker exec sdj-e2e-backend bash -c "npm run affected:e2e -- --base origin/develop"
+      run: docker exec sdj-e2e-backend bash -c "npm run affected:e2e -- --parallel --base origin/develop"
     env:
-      MYSQL_ROOT_PASSWORD: ${{ secrets.MYSQL_ROOT_PASSWORD }}
-      MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
-      MYSQL_USER: ${{ secrets.MYSQL_USER }}
-      MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
+      DB_ROOT_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      DB_HOST: ${{ secrets.DB_HOST }}
+      DB_USERNAME: root
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
 
   lint:
     runs-on: ubuntu-latest

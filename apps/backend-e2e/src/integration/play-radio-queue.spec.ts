@@ -2,8 +2,6 @@ import { INestApplication } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import { QueuedTrack } from '@sdj/backend/radio/core/domain';
 import { BackendRadioUiRedisModule } from '@sdj/backend/radio/ui-redis';
-import { BackendRadioUiRestModule } from '@sdj/backend/radio/ui-rest';
-import { SlackModule } from '@sdj/backend/radio/ui-slack';
 import { WebSocketModule } from '@sdj/backend/radio/ui-web-socket';
 import { connectionConfig } from '@sdj/backend/shared/domain';
 import { BackendSharedTestingKernelModule } from '@sdj/backend/shared/kernel';
@@ -20,15 +18,14 @@ describe('Play Radio Queue', () => {
   let app: INestApplication;
 
   beforeAll(async () => {
+    process.env.DB_DATABASE = 'sdj_test_play_radio_queue';
     jest.setTimeout(30 * 1000);
     await createDb();
 
     const module = await Test.createTestingModule({
       imports: [
-        BackendRadioUiRestModule,
         WebSocketModule,
         BackendRadioUiRedisModule,
-        SlackModule,
         BackendSharedTestingKernelModule,
       ],
     }).compile();
@@ -60,12 +57,10 @@ describe('Play Radio Queue', () => {
     });
 
     test('returns 10-sec-of-silence', (done) => {
-      new Promise((resolve) => {
-        redisSub.on('message', (channel, message) => {
-          expect(channel).toEqual(channelId);
-          expect(message).toEqual('10-sec-of-silence');
-          done();
-        });
+      redisSub.on('message', (channel, message) => {
+        expect(channel).toEqual(channelId);
+        expect(message).toEqual('10-sec-of-silence');
+        done();
       });
       redisPub.publish('getNext', channelId);
     });
@@ -119,7 +114,6 @@ describe('Play Radio Queue', () => {
             expect(channel).toEqual(channelId);
             expect(message).toEqual('_4VCpTZye10');
             setTimeout(async () => {
-              // ToDo Make sure that track data are saved before events are emitted
               expect(
                 (await getRepository(QueuedTrack).findOneOrFail(2)).playedAt
               ).toBeTruthy();

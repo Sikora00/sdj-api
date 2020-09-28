@@ -1,5 +1,5 @@
-import { Scene } from './scene';
 import { Circle } from './circle';
+import { Scene } from './scene';
 
 interface Tick {
   x1: number;

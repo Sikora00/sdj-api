@@ -51,9 +51,6 @@
     "backend-shared-util-you-tube": {
       "tags": ["platform:backend", "scope:shared", "type:util"]
     },
-    "backend-shared-util-mp3": {
-      "tags": ["platform:backend", "scope:shared", "type:util"]
-    },
     "backend-radio-ui-redis": {
       "tags": ["platform:backend", "scope:radio", "type:ui"]
     },
@@ -145,6 +142,15 @@
     "host-api-e2e": {
       "tags": ["type:e2e"],
       "implicitDependencies": ["host-api"]
+    },
+    "backend-radio-infrastructure-youtube-api": {
+      "tags": ["platform:backend", "scope:radio", "type:infrastructure"]
+    },
+    "backend-radio-infrastructure-mp3-gain": {
+      "tags": ["platform:backend", "scope:radio", "type:infrastructure"]
+    },
+    "backend-radio-infrastructure-typeorm": {
+      "tags": ["platform:backend", "scope:radio", "type:infrastructure"]
     }
   },
   "tasksRunnerOptions": {

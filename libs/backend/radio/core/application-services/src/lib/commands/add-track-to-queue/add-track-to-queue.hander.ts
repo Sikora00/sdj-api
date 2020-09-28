@@ -1,9 +1,9 @@
 import { CommandBus, CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import {
   Track,
-  TrackDomainRepository,
+  TrackRepositoryInterface,
   User,
-  UserDomainRepository,
+  UserRepositoryInterface,
 } from '@sdj/backend/radio/core/domain';
 import { extractVideoIdFromYoutubeUrl } from '@sdj/backend/shared/util-you-tube';
 import { CreateTrackCommand } from '../create-track/create-track.command';
@@ -15,8 +15,8 @@ export class PlayTrackHandler
   implements ICommandHandler<AddTrackToQueueCommand> {
   constructor(
     private readonly commandBus: CommandBus,
-    private trackRepository: TrackDomainRepository,
-    private userRepository: UserDomainRepository
+    private trackRepository: TrackRepositoryInterface,
+    private userRepository: UserRepositoryInterface
   ) {}
 
   async execute(command: AddTrackToQueueCommand): Promise<void> {

@@ -1,6 +1,6 @@
 import { EventPublisher, EventsHandler, IEventHandler } from '@nestjs/cqrs';
 import {
-  ChannelDomainRepository,
+  ChannelRepositoryInterface,
   ChannelWillStopEvent,
 } from '@sdj/backend/radio/core/domain';
 import { HostService } from '@sdj/backend/shared/application-services';
@@ -9,7 +9,7 @@ import { HostService } from '@sdj/backend/shared/application-services';
 export class ChannelWillStopHandler
   implements IEventHandler<ChannelWillStopEvent> {
   constructor(
-    private channelRepository: ChannelDomainRepository,
+    private channelRepository: ChannelRepositoryInterface,
     private hostService: HostService,
     private publisher: EventPublisher
   ) {}

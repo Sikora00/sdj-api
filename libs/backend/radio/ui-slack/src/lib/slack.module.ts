@@ -1,4 +1,5 @@
-import { Module } from '@nestjs/common';
+import { Global, Module } from '@nestjs/common';
+import { BackendRadioFeatureModule } from '@sdj/backend/radio/feature';
 import { CleanShitSlackCommand } from './bot/lib/commands/clean-shit.slack-command';
 import { FuckYouSlackCommand } from './bot/lib/commands/fuck-you.slack-command';
 import { HeartSlackCommand } from './bot/lib/commands/heart.slack-command';
@@ -11,10 +12,15 @@ import { SetChannelDefaultStreamSlackCommand } from './bot/lib/commands/set-chan
 import { ThumbDownSlackCommand } from './bot/lib/commands/thumb-down.slack-command';
 import { ThumbUpSlackCommand } from './bot/lib/commands/thumb-up.slack-command';
 import { SlackQueuedTrackSkippedHandler } from './bot/lib/events/queued-track-skipped/slack-queued-track-skipped.handler';
+import { AddUserInterceptor } from './bot/lib/interceptors/add-user-interceptor';
+import { SlackUserDataService } from './bot/lib/interceptors/slack-user-data.service';
+import { UserDataService } from './bot/lib/interceptors/user-data.service';
 
 const EventsHandlers = [SlackQueuedTrackSkippedHandler];
 
+@Global()
 @Module({
+  imports: [BackendRadioFeatureModule],
   providers: [
     CleanShitSlackCommand,
     FuckYouSlackCommand,
@@ -27,7 +33,10 @@ const EventsHandlers = [SlackQueuedTrackSkippedHandler];
     SetChannelDefaultStreamSlackCommand,
     ThumbUpSlackCommand,
     ThumbDownSlackCommand,
+    AddUserInterceptor,
+    { provide: UserDataService, useClass: SlackUserDataService },
     ...EventsHandlers,
   ],
+  exports: [UserDataService],
 })
 export class SlackModule {}

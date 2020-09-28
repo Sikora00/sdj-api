@@ -12,7 +12,7 @@ import {
   Store,
 } from '@sdj/backend/radio/core/application-services';
 import {
-  ChannelDomainRepository,
+  ChannelRepositoryInterface,
   QueuedTrack,
 } from '@sdj/backend/radio/core/domain';
 import { HostService } from '@sdj/backend/shared/application-services';
@@ -27,7 +27,7 @@ export class Gateway implements OnGatewayDisconnect {
   @WebSocketServer() server: Server;
 
   constructor(
-    private readonly channelRepository: ChannelDomainRepository,
+    private readonly channelRepository: ChannelRepositoryInterface,
     private hostService: HostService,
     private readonly storageService: Store,
     private radioFacade: RadioFacade

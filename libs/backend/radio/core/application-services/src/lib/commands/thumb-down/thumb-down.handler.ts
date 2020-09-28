@@ -1,10 +1,10 @@
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import {
-  QueuedTrackDomainRepository,
+  QueuedTrackRepositoryInterface,
   User,
-  UserDomainRepository,
+  UserRepositoryInterface,
   Vote,
-  VoteDomainRepository,
+  VoteRepositoryInterface,
 } from '@sdj/backend/radio/core/domain';
 import { SongVotedNegativelyEvent } from '../../events/song-voted-negatively/song-voted-negatively.event';
 import { ThumbDownCommand } from './thumb-down.command';
@@ -13,9 +13,9 @@ import { ThumbDownCommand } from './thumb-down.command';
 export class ThumbDownHandler implements ICommandHandler<ThumbDownCommand> {
   constructor(
     private eventBus: EventBus,
-    private queuedTrackRepository: QueuedTrackDomainRepository,
-    private userRepository: UserDomainRepository,
-    private voteRepository: VoteDomainRepository
+    private queuedTrackRepository: QueuedTrackRepositoryInterface,
+    private userRepository: UserRepositoryInterface,
+    private voteRepository: VoteRepositoryInterface
   ) {}
 
   async execute(command: ThumbDownCommand): Promise<void> {

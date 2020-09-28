@@ -1,7 +1,7 @@
 import { Controller, Get, Param, Render } from '@nestjs/common';
 import {
-  ChannelDomainRepository,
-  QueuedTrackDomainRepository,
+  ChannelRepositoryInterface,
+  QueuedTrackRepositoryInterface,
 } from '@sdj/backend/radio/core/domain';
 import { HostService } from '@sdj/backend/shared/application-services';
 
@@ -9,8 +9,8 @@ import { HostService } from '@sdj/backend/shared/application-services';
 export class AppController {
   constructor(
     private hostService: HostService,
-    private readonly channelRepository: ChannelDomainRepository,
-    private queuedTrackRepository: QueuedTrackDomainRepository
+    private readonly channelRepository: ChannelRepositoryInterface,
+    private queuedTrackRepository: QueuedTrackRepositoryInterface
   ) {}
 
   @Get()

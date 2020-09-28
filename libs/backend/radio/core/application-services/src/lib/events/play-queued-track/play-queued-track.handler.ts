@@ -1,7 +1,7 @@
 import { EventsHandler, IEventHandler } from '@nestjs/cqrs';
 import {
   QueuedTrack,
-  QueuedTrackDomainRepository,
+  QueuedTrackRepositoryInterface,
 } from '@sdj/backend/radio/core/domain';
 import { Store } from '../../ports/store.port';
 import { PlayQueuedTrackEvent } from './play-queued-track.event';
@@ -11,7 +11,7 @@ export class PlayQueuedTrackHandler
   implements IEventHandler<PlayQueuedTrackEvent> {
   constructor(
     private readonly storageService: Store,
-    private queuedTrackRepository: QueuedTrackDomainRepository
+    private queuedTrackRepository: QueuedTrackRepositoryInterface
   ) {}
 
   async handle(event: PlayQueuedTrackEvent): Promise<unknown> {

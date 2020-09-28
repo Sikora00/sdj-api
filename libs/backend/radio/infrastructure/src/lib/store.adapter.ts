@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Store } from '@sdj/backend/radio/core/application-services';
 import {
   QueuedTrack,
-  QueuedTrackDomainRepository,
+  QueuedTrackRepositoryInterface,
 } from '@sdj/backend/radio/core/domain';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { distinctUntilChanged, filter, first, map } from 'rxjs/operators';
@@ -21,7 +21,7 @@ const initialChannelState = { silenceCount: 0, queue: [], currentTrack: null };
 const initialPlaylistState = {};
 
 @Injectable()
-export class StoreAdapter extends Store {
+export class StoreAdapter implements Store {
   get state(): State {
     return this._state.getValue();
   }
@@ -31,10 +31,8 @@ export class StoreAdapter extends Store {
   );
 
   constructor(
-    private readonly queuedTrackRepository: QueuedTrackDomainRepository
-  ) {
-    super();
-  }
+    private readonly queuedTrackRepository: QueuedTrackRepositoryInterface
+  ) {}
 
   async addToQueue(queuedTrack: QueuedTrack): Promise<void> {
     const channelState = await this.getChannelState(queuedTrack.playedIn.id);

@@ -1,5 +1,5 @@
-import { Ticks } from './ticks';
 import { Circle } from './circle';
+import { Ticks } from './ticks';
 
 export class Scene {
   context: CanvasRenderingContext2D;

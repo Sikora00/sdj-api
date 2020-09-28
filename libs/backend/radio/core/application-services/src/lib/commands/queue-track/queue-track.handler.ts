@@ -1,9 +1,9 @@
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import {
-  ChannelDomainRepository,
+  ChannelRepositoryInterface,
   QueuedTrack,
-  QueuedTrackDomainRepository,
-  TrackDomainRepository,
+  QueuedTrackRepositoryInterface,
+  TrackRepositoryInterface,
 } from '@sdj/backend/radio/core/domain';
 import { appConfig } from '@sdj/backend/shared/domain';
 import { Store } from '../../ports/store.port';
@@ -14,9 +14,9 @@ import { QueueTrackCommand } from './queue-track.command';
 export class QueueTrackHandler implements ICommandHandler<QueueTrackCommand> {
   constructor(
     private readonly storageService: Store,
-    private channelRepository: ChannelDomainRepository,
-    private queuedTrackRepository: QueuedTrackDomainRepository,
-    private readonly trackRepository: TrackDomainRepository
+    private channelRepository: ChannelRepositoryInterface,
+    private queuedTrackRepository: QueuedTrackRepositoryInterface,
+    private readonly trackRepository: TrackRepositoryInterface
   ) {}
 
   async execute(command: QueueTrackCommand): Promise<QueuedTrack> {

@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import {
   QueuedTrack,
-  QueuedTrackDomainRepository,
+  QueuedTrackRepositoryInterface,
 } from '@sdj/backend/radio/core/domain';
 import {
   SlackCommand,
@@ -18,7 +18,7 @@ export class LsSlackCommand implements SlackCommand {
 
   constructor(
     private slack: SlackService,
-    private queuedTrackRepository: QueuedTrackDomainRepository
+    private queuedTrackRepository: QueuedTrackRepositoryInterface
   ) {}
 
   async handler(command: string[], message: SlackMessage): Promise<void> {

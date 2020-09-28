@@ -538,34 +538,6 @@
         }
       }
     },
-    "backend-shared-util-mp3": {
-      "root": "libs/backend/shared/util-mp3",
-      "sourceRoot": "libs/backend/shared/util-mp3/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/backend/shared/util-mp3/tsconfig.lib.json",
-              "libs/backend/shared/util-mp3/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/backend/shared/util-mp3/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/backend/shared/util-mp3/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "backend-radio-ui-redis": {
       "projectType": "library",
       "root": "libs/backend/radio/ui-redis",
@@ -1453,8 +1425,7 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/backend-e2e/jest.config.js",
-            "passWithNoTests": true,
-            "runInBand": true
+            "passWithNoTests": true
           }
         }
       }
@@ -1470,6 +1441,90 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/host-api-e2e/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "backend-radio-infrastructure-youtube-api": {
+      "root": "libs/backend/radio/infrastructure-youtube-api",
+      "sourceRoot": "libs/backend/radio/infrastructure-youtube-api/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/backend/radio/infrastructure-youtube-api/tsconfig.lib.json",
+              "libs/backend/radio/infrastructure-youtube-api/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/backend/radio/infrastructure-youtube-api/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/backend/radio/infrastructure-youtube-api/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "backend-radio-infrastructure-mp3-gain": {
+      "root": "libs/backend/radio/infrastructure-mp3-gain",
+      "sourceRoot": "libs/backend/radio/infrastructure-mp3-gain/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/backend/radio/infrastructure-mp3-gain/tsconfig.lib.json",
+              "libs/backend/radio/infrastructure-mp3-gain/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/backend/radio/infrastructure-mp3-gain/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/backend/radio/infrastructure-mp3-gain/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "backend-radio-infrastructure-typeorm": {
+      "root": "libs/backend/radio/infrastructure-typeorm",
+      "sourceRoot": "libs/backend/radio/infrastructure-typeorm/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/backend/radio/infrastructure-typeorm/tsconfig.lib.json",
+              "libs/backend/radio/infrastructure-typeorm/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/backend/radio/infrastructure-typeorm/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/backend/radio/infrastructure-typeorm/jest.config.js",
             "passWithNoTests": true
           }
         }

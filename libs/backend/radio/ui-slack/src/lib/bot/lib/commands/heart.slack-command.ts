@@ -3,7 +3,7 @@ import {
   HeartCommand,
   RadioFacade,
 } from '@sdj/backend/radio/core/application-services';
-import { QueuedTrackDomainRepository } from '@sdj/backend/radio/core/domain';
+import { QueuedTrackRepositoryInterface } from '@sdj/backend/radio/core/domain';
 import {
   SlackCommand,
   SlackCommandHandler,
@@ -19,7 +19,7 @@ export class HeartSlackCommand implements SlackCommand {
   type: string = ':heart:';
 
   constructor(
-    private readonly queuedTrackRepository: QueuedTrackDomainRepository,
+    private readonly queuedTrackRepository: QueuedTrackRepositoryInterface,
     private readonly radioFacade: RadioFacade,
     private readonly slackService: SlackService
   ) {}

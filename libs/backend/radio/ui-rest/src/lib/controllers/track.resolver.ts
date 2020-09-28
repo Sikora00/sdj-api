@@ -1,9 +1,12 @@
 import { Args, Query, Resolver } from '@nestjs/graphql';
-import { Track, TrackDomainRepository } from '@sdj/backend/radio/core/domain';
+import {
+  Track,
+  TrackRepositoryInterface,
+} from '@sdj/backend/radio/core/domain';
 
 @Resolver(Track)
 export class TrackResolver {
-  constructor(private readonly trackRepository: TrackDomainRepository) {}
+  constructor(private readonly trackRepository: TrackRepositoryInterface) {}
 
   @Query((returns) => [Track])
   async mostPlayedTracks(

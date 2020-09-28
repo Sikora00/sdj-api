@@ -1,9 +1,9 @@
 import { EventBus } from '@nestjs/cqrs';
 import { Test, TestingModule } from '@nestjs/testing';
 import {
-  ChannelDomainRepository,
-  QueuedTrackDomainRepository,
-  TrackDomainRepository,
+  ChannelRepositoryInterface,
+  QueuedTrackRepositoryInterface,
+  TrackRepositoryInterface,
 } from '@sdj/backend/radio/core/domain';
 import { appConfig } from '@sdj/backend/shared/domain';
 import { createSpyObj } from 'jest-createspyobj';
@@ -12,11 +12,11 @@ import { PlayNextTrackOrSilenceHandler } from './play-next-track-or-silence.hand
 import Mocked = jest.Mocked;
 
 describe('PlayNextTrackOrSilenceHandler', () => {
-  let channelRepository: Mocked<ChannelDomainRepository>;
+  let channelRepository: Mocked<ChannelRepositoryInterface>;
   let service: PlayNextTrackOrSilenceHandler;
   let radioFacade: Mocked<RadioFacade>;
-  let queuedTrackRepository: Mocked<QueuedTrackDomainRepository>;
-  let trackRepository: Mocked<TrackDomainRepository>;
+  let queuedTrackRepository: Mocked<QueuedTrackRepositoryInterface>;
+  let trackRepository: Mocked<TrackRepositoryInterface>;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -28,27 +28,27 @@ describe('PlayNextTrackOrSilenceHandler', () => {
           useValue: createSpyObj(EventBus),
         },
         {
-          provide: ChannelDomainRepository,
-          useValue: createSpyObj(ChannelDomainRepository),
+          provide: ChannelRepositoryInterface,
+          useValue: createSpyObj(ChannelRepositoryInterface),
         },
         {
-          provide: QueuedTrackDomainRepository,
-          useValue: createSpyObj(QueuedTrackDomainRepository),
+          provide: QueuedTrackRepositoryInterface,
+          useValue: createSpyObj(QueuedTrackRepositoryInterface),
         },
         {
-          provide: TrackDomainRepository,
-          useValue: createSpyObj(TrackDomainRepository),
+          provide: TrackRepositoryInterface,
+          useValue: createSpyObj(TrackRepositoryInterface),
         },
       ],
     }).compile();
 
-    channelRepository = module.get(ChannelDomainRepository);
-    queuedTrackRepository = module.get(QueuedTrackDomainRepository);
+    channelRepository = module.get(ChannelRepositoryInterface);
+    queuedTrackRepository = module.get(QueuedTrackRepositoryInterface);
     radioFacade = module.get(RadioFacade);
     service = module.get<PlayNextTrackOrSilenceHandler>(
       PlayNextTrackOrSilenceHandler
     );
-    trackRepository = module.get(TrackDomainRepository);
+    trackRepository = module.get(TrackRepositoryInterface);
   });
 
   test('creates itself', () => {

@@ -1,11 +1,11 @@
 import { CommandHandler, EventPublisher, ICommandHandler } from '@nestjs/cqrs';
-import { ChannelDomainRepository } from '@sdj/backend/radio/core/domain';
+import { ChannelRepositoryInterface } from '@sdj/backend/radio/core/domain';
 import { JoinChannelCommand } from './join-channel.command';
 
 @CommandHandler(JoinChannelCommand)
 export class JoinChannelHandler implements ICommandHandler<JoinChannelCommand> {
   constructor(
-    private channelRepository: ChannelDomainRepository,
+    private channelRepository: ChannelRepositoryInterface,
     private publisher: EventPublisher
   ) {}
 

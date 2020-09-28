@@ -1,9 +1,9 @@
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import {
-  ChannelDomainRepository,
+  ChannelRepositoryInterface,
   QueuedTrack,
-  QueuedTrackDomainRepository,
-  TrackDomainRepository,
+  QueuedTrackRepositoryInterface,
+  TrackRepositoryInterface,
 } from '@sdj/backend/radio/core/domain';
 import { appConfig } from '@sdj/backend/shared/domain';
 import { PlaySilenceEvent } from '../../events/play-silence/play-silence.event';
@@ -18,10 +18,10 @@ export class PlayNextTrackOrSilenceHandler
   implements ICommandHandler<PlayNextTrackOrSilenceCommand> {
   constructor(
     private eventBus: EventBus,
-    private channelRepository: ChannelDomainRepository,
+    private channelRepository: ChannelRepositoryInterface,
     private radioFacade: RadioFacade,
-    private queuedTrackRepository: QueuedTrackDomainRepository,
-    private trackRepository: TrackDomainRepository
+    private queuedTrackRepository: QueuedTrackRepositoryInterface,
+    private trackRepository: TrackRepositoryInterface
   ) {}
 
   async execute(command: PlayNextTrackOrSilenceCommand): Promise<any> {

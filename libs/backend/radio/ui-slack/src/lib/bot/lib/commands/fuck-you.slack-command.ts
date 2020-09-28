@@ -3,7 +3,7 @@ import {
   FuckYouCommand,
   RadioFacade,
 } from '@sdj/backend/radio/core/application-services';
-import { QueuedTrackDomainRepository } from '@sdj/backend/radio/core/domain';
+import { QueuedTrackRepositoryInterface } from '@sdj/backend/radio/core/domain';
 import {
   SlackCommand,
   SlackCommandHandler,
@@ -20,7 +20,7 @@ export class FuckYouSlackCommand implements SlackCommand {
 
   constructor(
     private readonly cqrsServiceFacade: RadioFacade,
-    private readonly queuedTrackRepository: QueuedTrackDomainRepository,
+    private readonly queuedTrackRepository: QueuedTrackRepositoryInterface,
     private readonly slackService: SlackService
   ) {}
 

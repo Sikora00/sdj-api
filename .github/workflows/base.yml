@@ -81,19 +81,20 @@ jobs:
           parallel-finished: true
 
   e2e:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+      - name: Build the stack
+        run: docker-compose -f docker-compose-e2e.yml up -d
       - name: npm install
-        run: npm ci
+        run: docker exec sdj-e2e-backend bash -c "npm ci"
       - name: affected:e2e
-        run: npm run affected:e2e -- --base origin/develop
+        run: docker exec sdj-e2e-backend bash -c "npm run affected:e2e -- --parallel --all"
     env:
-      CI: true
+      DB_ROOT_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      DB_HOST: ${{ secrets.DB_HOST }}
+      DB_USERNAME: root
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
 
   lint:
     runs-on: ubuntu-latest

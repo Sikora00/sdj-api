@@ -3,7 +3,7 @@ import {
   RadioFacade,
   ThumbUpCommand,
 } from '@sdj/backend/radio/core/application-services';
-import { QueuedTrackDomainRepository } from '@sdj/backend/radio/core/domain';
+import { QueuedTrackRepositoryInterface } from '@sdj/backend/radio/core/domain';
 import {
   SlackCommand,
   SlackCommandHandler,
@@ -20,7 +20,7 @@ export class ThumbUpSlackCommand implements SlackCommand {
   constructor(
     private readonly radioFacade: RadioFacade,
     private slack: SlackService,
-    private readonly queuedTrackRepository: QueuedTrackDomainRepository
+    private readonly queuedTrackRepository: QueuedTrackRepositoryInterface
   ) {}
 
   async handler(command: string[], message: SlackMessage): Promise<void> {

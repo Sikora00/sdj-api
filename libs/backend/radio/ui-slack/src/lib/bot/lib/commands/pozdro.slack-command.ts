@@ -3,12 +3,11 @@ import {
   PozdroEvent,
   RadioFacade,
 } from '@sdj/backend/radio/core/application-services';
-import { UserDomainRepository } from '@sdj/backend/radio/core/domain';
+import { UserRepositoryInterface } from '@sdj/backend/radio/core/domain';
 import {
   SlackCommand,
   SlackCommandHandler,
   SlackMessage,
-  SlackService,
 } from '@sikora00/nestjs-slack-bot';
 
 @SlackCommandHandler()
@@ -21,7 +20,7 @@ export class PozdroSlackCommand implements SlackCommand {
   constructor(
     private readonly logger: Logger,
     private radioFacade: RadioFacade,
-    private userRepository: UserDomainRepository
+    private userRepository: UserRepositoryInterface
   ) {}
 
   async handler(command: string[], message: SlackMessage): Promise<void> {

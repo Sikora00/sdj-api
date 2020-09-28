@@ -1,19 +1,19 @@
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import {
   QueuedTrack,
-  QueuedTrackDomainRepository,
+  QueuedTrackRepositoryInterface,
   Track,
-  TrackDomainRepository,
-  VoteDomainRepository,
+  TrackRepositoryInterface,
+  VoteRepositoryInterface,
 } from '@sdj/backend/radio/core/domain';
 import { DeleteTrackCommand } from './delete-track.command';
 
 @CommandHandler(DeleteTrackCommand)
 export class DeleteTrackHandler implements ICommandHandler<DeleteTrackCommand> {
   constructor(
-    private readonly queuedTrackRepository: QueuedTrackDomainRepository,
-    private readonly trackRepository: TrackDomainRepository,
-    private readonly voteRepository: VoteDomainRepository
+    private readonly queuedTrackRepository: QueuedTrackRepositoryInterface,
+    private readonly trackRepository: TrackRepositoryInterface,
+    private readonly voteRepository: VoteRepositoryInterface
   ) {}
 
   async execute(command: DeleteTrackCommand): Promise<void> {

@@ -1,5 +1,5 @@
-import { Track as ITrack } from '@sdj/shared/domain';
 import { Field, ObjectType } from '@nestjs/graphql';
+import { Track as ITrack } from '@sdj/shared/domain';
 import {
   Column,
   Entity,

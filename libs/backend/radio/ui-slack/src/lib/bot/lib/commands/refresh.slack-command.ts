@@ -4,9 +4,9 @@ import {
   RadioFacade,
 } from '@sdj/backend/radio/core/application-services';
 import {
-  QueuedTrackDomainRepository,
+  QueuedTrackRepositoryInterface,
   Track,
-  TrackDomainRepository,
+  TrackRepositoryInterface,
 } from '@sdj/backend/radio/core/domain';
 import { appConfig } from '@sdj/backend/shared/domain';
 import {
@@ -25,8 +25,8 @@ export class RefreshSlackCommand implements SlackCommand {
   constructor(
     private readonly radioFacade: RadioFacade,
     private slack: SlackService,
-    private queuedTrackRepository: QueuedTrackDomainRepository,
-    private trackRepository: TrackDomainRepository
+    private queuedTrackRepository: QueuedTrackRepositoryInterface,
+    private trackRepository: TrackRepositoryInterface
   ) {}
 
   async handler(command: string[], message: SlackMessage): Promise<void> {

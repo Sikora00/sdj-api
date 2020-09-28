@@ -1,7 +1,7 @@
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
 import {
   Channel,
-  ChannelDomainRepository,
+  ChannelRepositoryInterface,
 } from '@sdj/backend/radio/core/domain';
 import { ArrayUtil } from '@sdj/shared/utils';
 import { GetChannelsQuery } from './get-channels.query';
@@ -9,7 +9,7 @@ import { GetChannelsReadModel } from './get-channels.read-model';
 
 @QueryHandler(GetChannelsQuery)
 export class GetChannelsHandler implements IQueryHandler<GetChannelsQuery> {
-  constructor(private channelRepository: ChannelDomainRepository) {}
+  constructor(private channelRepository: ChannelRepositoryInterface) {}
 
   async execute(query: GetChannelsQuery): Promise<GetChannelsReadModel> {
     let channels: Channel[];

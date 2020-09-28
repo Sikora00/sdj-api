@@ -1,7 +1,7 @@
 import { EventsHandler, IEventHandler } from '@nestjs/cqrs';
 import {
-  QueuedTrackDomainRepository,
-  VoteDomainRepository,
+  QueuedTrackRepositoryInterface,
+  VoteRepositoryInterface,
 } from '@sdj/backend/radio/core/domain';
 import { appConfig } from '@sdj/backend/shared/domain';
 import { SkipQueuedTrackCommand } from '../../commands/skip-queued-track/skip-queued-track.command';
@@ -12,9 +12,9 @@ import { SongVotedNegativelyEvent } from './song-voted-negatively.event';
 export class SongVotedNegativelyHandler
   implements IEventHandler<SongVotedNegativelyEvent> {
   constructor(
-    private queuedTrackRepository: QueuedTrackDomainRepository,
+    private queuedTrackRepository: QueuedTrackRepositoryInterface,
     private radioFacade: RadioFacade,
-    private voteRepository: VoteDomainRepository
+    private voteRepository: VoteRepositoryInterface
   ) {}
 
   async handle(event: SongVotedNegativelyEvent): Promise<unknown> {

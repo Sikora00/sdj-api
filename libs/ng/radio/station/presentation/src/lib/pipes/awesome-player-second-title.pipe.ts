@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { SourceType } from '@sdj/ng/radio/core/domain';
-import { UserUtils } from '@sdj/shared/utils';
 import { QueuedTrack } from '@sdj/shared/domain';
+import { UserUtils } from '@sdj/shared/utils';
 
 @Pipe({
   name: 'awesomePlayerSecondTitle',

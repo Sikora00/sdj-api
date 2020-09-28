@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { NgSharedKernelModule } from '@sdj/ng/shared/kernel';
 import { NgMainShellModule } from '@sdj/ng/main/shell';
+import { NgSharedKernelModule } from '@sdj/ng/shared/kernel';
 import { AppComponent } from './app.component';
 
 @NgModule({

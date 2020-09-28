@@ -1,5 +1,5 @@
-import io from 'socket.io-client';
 import { INestApplication } from '@nestjs/common';
+import io from 'socket.io-client';
 
 export const getClientWebsocketForAppAndNamespace = (
   app: INestApplication,

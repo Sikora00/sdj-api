@@ -3,7 +3,7 @@ import {
   AddTrackToQueueCommand,
   RadioFacade,
 } from '@sdj/backend/radio/core/application-services';
-import { TrackDomainRepository } from '@sdj/backend/radio/core/domain';
+import { TrackRepositoryInterface } from '@sdj/backend/radio/core/domain';
 import { extractVideoIdFromYoutubeUrl } from '@sdj/backend/shared/util-you-tube';
 import {
   SlackCommand,
@@ -22,7 +22,7 @@ export class PlayTrackSlackCommand implements SlackCommand {
   constructor(
     private readonly radioFacade: RadioFacade,
     private slack: SlackService,
-    private readonly trackRepository: TrackDomainRepository
+    private readonly trackRepository: TrackRepositoryInterface
   ) {}
 
   async handler(command: string[], message: SlackMessage): Promise<void> {

@@ -40,9 +40,6 @@
       "@sdj/backend/shared/util-you-tube": [
         "libs/backend/shared/util-you-tube/src/index.ts"
       ],
-      "@sdj/backend/shared/util-mp3": [
-        "libs/backend/shared/util-mp3/src/index.ts"
-      ],
       "@sdj/backend/radio/ui-redis": [
         "libs/backend/radio/ui-redis/src/index.ts"
       ],
@@ -117,6 +114,15 @@
       ],
       "@sdj/ng/shared/infrastructure-ws-socket-io": [
         "libs/ng/shared/infrastructure-ws-socket-io/src/index.ts"
+      ],
+      "@sdj/backend/radio/infrastructure-youtube-api": [
+        "libs/backend/radio/infrastructure-youtube-api/src/index.ts"
+      ],
+      "@sdj/backend/radio/infrastructure-mp3-gain": [
+        "libs/backend/radio/infrastructure-mp3-gain/src/index.ts"
+      ],
+      "@sdj/backend/radio/infrastructure-typeorm": [
+        "libs/backend/radio/infrastructure-typeorm/src/index.ts"
       ]
     }
   },

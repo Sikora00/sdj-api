@@ -1,6 +1,6 @@
 import { EventsHandler, IEventHandler } from '@nestjs/cqrs';
 import {
-  ChannelDomainRepository,
+  ChannelRepositoryInterface,
   ChannelStartedEvent,
 } from '@sdj/backend/radio/core/domain';
 import { WebSocketEvents } from '@sdj/shared/domain';
@@ -10,7 +10,7 @@ import { Gateway } from '../../gateway/gateway';
 export class WsChannelStartedHandler
   implements IEventHandler<ChannelStartedEvent> {
   constructor(
-    private channelRepository: ChannelDomainRepository,
+    private channelRepository: ChannelRepositoryInterface,
     private gateway: Gateway
   ) {}
 

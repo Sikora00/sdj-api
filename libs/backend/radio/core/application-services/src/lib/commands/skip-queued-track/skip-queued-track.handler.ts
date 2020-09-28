@@ -1,7 +1,7 @@
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import {
-  QueuedTrackDomainRepository,
-  TrackDomainRepository,
+  QueuedTrackRepositoryInterface,
+  TrackRepositoryInterface,
 } from '@sdj/backend/radio/core/domain';
 import { HostService } from '@sdj/backend/shared/application-services';
 import { QueuedTrackSkippedEvent } from '../../events/queued-track-skiepped/queued-track-skipped.event';
@@ -13,8 +13,8 @@ export class SkipQueuedTrackHandler
   constructor(
     private eventBus: EventBus,
     private hostService: HostService,
-    private queuedTrackRepository: QueuedTrackDomainRepository,
-    private trackRepository: TrackDomainRepository
+    private queuedTrackRepository: QueuedTrackRepositoryInterface,
+    private trackRepository: TrackRepositoryInterface
   ) {}
 
   async execute(command: SkipQueuedTrackCommand): Promise<void> {

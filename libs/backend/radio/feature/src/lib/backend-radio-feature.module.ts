@@ -1,51 +1,30 @@
 import { Global, Module } from '@nestjs/common';
 import {
   BackendRadioCoreApplicationServicesModule,
-  Store,
+  TrackService,
 } from '@sdj/backend/radio/core/application-services';
-import {
-  ChannelDomainRepository,
-  QueuedTrackDomainRepository,
-  TrackDomainRepository,
-  UserDomainRepository,
-  VoteDomainRepository,
-} from '@sdj/backend/radio/core/domain';
-import {
-  BackendRadioInfrastructureModule,
-  ChannelRepositoryAdapter,
-  QueuedTrackRepositoryAdapter,
-  StoreAdapter,
-  TrackRepositoryAdapter,
-  UserRepositoryAdapter,
-  VoteRepositoryAdapter,
-} from '@sdj/backend/radio/infrastructure';
-import { DbModule } from './db.module';
-
-const providers = [
-  { provide: ChannelDomainRepository, useClass: ChannelRepositoryAdapter },
-  {
-    provide: QueuedTrackDomainRepository,
-    useClass: QueuedTrackRepositoryAdapter,
-  },
-  { provide: TrackDomainRepository, useClass: TrackRepositoryAdapter },
-  { provide: UserDomainRepository, useClass: UserRepositoryAdapter },
-  { provide: VoteDomainRepository, useClass: VoteRepositoryAdapter },
-  { provide: Store, useExisting: StoreAdapter },
-];
+import { BackendRadioInfrastructureModule } from '@sdj/backend/radio/infrastructure';
+import { BackendRadioInfrastructureMp3GainModule } from '@sdj/backend/radio/infrastructure-mp3-gain';
+import { BackendRadioInfrastructureTypeormModule } from '@sdj/backend/radio/infrastructure-typeorm';
+import { BackendRadioInfrastructureYoutubeApiModule } from '@sdj/backend/radio/infrastructure-youtube-api';
+import { TrackServiceAdapter } from './adapters/track-service.adapter';
 
 @Global()
 @Module({
   imports: [
-    DbModule,
     BackendRadioCoreApplicationServicesModule,
     BackendRadioInfrastructureModule,
+    BackendRadioInfrastructureYoutubeApiModule,
+    BackendRadioInfrastructureMp3GainModule,
+    BackendRadioInfrastructureTypeormModule,
   ],
-  providers: providers,
+  providers: [{ provide: TrackService, useClass: TrackServiceAdapter }],
   exports: [
-    DbModule,
-    ...providers,
+    TrackService,
     BackendRadioCoreApplicationServicesModule,
     BackendRadioInfrastructureModule,
-  ], // TODo hide infrastructure
+    BackendRadioInfrastructureYoutubeApiModule,
+    BackendRadioInfrastructureTypeormModule,
+  ],
 })
 export class BackendRadioFeatureModule {}
