@@ -27,7 +27,7 @@ export function reducer(
 ): ChannelState {
   switch (action.type) {
     case ChannelsReceivedEvent.type:
-      state = adapter.addAll((<ChannelsReceivedEvent>action).channels, state);
+      state = adapter.setAll((<ChannelsReceivedEvent>action).channels, state);
       break;
     case SelectChannelCommand.type:
       state = {

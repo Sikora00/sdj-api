@@ -77,7 +77,11 @@
           },
           {
             "sourceTag": "scope:radio",
-            "onlyDependOnLibsWithTags": ["scope:radio", "scope:shared"]
+            "onlyDependOnLibsWithTags": [
+              "name:auth-api",
+              "scope:radio",
+              "scope:shared"
+            ]
           },
           {
             "sourceTag": "scope:radio-most-played",

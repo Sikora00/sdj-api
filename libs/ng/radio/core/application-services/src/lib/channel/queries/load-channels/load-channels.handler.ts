@@ -24,12 +24,13 @@ export class LoadChannelsHandler {
       this.channelRepository.getChannels(),
       this.ws.createSubject(WebSocketEvents.channels).pipe(
         withLatestFrom(this.store.select(channelQuery.channels)),
-        map(([channels, storedChannels]: [Channel[], Channel[]]) =>
-          storedChannels.map((channel: Channel) => ({
-            ...channel,
-            ...channels[channel.id],
-            name: channel.name,
-          }))
+        map(([channel, storedChannels]: [Channel, Channel[]]) =>
+          storedChannels.map((storedChannel: Channel) => {
+            if (channel.id === storedChannel.id) {
+              return channel;
+            }
+            return storedChannel;
+          })
         )
       )
     ).pipe(map((channels) => new ChannelsReceivedEvent(channels)));

@@ -123,7 +123,25 @@
       ],
       "@sdj/backend/radio/infrastructure-typeorm": [
         "libs/backend/radio/infrastructure-typeorm/src/index.ts"
-      ]
+      ],
+      "@sdj/backend/radio/infrastructure-slack-api": [
+        "libs/backend/radio/infrastructure-slack-api/src/index.ts"
+      ],
+      "@sdj/backend/auth/core/application-services": [
+        "libs/backend/auth/core/application-services/src/index.ts"
+      ],
+      "@sdj/backend/auth/ui-rest": ["libs/backend/auth/ui-rest/src/index.ts"],
+      "@sdj/shared/auth/core/domain": [
+        "libs/shared/auth/core/domain/src/index.ts"
+      ],
+      "@sdj/ng/auth/infrastructure-local-storage": [
+        "libs/ng/auth/infrastructure-local-storage/src/index.ts"
+      ],
+      "@sdj/ng/auth/shell": ["libs/ng/auth/shell/src/index.ts"],
+      "@sdj/backend/auth/core/domain": [
+        "libs/backend/auth/core/domain/src/index.ts"
+      ],
+      "@sdj/backend/auth/api": ["libs/backend/auth/api/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

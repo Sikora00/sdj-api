@@ -1529,6 +1529,231 @@
           }
         }
       }
+    },
+    "backend-radio-infrastructure-slack-api": {
+      "root": "libs/backend/radio/infrastructure-slack-api",
+      "sourceRoot": "libs/backend/radio/infrastructure-slack-api/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/backend/radio/infrastructure-slack-api/tsconfig.lib.json",
+              "libs/backend/radio/infrastructure-slack-api/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/backend/radio/infrastructure-slack-api/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/backend/radio/infrastructure-slack-api/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "backend-auth-core-application-services": {
+      "root": "libs/backend/auth/core/application-services",
+      "sourceRoot": "libs/backend/auth/core/application-services/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/backend/auth/core/application-services/tsconfig.lib.json",
+              "libs/backend/auth/core/application-services/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/backend/auth/core/application-services/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/backend/auth/core/application-services/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "backend-auth-ui-rest": {
+      "root": "libs/backend/auth/ui-rest",
+      "sourceRoot": "libs/backend/auth/ui-rest/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/backend/auth/ui-rest/tsconfig.lib.json",
+              "libs/backend/auth/ui-rest/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/backend/auth/ui-rest/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/backend/auth/ui-rest/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-auth-core-domain": {
+      "root": "libs/shared/auth/core/domain",
+      "sourceRoot": "libs/shared/auth/core/domain/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/auth/core/domain/tsconfig.lib.json",
+              "libs/shared/auth/core/domain/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/auth/core/domain/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/auth/core/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ng-auth-infrastructure-local-storage": {
+      "projectType": "library",
+      "root": "libs/ng/auth/infrastructure-local-storage",
+      "sourceRoot": "libs/ng/auth/infrastructure-local-storage/src",
+      "prefix": "sdj",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ng/auth/infrastructure-local-storage/tsconfig.lib.json",
+              "libs/ng/auth/infrastructure-local-storage/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ng/auth/infrastructure-local-storage/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ng/auth/infrastructure-local-storage/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "ng-auth-shell": {
+      "projectType": "library",
+      "root": "libs/ng/auth/shell",
+      "sourceRoot": "libs/ng/auth/shell/src",
+      "prefix": "sdj",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ng/auth/shell/tsconfig.lib.json",
+              "libs/ng/auth/shell/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ng/auth/shell/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ng/auth/shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "backend-auth-core-domain": {
+      "root": "libs/backend/auth/core/domain",
+      "sourceRoot": "libs/backend/auth/core/domain/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/backend/auth/core/domain/tsconfig.lib.json",
+              "libs/backend/auth/core/domain/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/backend/auth/core/domain/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/backend/auth/core/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "backend-auth-api": {
+      "root": "libs/backend/auth/api",
+      "sourceRoot": "libs/backend/auth/api/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/backend/auth/api/tsconfig.lib.json",
+              "libs/backend/auth/api/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/backend/auth/api/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/backend/auth/api/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

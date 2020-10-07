@@ -1,3 +1,3 @@
 export class GetChannelsQuery {
-  constructor(public channelIds?: string[]) {}
+  constructor(public token: string) {}
 }

@@ -16,7 +16,6 @@ async function bootstrap(): Promise<void> {
       res.set('Access-Control-Allow-Origin', '*');
     },
   });
-  app.enableCors();
 
   return app.listen(port, () => {
     Logger.log('Listening at http://localhost:' + port + '/' + globalPrefix);

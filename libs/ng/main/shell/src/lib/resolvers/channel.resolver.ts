@@ -5,12 +5,11 @@ import {
   RouterStateSnapshot,
 } from '@angular/router';
 import { Channel, ChannelFacade } from '@sdj/ng/radio/core/domain';
-import { SlackChannel } from '@sdj/shared/domain';
 import { Observable } from 'rxjs';
 import { filter, first, switchMap, tap } from 'rxjs/operators';
 
 @Injectable()
-export class ChannelResolver implements Resolve<SlackChannel[]> {
+export class ChannelResolver implements Resolve<Channel[]> {
   constructor(private channelFacade: ChannelFacade) {}
 
   findChannelIdParam(route: ActivatedRouteSnapshot): string {

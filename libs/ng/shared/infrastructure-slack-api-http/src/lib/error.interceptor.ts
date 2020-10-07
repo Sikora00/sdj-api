@@ -23,7 +23,7 @@ export class ErrorInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(
       tap((event: HttpEvent<any>) => {
-        if (event instanceof HttpResponse && event.body.error) {
+        if (event instanceof HttpResponse && event.body?.error) {
           this.handleError(event.body.error);
         }
       })
@@ -34,7 +34,7 @@ export class ErrorInterceptor implements HttpInterceptor {
     switch (error) {
       case 'token_revoked':
       case 'missing_scope':
-        this.authFacade.removeToken();
+        // this.authFacade.logout(); TODO
         location.reload();
     }
   }

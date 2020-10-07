@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { TokenDataService } from '@sdj/ng/auth/core/application-services';
-import { HttpTokenDataService } from './token/http-token-data.service';
+import { AuthDataService } from '@sdj/ng/auth/core/application-services';
+import { HttpAuthDataService } from './token/http-auth-data.service';
 
 @NgModule({
-  providers: [{ provide: TokenDataService, useClass: HttpTokenDataService }],
+  providers: [{ provide: AuthDataService, useClass: HttpAuthDataService }],
 })
 export class NgAuthHttpInfrastructureModule {}

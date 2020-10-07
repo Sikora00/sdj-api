@@ -18,6 +18,7 @@ services:
       - VIRTUAL_PORT=${BACKEND_PORT}
       - LOCAL_USER_ID=${LOCAL_USER_ID}
       - HOST_IP=${HOST_IP}
+      - JWT_SECRET=${JWT_SECRET}
     networks:
       backend:
         aliases:

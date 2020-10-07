@@ -1,4 +1,5 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { Controller, Get, Req, UseGuards } from '@nestjs/common';
+import { JwtAuthenticationGuard, RequestWithUser } from '@sdj/backend/auth/api';
 import {
   GetChannelsQuery,
   GetChannelsReadModel,
@@ -10,9 +11,10 @@ export class ChannelController {
   constructor(private radioFacade: RadioFacade) {}
 
   @Get()
-  getChannels(
-    @Query('channelIds') channelIds: string[]
-  ): Promise<GetChannelsReadModel> {
-    return this.radioFacade.getChannels(new GetChannelsQuery(channelIds));
+  @UseGuards(JwtAuthenticationGuard)
+  getChannels(@Req() request: RequestWithUser): Promise<GetChannelsReadModel> {
+    return this.radioFacade.getChannels(
+      new GetChannelsQuery(request.user.token)
+    );
   }
 }

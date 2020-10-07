@@ -151,6 +151,30 @@
     },
     "backend-radio-infrastructure-typeorm": {
       "tags": ["platform:backend", "scope:radio", "type:infrastructure"]
+    },
+    "backend-radio-infrastructure-slack-api": {
+      "tags": ["platform:backend", "scope:radio", "type:infrastructure"]
+    },
+    "backend-auth-core-application-services": {
+      "tags": ["platform:backend", "scope:auth", "type:application-services"]
+    },
+    "backend-auth-ui-rest": {
+      "tags": ["platform:backend", "scope:auth", "type:ui"]
+    },
+    "shared-auth-core-domain": {
+      "tags": ["platform:any", "scope:auth", "type:domain"]
+    },
+    "ng-auth-infrastructure-local-storage": {
+      "tags": ["platform:ng", "scope:auth", "type:infrastructure"]
+    },
+    "ng-auth-shell": {
+      "tags": ["platform:ng", "scope:auth", "type:shell"]
+    },
+    "backend-auth-core-domain": {
+      "tags": ["platform:backend", "scope:auth", "type:domain"]
+    },
+    "backend-auth-api": {
+      "tags": ["name:auth-api", "platform:backend", "scope:auth", "type:domain"]
     }
   },
   "tasksRunnerOptions": {

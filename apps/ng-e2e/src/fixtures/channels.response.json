@@ -1,65 +1,67 @@
 {
-  "C9R4N7K7T": {
-    "id": "C9R4N7K7T",
-    "defaultStreamUrl": null,
-    "isRunning": false,
-    "name": null,
-    "usersOnline": 0
-  },
-  "C9RQHAD53": {
-    "id": "C9RQHAD53",
-    "defaultStreamUrl": "",
-    "isRunning": false,
-    "name": "general",
-    "usersOnline": 0
-  },
-  "CF2H8APEH": {
-    "id": "CF2H8APEH",
-    "defaultStreamUrl": null,
-    "isRunning": false,
-    "name": null,
-    "usersOnline": 0
-  },
-  "CFB1KBLNM": {
-    "id": "CFB1KBLNM",
-    "defaultStreamUrl": null,
-    "isRunning": false,
-    "name": null,
-    "usersOnline": 0
-  },
-  "CL01K3GUT": {
-    "id": "CL01K3GUT",
-    "defaultStreamUrl": null,
-    "isRunning": false,
-    "name": null,
-    "usersOnline": 0
-  },
-  "CL4U9684R": {
-    "id": "CL4U9684R",
-    "defaultStreamUrl": "https://n-6-12.dcs.redcdn.pl/sc/o2/Eurozet/live/audio.livx?audio=5",
-    "isRunning": false,
-    "name": null,
-    "usersOnline": 0
-  },
-  "CQUS4F2AV": {
-    "id": "CQUS4F2AV",
-    "defaultStreamUrl": null,
-    "isRunning": false,
-    "name": null,
-    "usersOnline": 0
-  },
-  "CRUFLRV9N": {
-    "id": "CRUFLRV9N",
-    "defaultStreamUrl": null,
-    "isRunning": false,
-    "name": null,
-    "usersOnline": 0
-  },
-  "GLTDVB5M5": {
-    "id": "GLTDVB5M5",
-    "defaultStreamUrl": null,
-    "isRunning": false,
-    "name": null,
-    "usersOnline": 0
-  }
+  "channels": [
+    {
+      "id": "C9R4N7K7T",
+      "defaultStreamUrl": null,
+      "isRunning": false,
+      "name": null,
+      "usersOnline": 0
+    },
+    {
+      "id": "C9RQHAD53",
+      "defaultStreamUrl": "",
+      "isRunning": false,
+      "name": "general",
+      "usersOnline": 0
+    },
+    {
+      "id": "CF2H8APEH",
+      "defaultStreamUrl": null,
+      "isRunning": false,
+      "name": null,
+      "usersOnline": 0
+    },
+    {
+      "id": "CFB1KBLNM",
+      "defaultStreamUrl": null,
+      "isRunning": false,
+      "name": null,
+      "usersOnline": 0
+    },
+    {
+      "id": "CL01K3GUT",
+      "defaultStreamUrl": null,
+      "isRunning": false,
+      "name": null,
+      "usersOnline": 0
+    },
+    {
+      "id": "CL4U9684R",
+      "defaultStreamUrl": "https://n-6-12.dcs.redcdn.pl/sc/o2/Eurozet/live/audio.livx?audio=5",
+      "isRunning": false,
+      "name": null,
+      "usersOnline": 0
+    },
+    {
+      "id": "CQUS4F2AV",
+      "defaultStreamUrl": null,
+      "isRunning": false,
+      "name": null,
+      "usersOnline": 0
+    },
+    {
+      "id": "CRUFLRV9N",
+      "defaultStreamUrl": null,
+      "isRunning": false,
+      "name": null,
+      "usersOnline": 0
+    },
+    {
+      "id": "GLTDVB5M5",
+      "defaultStreamUrl": null,
+      "isRunning": false,
+      "name": null,
+      "usersOnline": 0
+    }
+  ]
 }

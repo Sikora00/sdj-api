@@ -44,6 +44,12 @@ export class Channel extends AggregateRoot {
     this.id = id;
   }
 
+  static create(id: string, name: string): Channel {
+    const channel = new Channel(id);
+    channel.name = name;
+    return channel;
+  }
+
   join(): void {
     this.usersOnline = this.usersOnline + 1;
     this.apply(new UserJoinedChannelEvent(this.id));
