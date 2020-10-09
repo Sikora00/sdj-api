@@ -11,14 +11,10 @@ class IcesController {
     this.removeContainer = this.removeContainer.bind(this);
     this.nextSong = this.nextSong.bind(this);
   }
-  startContainer(req: Request, res: Response): void {
+  async startContainer(req: Request, res: Response): Promise<void> {
     console.log('starting', req.params.id);
-    this.icesManager
-      .startContainer(req.params.id)
-      .pipe(last())
-      .subscribe((code: number) => {
-        code === 0 ? res.sendStatus(204) : res.sendStatus(500);
-      });
+    const code = await this.icesManager.startContainer(req.params.id);
+    code === 0 ? res.sendStatus(204) : res.sendStatus(500);
   }
 
   removeContainer(req: Request, res: Response): void {

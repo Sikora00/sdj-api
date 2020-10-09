@@ -98,6 +98,7 @@
       [
         'backend',
         'deps',
+        'host-api',
         'ng',
         'ng-radio',
         'sdj'

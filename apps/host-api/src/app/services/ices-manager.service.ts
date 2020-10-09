@@ -31,23 +31,13 @@ export class IcesManager {
     );
     return signal$;
   }
-  startContainer(id: string): Observable<number> {
-    const { signal$, execSpawn } = spawn('docker-compose', [
-      `run`,
-      `-d`,
-      `--name`,
-      `slack_dj_ices_${id}`,
-      `-e`,
-      `ROOM_ID=${id}`,
-      `slack_dj_ices`,
-    ]);
 
-    this.commands$.next(execSpawn);
-    signal$.subscribe((code: number) =>
-      console.log(`starting exited with code ${code}`)
-    );
-
-    return signal$;
+  async startContainer(id: string): Promise<number> {
+    let result = await this.startNewIcesContainer(id);
+    if (result === 1) {
+      result = await this.startExistingIcesContainer(id);
+    }
+    return result;
   }
 
   removeContainer(id: string): Observable<number> {
@@ -62,6 +52,39 @@ export class IcesManager {
     );
     this.commands$.next(execSpawn);
     return signal$;
+  }
+
+  private startNewIcesContainer(id: string): Promise<number> {
+    const { signal$, execSpawn } = spawn('docker-compose', [
+      `run`,
+      `-d`,
+      `--name`,
+      `slack_dj_ices_${id}`,
+      `-e`,
+      `ROOM_ID=${id}`,
+      `slack_dj_ices`,
+    ]);
+
+    this.commands$.next(execSpawn);
+    signal$.subscribe((code: number) =>
+      console.log(`run exited with code ${code}`)
+    );
+
+    return signal$.toPromise();
+  }
+
+  private startExistingIcesContainer(id: string): Promise<number> {
+    const { signal$, execSpawn } = spawn('docker-compose', [
+      `start`,
+      `slack_dj_ices_${id}`,
+    ]);
+
+    this.commands$.next(execSpawn);
+    signal$.subscribe((code: number) =>
+      console.log(`starting exited with code ${code}`)
+    );
+
+    return signal$.toPromise();
   }
 }
 
