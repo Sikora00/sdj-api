@@ -1,40 +1,39 @@
 import { Action } from '@ngrx/store';
-import { Track } from '@sdj/ng/radio/core/domain';
 import { MostPlayedTracksReceivedEvent } from '../events/most-played-tracks-received.event';
 import { LoadMostPlayedTracksQuery } from '../queries/load-most-played-tracks/load-most-played-tracks.query';
 
-export const TRACK_FEATURE_KEY = 'track';
+export const MOST_PLAYED_TRACKS_FEATURE_KEY = 'mostPlayedTracks';
 
-export interface TrackState {
-  mostPlayedTracks: Track[] | null;
+export interface MostPlayedTracksState {
+  mostPlayedTracksIds: string[] | null;
   mostPlayedTracksLoading: boolean;
 }
 
 export interface TrackPartialState {
-  readonly [TRACK_FEATURE_KEY]: TrackState;
+  readonly [MOST_PLAYED_TRACKS_FEATURE_KEY]: MostPlayedTracksState;
 }
 
-export const initialState: TrackState = {
-  mostPlayedTracks: null,
+export const initialState: MostPlayedTracksState = {
+  mostPlayedTracksIds: [],
   mostPlayedTracksLoading: false,
 };
 
 export function reducer(
-  state: TrackState = initialState,
+  state: MostPlayedTracksState = initialState,
   action: Action
-): TrackState {
+): MostPlayedTracksState {
   switch (action.type) {
     case MostPlayedTracksReceivedEvent.type:
       state = {
         ...state,
-        mostPlayedTracks: (<MostPlayedTracksReceivedEvent>action).tracks,
+        mostPlayedTracksIds: (<MostPlayedTracksReceivedEvent>action).trackIds,
         mostPlayedTracksLoading: false,
       };
       break;
     case LoadMostPlayedTracksQuery.type:
       state = {
         ...state,
-        mostPlayedTracks: null,
+        mostPlayedTracksIds: [],
         mostPlayedTracksLoading: true,
       };
   }

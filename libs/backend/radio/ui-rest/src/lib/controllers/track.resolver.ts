@@ -1,4 +1,4 @@
-import { Args, Query, Resolver } from '@nestjs/graphql';
+import { Args, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
 import {
   Track,
   TrackRepositoryInterface,
@@ -13,5 +13,10 @@ export class TrackResolver {
     @Args('channelId') channelId: string
   ): Promise<Track[]> {
     return this.trackRepository.findMostPlayedTracks(channelId);
+  }
+
+  @ResolveField('playedCount', () => Number)
+  async getPlayedCount(@Parent() track: Track): Promise<number> {
+    return track.playedCount();
   }
 }

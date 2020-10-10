@@ -66,7 +66,7 @@
     "@nestjs/websockets": "^7.4.4",
     "@ngneat/until-destroy": "^8.0.1",
     "@ngrx/effects": "10.0.0",
-    "@ngrx/entity": "10.0.0",
+    "@ngrx/entity": "^10.0.0",
     "@ngrx/router-store": "10.0.0",
     "@ngrx/store": "10.0.0",
     "@nrwl/angular": "10.2.1",

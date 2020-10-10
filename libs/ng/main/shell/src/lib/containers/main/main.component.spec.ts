@@ -1,5 +1,5 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -15,25 +15,27 @@ describe('MainComponent', () => {
   let component: MainComponent;
   let fixture: ComponentFixture<MainComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        MatSidenavModule,
-        RouterTestingModule,
-        HttpClientTestingModule,
-        NoopAnimationsModule,
-      ],
-      declarations: [
-        MainComponent,
-        MockComponent(NavbarComponent),
-        MockComponent(SidenavComponent),
-      ],
-      providers: [{ provide: ChannelFacade, useValue: {} }],
-    }).compileComponents();
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [
+          MatSidenavModule,
+          RouterTestingModule,
+          HttpClientTestingModule,
+          NoopAnimationsModule,
+        ],
+        declarations: [
+          MainComponent,
+          MockComponent(NavbarComponent),
+          MockComponent(SidenavComponent),
+        ],
+        providers: [{ provide: ChannelFacade, useValue: {} }],
+      }).compileComponents();
 
-    const channelFacade = TestBed.inject(ChannelFacade);
-    (channelFacade.selectedChannel$ as any) = hot('');
-  }));
+      const channelFacade = TestBed.inject(ChannelFacade);
+      (channelFacade.selectedChannel$ as any) = hot('');
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(MainComponent);

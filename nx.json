@@ -175,6 +175,9 @@
     },
     "backend-auth-api": {
       "tags": ["name:auth-api", "platform:backend", "scope:auth", "type:domain"]
+    },
+    "ng-radio-infrastructure-track-persistence-ngrx-entity": {
+      "tags": ["platform:ng", "scope:radio", "type:infrastructure"]
     }
   },
   "tasksRunnerOptions": {

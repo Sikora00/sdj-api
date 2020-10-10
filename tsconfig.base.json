@@ -141,7 +141,10 @@
       "@sdj/backend/auth/core/domain": [
         "libs/backend/auth/core/domain/src/index.ts"
       ],
-      "@sdj/backend/auth/api": ["libs/backend/auth/api/src/index.ts"]
+      "@sdj/backend/auth/api": ["libs/backend/auth/api/src/index.ts"],
+      "@sdj/ng/radio/infrastructure-track-persistence-ngrx-entity": [
+        "libs/ng/radio/infrastructure-track-persistence-ngrx-entity/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

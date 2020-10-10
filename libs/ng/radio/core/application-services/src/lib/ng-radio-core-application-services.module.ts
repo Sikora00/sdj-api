@@ -12,7 +12,6 @@ import { RadioFacade } from './radio.facade';
 import * as fromRadio from './radio/+state/radio.reducer';
 import { JoinHandler } from './radio/commands/join/join.handler';
 import { GetAudioSourceHandler } from './radio/queries/get-audio-source.handler';
-import { NgCoreTrackApplicationServicesModule } from './track/ng-core-track-application-services.module';
 
 const HANDLERS = [JoinHandler, GetAudioSourceHandler];
 const CHANNEL_HANDLERS = [LoadChannelsHandler];
@@ -29,7 +28,6 @@ const CHANNEL_HANDLERS = [LoadChannelsHandler];
   ],
   imports: [
     NgCoreQueuedTrackApplicationServicesModule,
-    NgCoreTrackApplicationServicesModule,
     EffectsModule.forFeature(HANDLERS),
     StoreModule.forFeature(fromRadio.RADIO_FEATURE_KEY, fromRadio.reducer),
     EffectsModule.forFeature(CHANNEL_HANDLERS),

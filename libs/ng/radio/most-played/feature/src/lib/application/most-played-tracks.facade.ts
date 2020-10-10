@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { TrackPartialState } from './+state/track.reducer';
-import { trackQuery } from './+state/track.selectors';
+import { TrackPartialState } from './+state/most-played-tracks.reducer';
+import { mostPlayedTracksQuery } from './+state/most-played-tracks.selectors';
 import { LoadMostPlayedTracksQuery } from './queries/load-most-played-tracks/load-most-played-tracks.query';
 
 @Injectable()
-export class TrackFacade {
-  mostPlayedTracks$ = this.store.pipe(select(trackQuery.mostPlayedTracks));
+export class MostPlayedTracksFacade {
+  mostPlayedTracks$ = this.store.pipe(
+    select(mostPlayedTracksQuery.mostPlayedTracks)
+  );
   mostPlayedTracksLoading$ = this.store.pipe(
-    select(trackQuery.mostPlayedTracksLoading)
+    select(mostPlayedTracksQuery.mostPlayedTracksLoading)
   );
 
   constructor(private store: Store<TrackPartialState>) {}

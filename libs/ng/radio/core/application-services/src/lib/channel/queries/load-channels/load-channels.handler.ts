@@ -8,7 +8,7 @@ import { merge, Observable } from 'rxjs';
 import { map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { ChannelPartialState } from '../../+state/channel.reducer';
 import { channelQuery } from '../../+state/channel.selectors';
-import { ChannelDataService } from '../../../ports/channel-data.service';
+import { ChannelDataService } from '../../../ports/data-services/channel-data.service';
 import { ChannelsReceivedEvent } from '../../events/channels-received.event';
 import { LoadChannelsQuery } from './load-channels.query';
 

@@ -1,12 +1,14 @@
-import { async, TestBed } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { NgSharedInfrastructureSlackApiHttpModule } from './ng-shared-infrastructure-slack-api-http.module';
 
 describe('NgSharedInfrastructureSlackApiHttpModule', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [NgSharedInfrastructureSlackApiHttpModule],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [NgSharedInfrastructureSlackApiHttpModule],
+      }).compileComponents();
+    })
+  );
 
   it('should create', () => {
     expect(NgSharedInfrastructureSlackApiHttpModule).toBeDefined();

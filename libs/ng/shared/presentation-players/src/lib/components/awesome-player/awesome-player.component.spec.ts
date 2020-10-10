@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { LoaderComponent } from '@sdj/ng/shared/presentation-sdj-loader';
 import { MockComponent } from 'ng-mocks';
 
@@ -8,11 +8,13 @@ describe('AwesomePlayerComponent', () => {
   let component: AwesomePlayerComponent;
   let fixture: ComponentFixture<AwesomePlayerComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [AwesomePlayerComponent, MockComponent(LoaderComponent)],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [AwesomePlayerComponent, MockComponent(LoaderComponent)],
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AwesomePlayerComponent);

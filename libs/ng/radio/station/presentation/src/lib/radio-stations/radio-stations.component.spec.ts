@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import {
   MAT_DIALOG_DATA,
   MatDialogActions,
@@ -14,18 +14,20 @@ describe('RadioStationsComponent', () => {
   let component: RadioStationsComponent;
   let fixture: ComponentFixture<RadioStationsComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        RadioStationsComponent,
-        MockDirectives(MatDialogContent, MatDialogActions),
-      ],
-      providers: [
-        { provide: MatDialogRef, useValue: createSpyObj(MatDialogRef) },
-        { provide: MAT_DIALOG_DATA, useValue: {} },
-      ],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [
+          RadioStationsComponent,
+          MockDirectives(MatDialogContent, MatDialogActions),
+        ],
+        providers: [
+          { provide: MatDialogRef, useValue: createSpyObj(MatDialogRef) },
+          { provide: MAT_DIALOG_DATA, useValue: {} },
+        ],
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(RadioStationsComponent);

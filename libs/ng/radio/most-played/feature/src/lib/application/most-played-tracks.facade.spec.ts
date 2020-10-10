@@ -3,20 +3,20 @@ import { provideMockStore } from '@ngrx/store/testing';
 import { TrackDataService } from '@sdj/ng/radio/core/application-services';
 import { createSpyObj } from 'jest-createspyobj';
 
-import { TrackFacade } from './track.facade';
+import { MostPlayedTracksFacade } from './most-played-tracks.facade';
 
 describe('TrackFacade', () => {
-  let service: TrackFacade;
+  let service: MostPlayedTracksFacade;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        TrackFacade,
+        MostPlayedTracksFacade,
         provideMockStore(),
         { provide: TrackDataService, useValue: createSpyObj(TrackDataService) },
       ],
     });
-    service = TestBed.inject(TrackFacade);
+    service = TestBed.inject(MostPlayedTracksFacade);
   });
 
   it('should be created', () => {
