@@ -1,10 +1,6 @@
-name: SDJ TASK CI
+name: SDJ PR CI
 
-on:
-  push:
-    branches-ignore:
-      - master
-      - develop
+on: pull_request
 
 jobs:
 
@@ -24,9 +20,10 @@ jobs:
     - name: npm install
       run: npm ci
     - name: affected:build
-      run: npm run affected:build -- --base origin/develop
+      run: npm run affected:build -- --base origin/${BASE_BRANCH}
     env:
       CI: true
+      BASE_BRANCH: ${{ github.base_ref }}
 
   e2e:
     runs-on: ubuntu-latest
@@ -37,12 +34,13 @@ jobs:
     - name: npm install
       run: docker exec sdj-e2e-backend bash -c "npm ci"
     - name: affected:e2e
-      run: docker exec sdj-e2e-backend bash -c "npm run affected:e2e -- --parallel --base origin/develop"
+      run: docker exec sdj-e2e-backend bash -c "npm run affected:e2e -- --parallel --base origin/${BASE_BRANCH}"
     env:
       DB_ROOT_PASSWORD: ${{ secrets.DB_PASSWORD }}
       DB_HOST: ${{ secrets.DB_HOST }}
       DB_USERNAME: root
       DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      BASE_BRANCH: ${{ github.base_ref }}
 
   lint:
     runs-on: ubuntu-latest
@@ -60,9 +58,10 @@ jobs:
     - name: npm install
       run: npm ci
     - name: affected:lint
-      run: npm run affected:lint -- --base origin/develop
+      run: npm run affected:lint -- --base origin/${BASE_BRANCH}
       env:
         CI: true
+        BASE_BRANCH: ${{ github.base_ref }}
 
   test:
     runs-on: ubuntu-latest
@@ -80,9 +79,10 @@ jobs:
     - name: npm install
       run: npm ci
     - name: affected:test
-      run: npm run affected:test -- --base origin/develop --passWithNoTests
+      run: npm run affected:test -- --base origin/${BASE_BRANCH} --passWithNoTests
     env:
       CI: true
+      BASE_BRANCH: ${{ github.base_ref }}
 
   vaidate:
     runs-on: ubuntu-latest
@@ -104,6 +104,7 @@ jobs:
     - name: validate nx tags
       run: npm run validate-nx-tags
     - name: prettier check
-      run: node ./node_modules/@valueadd/dev prettier-check `git diff origin/develop  --cached --name-only --diff-filter=AM | tr '\r\n' ','`
+      run: node ./node_modules/@valueadd/dev prettier-check `git diff origin/${BASE_BRANCH}  --cached --name-only --diff-filter=AM | tr '\r\n' ','`
     env:
       CI: true
+      BASE_BRANCH: ${{ github.base_ref }}
