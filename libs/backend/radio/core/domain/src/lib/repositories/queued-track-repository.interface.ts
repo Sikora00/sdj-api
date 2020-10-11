@@ -25,4 +25,6 @@ export abstract class QueuedTrackRepositoryInterface {
   abstract createQueryBuilder(alias: string): QueryBuilder<QueuedTrack>;
 
   abstract remove(queuedTrack: QueuedTrack): Promise<QueuedTrack>;
+
+  abstract getQueue(channelId: string): Promise<QueuedTrack[]>;
 }

@@ -64,4 +64,8 @@ export class QueuedTrack implements IQueuedTrack {
     this.track = track;
     this.randomized = randomized;
   }
+
+  play(): void {
+    this.playedAt = new Date();
+  }
 }

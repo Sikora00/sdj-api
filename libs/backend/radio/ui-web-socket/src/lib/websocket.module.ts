@@ -6,8 +6,10 @@ import { WsChannelUpdatedHandler } from './events/channel-updated/ws-channel-upd
 import { WsPlayQueuedTrackHandler } from './events/play-queued-track/ws-play-queued-track.handler';
 import { WsPlaySilenceHandler } from './events/play-silence/ws-play-silence.handler';
 import { WsPozdroHandler } from './events/pozdro/ws-pozdro.handler';
+import { WsQueuedChangedHandler } from './events/queue-changed/ws-queued-changed.handler';
 import { WsUserJoinedChannelHandler } from './events/user-joined-channel/ws-user-joined-channel.handler';
 import { Gateway } from './gateway/gateway';
+import { WsQueueSynchronizationService } from './services/ws-queue-synchronization.service';
 
 const EventsHandlers = [
   WsChannelStartedHandler,
@@ -15,12 +17,13 @@ const EventsHandlers = [
   WsPlayQueuedTrackHandler,
   WsPlaySilenceHandler,
   WsPozdroHandler,
+  WsQueuedChangedHandler,
   WsUserJoinedChannelHandler,
 ];
 
 @Module({
   imports: [CqrsModule],
-  providers: [...EventsHandlers, Gateway],
+  providers: [...EventsHandlers, Gateway, WsQueueSynchronizationService],
   exports: [Gateway],
 })
 export class WebSocketModule implements OnModuleInit {

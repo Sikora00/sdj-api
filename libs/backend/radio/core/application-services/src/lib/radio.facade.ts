@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { CommandBus, EventBus, QueryBus } from '@nestjs/cqrs';
 
-import { QueuedTrack } from '@sdj/backend/radio/core/domain';
+import { PozdroEvent, QueuedTrack } from '@sdj/backend/radio/core/domain';
 import { AddTrackToQueueCommand } from './commands/add-track-to-queue/add-track-to-queue.command';
 import { DeleteQueuedTrackCommand } from './commands/delete-queued-track/delete-queued-track.command';
 import { DownloadAndPlayCommand } from './commands/download-and-play/download-and-play.command';
@@ -16,7 +16,6 @@ import { SetChannelDefaultStreamCommand } from './commands/set-channel-default-s
 import { SkipQueuedTrackCommand } from './commands/skip-queued-track/skip-queued-track.command';
 import { ThumbDownCommand } from './commands/thumb-down/thumb-down.command';
 import { ThumbUpCommand } from './commands/thumb-up/thumb-up.command';
-import { PozdroEvent } from './events/pozdro/pozdro.event';
 import { GetChannelsQuery } from './queries/get-channels/get-channels.query';
 import { GetChannelsReadModel } from './queries/get-channels/get-channels.read-model';
 

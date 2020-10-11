@@ -1,5 +1,5 @@
 import { EventsHandler, IEventHandler } from '@nestjs/cqrs';
-import { PlaySilenceEvent } from '@sdj/backend/radio/core/application-services';
+import { PlaySilenceEvent } from '@sdj/backend/radio/core/domain';
 import { RedisService } from '../../services/redis.service';
 
 @EventsHandler(PlaySilenceEvent)

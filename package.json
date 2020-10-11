@@ -168,8 +168,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm-run-all --parallel validate-commit validate-nx-tags format:check",
-      "pre-push": "npm-run-all --parallel affected:lint affected:test"
+      "pre-commit": "validate-commit validate-nx-tags format:check"
     }
   }
 }

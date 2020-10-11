@@ -1,6 +1,5 @@
-import { forwardRef, Inject, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Store } from '@sdj/backend/radio/core/application-services';
 import {
   QueuedTrack,
   QueuedTrackRepositoryInterface,
@@ -10,8 +9,6 @@ import { QueryBuilder, Repository } from 'typeorm';
 @Injectable()
 export class TypeormQueuedTrackRepository extends QueuedTrackRepositoryInterface {
   constructor(
-    @Inject(forwardRef(() => Store))
-    private store: Store,
     @InjectRepository(QueuedTrack)
     private typeOrmRepository: Repository<QueuedTrack>
   ) {
@@ -53,21 +50,39 @@ export class TypeormQueuedTrackRepository extends QueuedTrackRepositoryInterface
   }
 
   async getCurrentTrack(channelId: string): Promise<QueuedTrack | null> {
-    return this.store.getCurrentTrack(channelId);
+    return this.typeOrmRepository
+      .createQueryBuilder('queuedTrack')
+      .where('queuedTrack.playedIn = :channelId')
+      .innerJoin(
+        'queuedTrack.playedIn',
+        'channel',
+        'queuedTrack.id = channel.currentTrack'
+      )
+      .setParameter('channelId', channelId)
+      .getOne();
   }
 
   getNextSongInQueue(channelId: string): Promise<QueuedTrack | undefined> {
-    return (
-      this.typeOrmRepository
-        .createQueryBuilder('queuedTrack')
-        // .addSelect('max(queuedTrack.id)')
-        .where('queuedTrack.playedIn = :channelId')
-        .leftJoinAndSelect('queuedTrack.track', 'track')
-        .andWhere('queuedTrack.playedAt IS NULL')
-        .orderBy('queuedTrack.order, queuedTrack.id', 'ASC')
-        .setParameter('channelId', channelId)
-        .getOne()
-    );
+    return this.typeOrmRepository
+      .createQueryBuilder('queuedTrack')
+      .where('queuedTrack.playedIn = :channelId')
+      .leftJoinAndSelect('queuedTrack.track', 'track')
+      .andWhere('queuedTrack.playedAt IS NULL')
+      .orderBy('queuedTrack.order, queuedTrack.id', 'ASC')
+      .setParameter('channelId', channelId)
+      .getOne();
+  }
+
+  getQueue(channelId: string): Promise<QueuedTrack[]> {
+    return this.typeOrmRepository
+      .createQueryBuilder('queuedTrack')
+      .where('queuedTrack.playedIn = :channelId')
+      .innerJoinAndSelect('queuedTrack.track', 'track')
+      .leftJoinAndSelect('queuedTrack.addedBy', 'addedBy  ')
+      .andWhere('queuedTrack.playedAt IS NULL')
+      .orderBy('queuedTrack.createdAt')
+      .setParameter('channelId', channelId)
+      .getMany();
   }
 
   remove(queuedTrack: QueuedTrack): Promise<QueuedTrack> {

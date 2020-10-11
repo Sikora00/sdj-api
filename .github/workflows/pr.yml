@@ -34,7 +34,7 @@ jobs:
     - name: npm install
       run: docker exec sdj-e2e-backend bash -c "npm ci"
     - name: affected:e2e
-      run: docker exec sdj-e2e-backend bash -c "npm run affected:e2e -- --parallel --base origin/${BASE_BRANCH}"
+      run: docker exec sdj-e2e-backend bash -c "npm run affected:e2e -- --base origin/${BASE_BRANCH}"
     env:
       DB_ROOT_PASSWORD: ${{ secrets.DB_PASSWORD }}
       DB_HOST: ${{ secrets.DB_HOST }}

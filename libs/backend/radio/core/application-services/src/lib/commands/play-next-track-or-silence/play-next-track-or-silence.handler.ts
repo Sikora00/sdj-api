@@ -1,4 +1,4 @@
-import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
+import { CommandHandler, EventPublisher, ICommandHandler } from '@nestjs/cqrs';
 import {
   ChannelRepositoryInterface,
   QueuedTrack,
@@ -6,7 +6,6 @@ import {
   TrackRepositoryInterface,
 } from '@sdj/backend/radio/core/domain';
 import { appConfig } from '@sdj/backend/shared/domain';
-import { PlaySilenceEvent } from '../../events/play-silence/play-silence.event';
 import { RadioFacade } from '../../radio.facade';
 import { DeleteQueuedTrackCommand } from '../delete-queued-track/delete-queued-track.command';
 import { DownloadAndPlayCommand } from '../download-and-play/download-and-play.command';
@@ -17,16 +16,16 @@ import { PlayNextTrackOrSilenceCommand } from './play-next-track-or-silence.comm
 export class PlayNextTrackOrSilenceHandler
   implements ICommandHandler<PlayNextTrackOrSilenceCommand> {
   constructor(
-    private eventBus: EventBus,
     private channelRepository: ChannelRepositoryInterface,
+    private publisher: EventPublisher,
     private radioFacade: RadioFacade,
     private queuedTrackRepository: QueuedTrackRepositoryInterface,
     private trackRepository: TrackRepositoryInterface
   ) {}
 
   async execute(command: PlayNextTrackOrSilenceCommand): Promise<any> {
-    const channel = await this.channelRepository.findOrCreate(
-      command.channelId
+    const channel = this.publisher.mergeObjectContext(
+      await this.channelRepository.findOrCreate(command.channelId)
     );
     const queuedTrack = await this.getNextTrack(channel.id);
     if (queuedTrack) {
@@ -41,7 +40,9 @@ export class PlayNextTrackOrSilenceHandler
         await this.execute(command);
       }
     } else {
-      this.eventBus.publish(new PlaySilenceEvent(channel.id));
+      channel.playSilence();
+      channel.commit();
+      await this.channelRepository.save(channel);
     }
   }
 
