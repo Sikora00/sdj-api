@@ -1,4 +1,4 @@
-import { EventBus } from '@nestjs/cqrs';
+import { EventPublisher } from '@nestjs/cqrs';
 import { Test, TestingModule } from '@nestjs/testing';
 import {
   ChannelRepositoryInterface,
@@ -17,6 +17,7 @@ describe('PlayNextTrackOrSilenceHandler', () => {
   let radioFacade: Mocked<RadioFacade>;
   let queuedTrackRepository: Mocked<QueuedTrackRepositoryInterface>;
   let trackRepository: Mocked<TrackRepositoryInterface>;
+  let publisher: Mocked<EventPublisher>;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -24,8 +25,8 @@ describe('PlayNextTrackOrSilenceHandler', () => {
         PlayNextTrackOrSilenceHandler,
         { provide: RadioFacade, useValue: createSpyObj(RadioFacade) },
         {
-          provide: EventBus,
-          useValue: createSpyObj(EventBus),
+          provide: EventPublisher,
+          useValue: createSpyObj(EventPublisher),
         },
         {
           provide: ChannelRepositoryInterface,
@@ -45,6 +46,7 @@ describe('PlayNextTrackOrSilenceHandler', () => {
     channelRepository = module.get(ChannelRepositoryInterface);
     queuedTrackRepository = module.get(QueuedTrackRepositoryInterface);
     radioFacade = module.get(RadioFacade);
+    publisher = module.get(EventPublisher);
     service = module.get<PlayNextTrackOrSilenceHandler>(
       PlayNextTrackOrSilenceHandler
     );
@@ -58,6 +60,7 @@ describe('PlayNextTrackOrSilenceHandler', () => {
   test('#execute triggers download an play track if is in queue', async () => {
     channelRepository.findOrCreate = jest.fn();
     channelRepository.findOrCreate.mockResolvedValue({ id: '1234' } as any);
+    publisher.mergeObjectContext.mockImplementation((x) => x);
 
     radioFacade.downloadAndPlay.mockResolvedValue({});
 
@@ -77,6 +80,7 @@ describe('PlayNextTrackOrSilenceHandler', () => {
     queuedTrackRepository.getNextSongInQueue.mockResolvedValue(null);
     queuedTrackRepository.findOneOrFail = jest.fn();
     queuedTrackRepository.findOneOrFail.mockResolvedValue({ id: 2 } as any);
+    publisher.mergeObjectContext.mockImplementation((x) => x);
 
     appConfig.trackLengthToStartOwnRadio = 40;
     trackRepository.countTracks = jest.fn();

@@ -1,16 +1,29 @@
 import { AggregateRoot } from '@nestjs/cqrs';
-import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  OneToMany,
+  OneToOne,
+  PrimaryColumn,
+} from 'typeorm';
+import { QueueChangedEvent } from '../..';
 import { ChannelStartedEvent } from '../events/channel-started.event';
 import { ChannelStoppedEvent } from '../events/channel-stopped.event';
 import { ChannelUpdatedEvent } from '../events/channel-updated.event';
 import { ChannelWillStartEvent } from '../events/channel-will-start.event';
 import { ChannelWillStopEvent } from '../events/channel-will-stop.event';
+import { PlaySilenceEvent } from '../events/play-silence.event';
 import { UserJoinedChannelEvent } from '../events/user-joined-channel.event';
 import { UserLeavedChannelEvent } from '../events/user-leaved-channel.event';
 import { QueuedTrack } from './queued-track.entity';
 
 @Entity()
 export class Channel extends AggregateRoot {
+  @OneToOne((type) => QueuedTrack, (queuedTrack) => queuedTrack.playedIn)
+  @JoinColumn()
+  currentTrack: QueuedTrack;
+
   @Column('varchar', {
     length: 200,
     nullable: true,
@@ -85,5 +98,16 @@ export class Channel extends AggregateRoot {
     this.isRunning = false;
     this.apply(new ChannelStoppedEvent(this.id));
     this.apply(new ChannelUpdatedEvent(this.id));
+  }
+
+  play(queuedTrack: QueuedTrack): void {
+    this.currentTrack = queuedTrack;
+    queuedTrack.play();
+    this.apply(new QueueChangedEvent(this.id));
+  }
+
+  playSilence(): void {
+    this.currentTrack = null;
+    this.apply(new PlaySilenceEvent(this.id));
   }
 }

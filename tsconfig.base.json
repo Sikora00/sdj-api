@@ -34,9 +34,6 @@
       "@sdj/backend/radio/ui-slack": [
         "libs/backend/radio/ui-slack/src/index.ts"
       ],
-      "@sdj/backend/radio/infrastructure": [
-        "libs/backend/radio/infrastructure/src/index.ts"
-      ],
       "@sdj/backend/shared/util-you-tube": [
         "libs/backend/shared/util-you-tube/src/index.ts"
       ],

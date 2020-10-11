@@ -1,9 +1,9 @@
 import { Injectable, Logger } from '@nestjs/common';
+import { RadioFacade } from '@sdj/backend/radio/core/application-services';
 import {
   PozdroEvent,
-  RadioFacade,
-} from '@sdj/backend/radio/core/application-services';
-import { UserRepositoryInterface } from '@sdj/backend/radio/core/domain';
+  UserRepositoryInterface,
+} from '@sdj/backend/radio/core/domain';
 import {
   SlackCommand,
   SlackCommandHandler,

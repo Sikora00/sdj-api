@@ -1,6 +1,6 @@
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 
-import { PlayQueuedTrackEvent } from '../../events/play-queued-track/play-queued-track.event';
+import { PlayQueuedTrackEvent } from '@sdj/backend/radio/core/domain';
 import { RadioFacade } from '../../radio.facade';
 import { DownloadTrackCommand } from '../download-track/download-track.command';
 import { DownloadAndPlayCommand } from './download-and-play.command';

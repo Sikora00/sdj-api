@@ -1,38 +1,30 @@
-import { EventsHandler, IEventHandler } from '@nestjs/cqrs';
+import { EventPublisher, EventsHandler, IEventHandler } from '@nestjs/cqrs';
 import {
-  QueuedTrack,
+  ChannelRepositoryInterface,
+  PlayQueuedTrackEvent,
   QueuedTrackRepositoryInterface,
 } from '@sdj/backend/radio/core/domain';
-import { Store } from '../../ports/store.port';
-import { PlayQueuedTrackEvent } from './play-queued-track.event';
 
 @EventsHandler(PlayQueuedTrackEvent)
 export class PlayQueuedTrackHandler
   implements IEventHandler<PlayQueuedTrackEvent> {
   constructor(
-    private readonly storageService: Store,
-    private queuedTrackRepository: QueuedTrackRepositoryInterface
+    private queuedTrackRepository: QueuedTrackRepositoryInterface,
+    private channelRepository: ChannelRepositoryInterface,
+    private publisher: EventPublisher
   ) {}
 
-  async handle(event: PlayQueuedTrackEvent): Promise<unknown> {
+  async handle(event: PlayQueuedTrackEvent): Promise<void> {
     const queuedTrack = await this.queuedTrackRepository.findOneOrFail(
       event.queuedTrackId
     );
     const channelId = queuedTrack.playedIn.id;
-    const prevTrack = await this.storageService.getCurrentTrack(channelId);
-    if (prevTrack) {
-      await this.storageService.removeFromQueue(prevTrack);
-    }
-    await this.storageService.setCurrentTrack(channelId, queuedTrack);
-    await this.updateQueuedTrackPlayedAt(queuedTrack);
-    return this.storageService.setSilenceCount(channelId, 0);
-  }
-
-  updateQueuedTrackPlayedAt(
-    queuedTrack: QueuedTrack,
-    playedAt?: Date
-  ): Promise<QueuedTrack> {
-    queuedTrack.playedAt = playedAt || new Date();
-    return this.queuedTrackRepository.save(queuedTrack);
+    const channel = this.publisher.mergeObjectContext(
+      await this.channelRepository.findOrFail(channelId)
+    );
+    channel.play(queuedTrack);
+    await this.channelRepository.save(channel);
+    await this.queuedTrackRepository.save(queuedTrack);
+    channel.commit();
   }
 }

@@ -19,7 +19,6 @@ import { ThumbUpHandler } from './commands/thumb-up/thumb-up.handler';
 import { ChannelWillStartHandler } from './events/channel-will-start/channel-will-start.handler';
 import { ChannelWillStopHandler } from './events/channel-will-stop/channel-will-stop.handler';
 import { PlayQueuedTrackHandler } from './events/play-queued-track/play-queued-track.handler';
-import { PlaySilenceHandler } from './events/play-silence/play-silence.handler';
 import { SongVotedNegativelyHandler } from './events/song-voted-negatively/song-voted-negatively.handler';
 import { GetChannelsHandler } from './queries/get-channels/get-channels.handler';
 import { RadioFacade } from './radio.facade';
@@ -47,7 +46,6 @@ export const EventHandlers = [
   ChannelWillStartHandler,
   ChannelWillStopHandler,
   PlayQueuedTrackHandler,
-  PlaySilenceHandler,
   SongVotedNegativelyHandler,
 ];
 

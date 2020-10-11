@@ -3,7 +3,6 @@ import {
   BackendRadioCoreApplicationServicesModule,
   TrackService,
 } from '@sdj/backend/radio/core/application-services';
-import { BackendRadioInfrastructureModule } from '@sdj/backend/radio/infrastructure';
 import { BackendRadioInfrastructureMp3GainModule } from '@sdj/backend/radio/infrastructure-mp3-gain';
 import { BackendRadioInfrastructureSlackApiModule } from '@sdj/backend/radio/infrastructure-slack-api';
 import { BackendRadioInfrastructureTypeormModule } from '@sdj/backend/radio/infrastructure-typeorm';
@@ -14,7 +13,6 @@ import { TrackServiceAdapter } from './adapters/track-service.adapter';
 @Module({
   imports: [
     BackendRadioCoreApplicationServicesModule,
-    BackendRadioInfrastructureModule,
     BackendRadioInfrastructureYoutubeApiModule,
     BackendRadioInfrastructureMp3GainModule,
     BackendRadioInfrastructureTypeormModule,
@@ -24,7 +22,6 @@ import { TrackServiceAdapter } from './adapters/track-service.adapter';
   exports: [
     TrackService,
     BackendRadioCoreApplicationServicesModule,
-    BackendRadioInfrastructureModule,
     BackendRadioInfrastructureYoutubeApiModule,
     BackendRadioInfrastructureTypeormModule,
     BackendRadioInfrastructureSlackApiModule,

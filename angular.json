@@ -482,34 +482,6 @@
         }
       }
     },
-    "backend-radio-infrastructure": {
-      "root": "libs/backend/radio/infrastructure",
-      "sourceRoot": "libs/backend/radio/infrastructure/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/backend/radio/infrastructure/tsconfig.lib.json",
-              "libs/backend/radio/infrastructure/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/backend/radio/infrastructure/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/backend/radio/infrastructure/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "backend-shared-util-you-tube": {
       "root": "libs/backend/shared/util-you-tube",
       "sourceRoot": "libs/backend/shared/util-you-tube/src",

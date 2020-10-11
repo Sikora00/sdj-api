@@ -9,7 +9,6 @@ import {
   JoinChannelCommand,
   LeaveChannelCommand,
   RadioFacade,
-  Store,
 } from '@sdj/backend/radio/core/application-services';
 import {
   ChannelRepositoryInterface,
@@ -20,6 +19,7 @@ import { WebSocketEvents } from '@sdj/shared/domain';
 import { Observable, Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
 import { Server, Socket } from 'socket.io';
+import { WsQueueSynchronizationService } from '../services/ws-queue-synchronization.service';
 
 @WebSocketGateway()
 export class Gateway implements OnGatewayDisconnect {
@@ -29,7 +29,7 @@ export class Gateway implements OnGatewayDisconnect {
   constructor(
     private readonly channelRepository: ChannelRepositoryInterface,
     private hostService: HostService,
-    private readonly storageService: Store,
+    private queueSynchronizationService: WsQueueSynchronizationService,
     private radioFacade: RadioFacade
   ) {}
 
@@ -75,12 +75,14 @@ export class Gateway implements OnGatewayDisconnect {
       this.clientInRoomSubjects[client.id].complete();
     }
     this.clientInRoomSubjects[client.id] = new Subject();
-    return this.storageService.getQueue(JSON.parse(channel)).pipe(
-      takeUntil(this.clientInRoomSubjects[client.id]),
-      map((list) => {
-        return { event: WebSocketEvents.queuedTrackList, data: list };
-      })
-    );
+    return this.queueSynchronizationService
+      .listenToQueue(JSON.parse(channel))
+      .pipe(
+        takeUntil(this.clientInRoomSubjects[client.id]),
+        map((list) => {
+          return { event: WebSocketEvents.queuedTrackList, data: list };
+        })
+      );
   }
 
   private async leaveOtherChannels(

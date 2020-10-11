@@ -45,9 +45,6 @@
     "backend-radio-ui-slack": {
       "tags": ["platform:backend", "scope:radio", "type:ui"]
     },
-    "backend-radio-infrastructure": {
-      "tags": ["platform:backend", "scope:radio", "type:infrastructure"]
-    },
     "backend-shared-util-you-tube": {
       "tags": ["platform:backend", "scope:shared", "type:util"]
     },

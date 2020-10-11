@@ -1,8 +1,8 @@
 import { JwtService } from '@nestjs/jwt';
 import { Test, TestingModule } from '@nestjs/testing';
 import { SlackApiService } from '@sdj/shared/domain';
-import { LoginHandler } from './login.handler';
 import { createSpyObj } from 'jest-createspyobj';
+import { LoginHandler } from './login.handler';
 
 describe('LoginHandler', () => {
   let handler: LoginHandler;

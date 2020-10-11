@@ -1,7 +1,9 @@
 import { Logger } from '@nestjs/common';
 import { EventsHandler, IEventHandler } from '@nestjs/cqrs';
-import { PlayQueuedTrackEvent } from '@sdj/backend/radio/core/application-services';
-import { QueuedTrackRepositoryInterface } from '@sdj/backend/radio/core/domain';
+import {
+  PlayQueuedTrackEvent,
+  QueuedTrackRepositoryInterface,
+} from '@sdj/backend/radio/core/domain';
 import { WebSocketEvents } from '@sdj/shared/domain';
 import { Gateway } from '../../gateway/gateway';
 

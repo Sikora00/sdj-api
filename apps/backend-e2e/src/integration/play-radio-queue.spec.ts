@@ -56,16 +56,7 @@ describe('Play Radio Queue', () => {
       });
     });
 
-    test('returns 10-sec-of-silence', (done) => {
-      redisSub.on('message', (channel, message) => {
-        expect(channel).toEqual(channelId);
-        expect(message).toEqual('10-sec-of-silence');
-        done();
-      });
-      redisPub.publish('getNext', channelId);
-    });
-
-    test('returns emits playRadio on second silence', (done) => {
+    test('returns 10-sec-of-silence and emits playRadio', (done) => {
       Promise.all([
         new Promise((resolve) => {
           redisSub.on('message', (channel, message) => {
@@ -132,23 +123,15 @@ describe('Play Radio Queue', () => {
           redisSub.once('message', (channel, message) => {
             expect(channel).toEqual(channelId);
             expect(message).toEqual('_D1rrdFcj1U');
-            resolve();
+            // @ToDo play is an event so it is possible that it emits by web socket before the track will be updated and the next test will fall
+            setTimeout(() => resolve(), 100);
           });
         }),
       ]).then(() => done());
       redisPub.publish('getNext', channelId);
     });
 
-    test('returns silence when queue is empty', (done) => {
-      redisSub.once('message', (channel, message) => {
-        expect(channel).toEqual(channelId);
-        expect(message).toEqual('10-sec-of-silence');
-        done();
-      });
-      redisPub.publish('getNext', channelId);
-    });
-
-    test('returns silence and emits playRadio on second silence playing', (done) => {
+    test('returns silence and emits playRadio when queue is empty', (done) => {
       Promise.all([
         new Promise((resolve) =>
           socket.once(WebSocketEvents.playRadio, resolve)

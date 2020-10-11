@@ -1,22 +1,22 @@
-import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
+import { CommandHandler, EventPublisher, ICommandHandler } from '@nestjs/cqrs';
 import {
   ChannelRepositoryInterface,
   QueuedTrack,
   QueuedTrackRepositoryInterface,
+  RadioAggregate,
   TrackRepositoryInterface,
 } from '@sdj/backend/radio/core/domain';
 import { appConfig } from '@sdj/backend/shared/domain';
-import { Store } from '../../ports/store.port';
 
 import { QueueTrackCommand } from './queue-track.command';
 
 @CommandHandler(QueueTrackCommand)
 export class QueueTrackHandler implements ICommandHandler<QueueTrackCommand> {
   constructor(
-    private readonly storageService: Store,
     private channelRepository: ChannelRepositoryInterface,
     private queuedTrackRepository: QueuedTrackRepositoryInterface,
-    private readonly trackRepository: TrackRepositoryInterface
+    private readonly trackRepository: TrackRepositoryInterface,
+    private publisher: EventPublisher
   ) {}
 
   async execute(command: QueueTrackCommand): Promise<QueuedTrack> {
@@ -39,7 +39,8 @@ export class QueueTrackHandler implements ICommandHandler<QueueTrackCommand> {
         );
       }
     }
-    let queuedTrack = new QueuedTrack(
+    const radio = this.publisher.mergeObjectContext(new RadioAggregate());
+    let queuedTrack = radio.queueTrack(
       track,
       channel,
       command.randomized,
@@ -47,7 +48,7 @@ export class QueueTrackHandler implements ICommandHandler<QueueTrackCommand> {
     );
 
     queuedTrack = await this.queuedTrackRepository.save(queuedTrack);
-    await this.storageService.addToQueue(queuedTrack);
+    radio.commit();
     return queuedTrack;
   }
 }

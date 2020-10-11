@@ -1,6 +1,8 @@
 import { EventsHandler, IEventHandler } from '@nestjs/cqrs';
-import { PlayQueuedTrackEvent } from '@sdj/backend/radio/core/application-services';
-import { QueuedTrackRepositoryInterface } from '@sdj/backend/radio/core/domain';
+import {
+  PlayQueuedTrackEvent,
+  QueuedTrackRepositoryInterface,
+} from '@sdj/backend/radio/core/domain';
 import { RedisService } from '../../services/redis.service';
 
 @EventsHandler(PlayQueuedTrackEvent)
