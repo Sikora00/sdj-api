@@ -175,6 +175,9 @@
     },
     "ng-radio-infrastructure-track-persistence-ngrx-entity": {
       "tags": ["platform:ng", "scope:radio", "type:infrastructure"]
+    },
+    "ng-radio-infrastructure-channel-persistence-ngrx-entity": {
+      "tags": ["platform:ng", "scopre:radio", "type:infrastructure"]
     }
   },
   "tasksRunnerOptions": {

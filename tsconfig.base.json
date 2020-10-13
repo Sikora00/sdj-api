@@ -141,6 +141,9 @@
       "@sdj/backend/auth/api": ["libs/backend/auth/api/src/index.ts"],
       "@sdj/ng/radio/infrastructure-track-persistence-ngrx-entity": [
         "libs/ng/radio/infrastructure-track-persistence-ngrx-entity/src/index.ts"
+      ],
+      "@sdj/ng/radio/infrastructure-channel-persistence-ngrx-entity": [
+        "libs/ng/radio/infrastructure-channel-persistence-ngrx-entity/src/index.ts"
       ]
     }
   },

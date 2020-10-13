@@ -1,6 +1,6 @@
-import { initialState, reducer } from './channel.reducer';
+import { initialState, reducer } from './main.reducer';
 
-describe('Channel Reducer', () => {
+describe('Main Reducer', () => {
   beforeEach(() => {});
 
   describe('unknown action', () => {

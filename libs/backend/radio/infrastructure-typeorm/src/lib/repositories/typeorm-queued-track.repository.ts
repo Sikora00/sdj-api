@@ -58,6 +58,7 @@ export class TypeormQueuedTrackRepository extends QueuedTrackRepositoryInterface
         'channel',
         'queuedTrack.id = channel.currentTrack'
       )
+      .innerJoinAndSelect('queuedTrack.track', 'track')
       .setParameter('channelId', channelId)
       .getOne();
   }
@@ -73,16 +74,18 @@ export class TypeormQueuedTrackRepository extends QueuedTrackRepositoryInterface
       .getOne();
   }
 
-  getQueue(channelId: string): Promise<QueuedTrack[]> {
-    return this.typeOrmRepository
-      .createQueryBuilder('queuedTrack')
-      .where('queuedTrack.playedIn = :channelId')
-      .innerJoinAndSelect('queuedTrack.track', 'track')
-      .leftJoinAndSelect('queuedTrack.addedBy', 'addedBy  ')
-      .andWhere('queuedTrack.playedAt IS NULL')
-      .orderBy('queuedTrack.createdAt')
-      .setParameter('channelId', channelId)
-      .getMany();
+  async getQueue(channelId: string): Promise<QueuedTrack[]> {
+    return (
+      await this.typeOrmRepository
+        .createQueryBuilder('queuedTrack')
+        .where('queuedTrack.playedIn = :channelId')
+        .innerJoinAndSelect('queuedTrack.track', 'track')
+        .leftJoinAndSelect('queuedTrack.addedBy', 'addedBy  ')
+        .andWhere('queuedTrack.playedAt IS NULL')
+        .orderBy('queuedTrack.createdAt')
+        .setParameter('channelId', channelId)
+        .getMany()
+    ).concat(await this.getCurrentTrack(channelId));
   }
 
   remove(queuedTrack: QueuedTrack): Promise<QueuedTrack> {

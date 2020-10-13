@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { TrackPersistenceService } from '@sdj/ng/radio/core/application-services';
 import { Track } from '@sdj/ng/radio/core/domain';
-import { fromTrackActions } from '@sdj/ng/radio/infrastructure-track-persistence-ngrx-entity';
+import { fromTrackActions } from './+state/track.actions';
 import { Observable, of } from 'rxjs';
 
 @Injectable()
