@@ -96,6 +96,7 @@
       2,
       'always',
       [
+        'auth',
         'backend',
         'deps',
         'host-api',

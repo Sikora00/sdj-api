@@ -53,7 +53,7 @@ export class AuthFacade {
   }
 
   private redirectToSlackAuth(): Observable<void> {
-    window.location.href = `https://slack.com/oauth/authorize?user_scope=identity.basic&scope=groups:read,channels:read,mpim:read,im:read&client_id=${environment.slack.clientId}&redirect_uri=${window.location.origin}`;
+    window.location.href = `https://slack.com/oauth/authorize?scope=identity.basic&client_id=${environment.slack.clientId}&redirect_uri=${window.location.origin}`;
     return of();
   }
 }
