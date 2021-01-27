@@ -1,5 +1,5 @@
-import { CHANNEL_FEATURE_KEY } from './channel.reducer';
-import { channelQuery } from './channel.selectors';
+import { MAIN_FEATURE_KEY } from './main.reducer';
+import { channelQuery } from './main.selectors';
 
 describe('Channel Selectors', () => {
   let storeState;
@@ -7,7 +7,7 @@ describe('Channel Selectors', () => {
 
   beforeEach(() => {
     storeState = {
-      [CHANNEL_FEATURE_KEY]: { entities: { ['1234']: channel }, ids: ['1234'] },
+      [MAIN_FEATURE_KEY]: { entities: { ['1234']: channel }, ids: ['1234'] },
     };
   });
 

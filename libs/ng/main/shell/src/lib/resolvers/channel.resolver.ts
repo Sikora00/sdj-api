@@ -31,11 +31,13 @@ export class ChannelResolver implements Resolve<Channel[]> {
     state: RouterStateSnapshot
   ): Observable<any> {
     const channelIdParam = this.findChannelIdParam(route);
+    let firstExec = true;
 
     return this.channelFacade.channels$.pipe(
       tap((channels) => {
-        if (!channels || !channels.length) {
+        if (firstExec && (!channels || !channels.length)) {
           this.channelFacade.loadChannels();
+          firstExec = false;
         }
       }),
       filter((channels) => !!channels && !!channels.length),

@@ -1759,6 +1759,39 @@
           "style": "scss"
         }
       }
+    },
+    "ng-radio-infrastructure-channel-persistence-ngrx-entity": {
+      "projectType": "library",
+      "root": "libs/ng/radio/infrastructure-channel-persistence-ngrx-entity",
+      "sourceRoot": "libs/ng/radio/infrastructure-channel-persistence-ngrx-entity/src",
+      "prefix": "sdj",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ng/radio/infrastructure-channel-persistence-ngrx-entity/tsconfig.lib.json",
+              "libs/ng/radio/infrastructure-channel-persistence-ngrx-entity/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ng/radio/infrastructure-channel-persistence-ngrx-entity/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ng/radio/infrastructure-channel-persistence-ngrx-entity/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {
